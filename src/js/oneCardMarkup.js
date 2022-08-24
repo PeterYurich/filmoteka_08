@@ -1,6 +1,5 @@
-
 function oneCardMarkup(item) {
-    return `<div class="photo-card">
+  return `<div class="photo-card">
       <a class="photo-card__link">
         <img
           class="photo-card-img"
@@ -18,6 +17,6 @@ function oneCardMarkup(item) {
           </p>
         </a>
       </div>
-    </div>`
+    </div>`;
 }
-export default{oneCardMarkup}
+export default { oneCardMarkup };
