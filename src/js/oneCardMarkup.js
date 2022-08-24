@@ -1,5 +1,5 @@
 function oneCardMarkup(item) {
-  return `<div class="photo-card">
+  return `<div class="container photo-card">
       <a class="photo-card__link">
         <img
           class="photo-card-img"
