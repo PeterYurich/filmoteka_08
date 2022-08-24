@@ -1,42 +1,38 @@
-@media screen and (max-width: 1280px) {
-  .card-info__title {
-    color: var(--primary-color);
-  }
-
-  .card-info__genre {
-    color: var(--accent-color);
-  }
-
-  .pseudo-element::before {
-    position: absolute;
-    top: 0;
-    right: -5px;
-    content: '';
-    width: 2px;
-    height: 100%;
-    border: 1px solid var(--accent-color);
-  }
+.photo-card {
+  width: 280px;
+  height: 443px;
 }
 
-@media screen and (max-width: 320px) {
-  .photo-card {
-    width: 280px;
-    height: 443px;
-  }
-
-  .photo-card__link {
-    margin-bottom: 10px;
-  }
-
-  .photo-card-img {
-    height: 402px;
-  }
-
-  .card-info {
-    @include font(500, 12, 14);
-  }
+.photo-card__link {
+  margin-bottom: 10px;
 }
 
+.photo-card-img {
+  height: 402px;
+}
+
+.card-info {
+  @include font(500, 12, 14);
+}
+.card-info__title {
+  color: var(--primary-color);
+}
+
+.card-info__genre {
+  color: var(--accent-color);
+}
+
+.pseudo-element::before {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  content: '';
+  width: 2px;
+  height: 100%;
+  border: 1px solid var(--accent-color);
+}
+
+//Tablet styles 768px
 @media screen and (min-width: 768px) {
   .photo-card {
     width: 336px;
@@ -52,6 +48,8 @@
     @include font(500, 12, 16);
   }
 }
+
+//Desktop styles 1280px
 
 @media screen and (min-width: 1280px) {
   .photo-card {
