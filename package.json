@@ -12,10 +12,10 @@
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Go_Eighth_Team",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://peteryurich.github.io/filmoteka_08/"
   },
   "dependencies": {
     "axios": "^0.27.2",
