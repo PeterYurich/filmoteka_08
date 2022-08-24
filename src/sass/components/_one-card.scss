@@ -16,14 +16,14 @@
   border: 1px solid var(--accent-color);
 }
 
-//Styles for old mob
+//old mob
 @media screen and (max-width: 320) {
   .photo-card {
     width: 100%;
   }
 }
 
-//Mobile styles 320px
+//Mobile
 @media screen and (max-width: 767px) {
   .photo-card {
     width: 280px;
@@ -43,7 +43,7 @@
   }
 }
 
-//Tablet styles 768px
+//Tablet
 @media screen and (min-width: 768px) {
   .photo-card {
     width: 336px;
@@ -60,7 +60,7 @@
   }
 }
 
-//Desktop styles 1280px
+//Desktop
 
 @media screen and (min-width: 1280px) {
   .photo-card {
