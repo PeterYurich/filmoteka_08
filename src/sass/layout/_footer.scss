@@ -58,3 +58,10 @@ body {
       line-height: calc(16 / 18);
     }
   }
+  .footer-icon {
+    width: 16px;
+    height: 16px;
+    -webkit-animation: pulsing 2s infinite;
+    animation: pulsing 2s infinite;
+  }
+ 
