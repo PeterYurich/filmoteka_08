@@ -1,19 +1,5 @@
-.photo-card {
-  width: 280px;
-  height: 443px;
-}
+//Common styles
 
-.photo-card__link {
-  margin-bottom: 10px;
-}
-
-.photo-card-img {
-  height: 402px;
-}
-
-.card-info {
-  @include font(500, 12, 14);
-}
 .card-info__title {
   color: var(--primary-color);
 }
@@ -30,6 +16,26 @@
   width: 2px;
   height: 100%;
   border: 1px solid var(--accent-color);
+}
+
+//Mobile styles 320px
+@media screen and (min-width: 320px) {
+  .photo-card {
+    width: 280px;
+    height: 443px;
+  }
+
+  .photo-card__link {
+    margin-bottom: 10px;
+  }
+
+  .photo-card-img {
+    height: 402px;
+  }
+
+  .card-info {
+    @include font(500, 12, 14);
+  }
 }
 
 //Tablet styles 768px
