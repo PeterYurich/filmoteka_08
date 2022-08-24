@@ -1,3 +1,12 @@
+:root{
+    --accent-color: #FF6B01;
+    --primary-white-color: #FFFFFF;
+    --primary-black-color: #000;
+    --main-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --secondary-text-color: #8C8C8C;
+
+}
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -20,23 +29,30 @@
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
-    background-color: white;
+    background-color: var(--primary-white-color);
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 500ms var(--main-timing-function);
     ;
+    margin: 20px 10px;  
+
     padding: 40px 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 280px;
+    max-height: 560px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 .modal__close-btn {
-    color: #000000;
+    fill: var(--primary-black-color);
     position: absolute;
     top: 8px;
     right: 8px;
+    margin-bottom: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,100 +60,100 @@
     height: 30px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    border: none;
     background-color: transparent;
     padding: 0;
     cursor: pointer;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--main-timing-function);
     ;
+    background-image: url(/src/images/close-btn.svg);
+    background-size: contain;
 }
 
 .modal__close-btn:focus,
 .modal__close-btn:hover {
-    fill: #FF6B01;
+    background-color: var(--accent-color);
 }
 
-@media screen and (min-width: 320px) {
-    .modal {
-        width: 280px;
-        /* height: 940px; */
-        overflow: scroll;
-    }
+.modal__img {
+margin-top: 8px;
+margin-bottom: 20px;
 }
-
 .modal__title {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.15;
+    @include font(500, 20, 23);
+    color: var(--primary-black-color);
+    margin-bottom: 20px;
+    }
 
-    color: #000000;
+.modal__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
-
-.modal__list {}
 
 .modal__list-item {
     display: flex;
 }
-
+.modal__list-description-item:not(:last-child){
+    margin-bottom: 8px;
+}
 .modal__list-item-title {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    color: #8C8C8C;
+    @include font(500, 12, 16);
+    color: var(--secondary-text-color);
+
 }
 
-/* Must done roof accent-color!!!!!! */
+.modal__list-item-api-value:not(:last-child){
+margin-bottom: 8px;
+}
 .modal__list-item-value-vote {
-    border: 1px solid #FF6B01;
+    border: 1px solid var(--accent-color);
     border-radius: 5px;
-    background-color: #FF6B01;
-    color: #ffffff;
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+    width: 36px;
+    height: 16px;
+
 }
 
 .modal__list-item-value {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.17;
-
-
+    @include font(500, 12, 14);
     display: flex;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
 
-    color: #000000;
+    color: var(--primary-black-color);
+    margin-bottom: 8px;
 }
 
 .modal__list-item-value-original-title,
 .modal__list-item-value-genre {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
+    @include font(500, 12, 16);
     display: flex;
     align-items: center;
-
-    color: #000000;
+    color: var(--primary-black-color);
+ 
 }
 
 .modal__description-title {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-
+    @include font(500, 12, 16);
     display: flex;
     align-items: center;
     text-transform: uppercase;
-
-    color: #000000;
+    color: var(--primary-black-color);
+        margin-bottom: 8px;
 }
 
 .modal__description-overwiew {
@@ -146,7 +162,9 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.67;
-    color: #000000;
+    @include font(500, 12, 20);
+    color: var(--primary-black-color);
+    margin-bottom: 20px;
 }
 
 .modal__btn-wrapper {
@@ -157,25 +175,19 @@
 .modal__btn {
     width: 110px;
     height: 44px;
-    padding-left: 12px;
-    padding-right: 12px;
-    border: 1px solid black;
+    border: 1px solid var(--primary-black-color);
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--primary-white-color);
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    /* or 133% */
-
+    @include font(500, 12, 16);
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
     text-transform: uppercase;
-
-    color: #000000;
-
+    color: var(--primary-black-color);
+    cursor: pointer;
+    transition: background-color 250ms var(--main-timing-function), color 250ms var(--main-timing-function);
 }
 
 .modal__btn:hover,
@@ -189,53 +201,102 @@
 
 .btn-add-to-queue {}
 
-@media screen and (min-width: 768px) {
-    .modal {
-        width: 704px;
-        height: 552px;
-        display: flex;
-    }
-
+@media screen and (min-width: 320px) {
     .modal__img {
-        width: 264px;
-        height: 374px;
-        margin-right: 68px;
+    width: 240px;
+    height: 358px;
+}
+}
+@media screen and (min-width: 768px) {
+.modal {
+    width: 704px;
+    height: 552px;
+    display: flex;
+    margin: 0;
+    padding: 40px 40px;
+}
 
-    }
+.modal__img {
+    width: 264px;
+    height: 374px;
+    margin-right: 68px;
+    margin-top: 0;
+}
 
-    .modal__overview-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 264px;
+.modal__overview-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.modal__title {
+    margin-bottom: 20px;
+}
 
-    }
+.modal__list {
+    margin-bottom: 20px;
+}
 
-    .modal__title {
-        margin-bottom: 20px;
-    }
-
-    .modal__list {
-        margin-bottom: 20px;
-    }
-
-    .modal__description-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 20px;
-    }
-
-    .modal__btn {
-        margin-right: 14px;
-    }
+.modal__list-description{
+    margin-right: 40px;
+}
+.modal__description-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.modal__description-overwiew{
+    margin-bottom: 0;
+}
+.modal__btn {
+        width: 124px;
+    margin-right: 14px;
+    margin-bottom: 40px;
+}
+.modal__btn:not(:last-child){
+    margin-right: 15px;
+}
 }
 
 @media screen and (min-width: 1200px) {
-    .modal {
-        width: 806px;
-        height: 558px;
-    }
+.modal {
+    width: 806px;
+    height: 558px;
+    padding: 40px 12px;
+}
+.modal__img {
+    width: 375px;
+    height: 478px;
+    margin-right: 16px;
+    margin-bottom: 0;
+}
+.modal__title {
 
+    @include font(500, 30, 35);
+
+    margin-bottom: 20px;
+}
+.modal__list-description{
+    padding-right: 50px;
+}
+.modal__btn {
+    width: 136px;
+    justify-content: center;
+}
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 10px var(--primary-white-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-color);
 }
