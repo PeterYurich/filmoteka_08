@@ -1,0 +1,1 @@
+import loadPopularMovies from "./js/load-popular-movies"
