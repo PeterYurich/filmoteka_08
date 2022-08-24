@@ -1,1 +1,1 @@
-import loadPopularMovies from "./js/popular-movies-fn"
+import loadPopularMovies from "./js/load-popular-movies"
