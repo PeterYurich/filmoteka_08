@@ -4,9 +4,29 @@
     padding-bottom: 62px;
     color: var(--dark-theme-text-color);
 
-    background-color: rgb(31, 2, 2);
+    // background-color: rgb(31, 2, 2);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.current-page {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--style-color);
+        border-radius: 1px;
+        bottom: -5px;
+    }
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
 }
 
 .container_header {
@@ -53,7 +73,7 @@
     justify-content: center;
 }
 
-// small_mob
+// mob responsive
 @media screen and (max-width: 320px) {
     .logo-icon {
         margin-right: 10px;
@@ -68,15 +88,15 @@
     }
 
     .nav-item:first-child {
-            margin-bottom: 10px;
-        }
+        margin-bottom: 10px;
+    }
 
     .input {
         width: 100%;
     }
 }
 
-// mob
+// mob adaptive
 @media screen and (min-width: 321px) {
     .nav-item:last-child {
         margin-left: 40px;
@@ -86,8 +106,11 @@
         width: 280px;
     }
 }
+
 @media screen and (max-width: 767px) {
-    .logo-text, .search-btn {
+
+    .logo-text,
+    .search-btn {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -97,11 +120,18 @@
         overflow: hidden;
         clip: rect(0 0 0 0);
     }
-    
+
+    .header {
+        background-image: url(../images/header-back-mob.jpg);
+    }
 }
 
 // tablet
 @media screen and (min-width: 768px) {
+    .header {
+        height: 216px;
+        background-image: url(../images/header-back-tab.jpg)
+    }
 
     .logo {
         display: flex;
@@ -116,7 +146,6 @@
         @include font(500, 30, 35)
     }
 }
-// desktop
-@media screen and (min-width: 1280px) {
 
-}
+// desktop
+@media screen and (min-width: 1280px) {}
