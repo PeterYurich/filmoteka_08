@@ -1,4 +1,10 @@
 @import '../../node_modules/modern-normalize/modern-normalize.css';
-@import './base/_common';
-@import './base/_container';
-@import './components/subtitle';
+@import './base/common';
+@import './base/container';
+
+@import './utils/templates';
+@import './utils/variables';
+@import './utils/visually-hidden';
+
+
+@import './layout/film-grid';
