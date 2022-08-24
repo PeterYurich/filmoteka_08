@@ -1,12 +1,3 @@
-:root{
-    --accent-color: #FF6B01;
-    --primary-white-color: #FFFFFF;
-    --primary-black-color: #000;
-    --main-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    --secondary-text-color: #8C8C8C;
-
-}
-
 .backdrop {
     position: fixed;
     top: 0;
@@ -15,7 +6,7 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 500ms var(--timing-function), visibility 500ms var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -32,9 +23,9 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    background-color: var(--primary-white-color);
+    background-color: var(--dark-theme-text-color);
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 500ms var(--main-timing-function);
+    transition: transform 500ms var(--timing-function);
     ;
     margin: 20px 10px;  
 
@@ -64,7 +55,7 @@
     background-color: transparent;
     padding: 0;
     cursor: pointer;
-    transition: background-color 250ms var(--main-timing-function);
+    transition: background-color 250ms var(--timing-function);
     ;
     background-image: url(/src/images/close-btn.svg);
     background-size: contain;
@@ -80,10 +71,8 @@ margin-top: 8px;
 margin-bottom: 20px;
 }
 .modal__title {
-    font-family: 'Roboto';
-    font-style: normal;
     @include font(500, 20, 23);
-    color: var(--primary-black-color);
+    color: var(--primary-color);
     margin-bottom: 20px;
     }
 
@@ -101,8 +90,6 @@ margin-bottom: 20px;
     margin-bottom: 8px;
 }
 .modal__list-item-title {
-    font-family: 'Roboto';
-    font-style: normal;
     @include font(500, 12, 16);
     color: var(--secondary-text-color);
 
@@ -115,55 +102,44 @@ margin-bottom: 8px;
     border: 1px solid var(--accent-color);
     border-radius: 5px;
     background-color: var(--accent-color);
-    color: var(--primary-white-color);
+    color: var(--dark-theme-text-color);
     width: 36px;
     height: 16px;
 
 }
 
 .modal__list-item-value {
-    font-family: 'Roboto';
-    font-style: normal;
     @include font(500, 12, 14);
     display: flex;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
 
-    color: var(--primary-black-color);
+    color: var(--primary-color);
     margin-bottom: 8px;
 }
 
 .modal__list-item-value-original-title,
 .modal__list-item-value-genre {
-    font-family: 'Roboto';
-    font-style: normal;
     @include font(500, 12, 16);
     display: flex;
     align-items: center;
-    color: var(--primary-black-color);
+    color: var(--primary-color);
  
 }
 
 .modal__description-title {
-    font-family: 'Roboto';
-    font-style: normal;
     @include font(500, 12, 16);
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    color: var(--primary-black-color);
+    color: var(--primary-color);
         margin-bottom: 8px;
 }
 
 .modal__description-overwiew {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.67;
     @include font(500, 12, 20);
-    color: var(--primary-black-color);
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -175,11 +151,9 @@ margin-bottom: 8px;
 .modal__btn {
     width: 110px;
     height: 44px;
-    border: 1px solid var(--primary-black-color);
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
-    background-color: var(--primary-white-color);
-    font-family: 'Roboto';
-    font-style: normal;
+    background-color: var(--dark-theme-text-color);
     @include font(500, 12, 16);
     display: flex;
     justify-content: center;
@@ -187,19 +161,19 @@ margin-bottom: 8px;
     text-transform: uppercase;
     color: var(--primary-black-color);
     cursor: pointer;
-    transition: background-color 250ms var(--main-timing-function), color 250ms var(--main-timing-function);
+    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
 .modal__btn:hover,
 .modal__btn:focus {
-    background-color: #FF6B01;
-    color: #ffffff;
+    background-color: var(--accent-color);
+    color: var(--dark-theme-text-color);
     border: none;
 }
 
-.btn-add-to-watched {}
+// .btn-add-to-watched {}
 
-.btn-add-to-queue {}
+// .btn-add-to-queue {}
 
 @media screen and (min-width: 320px) {
     .modal__img {
@@ -250,7 +224,7 @@ margin-bottom: 8px;
     margin-bottom: 0;
 }
 .modal__btn {
-        width: 124px;
+    width: 124px;
     margin-right: 14px;
     margin-bottom: 40px;
 }
@@ -259,7 +233,7 @@ margin-bottom: 8px;
 }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
 .modal {
     width: 806px;
     height: 558px;
@@ -294,7 +268,7 @@ margin-bottom: 8px;
 ::-webkit-scrollbar-thumb {
     background-color: var(--accent-color);
     border-radius: 20px;
-    box-shadow: inset 1px 1px 10px var(--primary-white-color);
+    box-shadow: inset 1px 1px 10px var(--dark-theme-text-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
