@@ -1,15 +1,18 @@
 
-const {
-  mask,
-  ...rest
-} = refs;
+const pagePreloader = document.querySelector('.mask');
 
-window.addEventListener('load', onLoad);
-
-function onLoad() {
-   mask.classList.add('hide-load');
-    setTimeout(() => {
-        mask.remove();
-    }, 400);
+function showLoader() {
+  pagePreloader.classList.remove('hide-load');
 }
+function hideLoader() {
+  pagePreloader.classList.add('hide-load');
+}
+
+export { showLoader, hideLoader };
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    pagePreloader.classList.add('hide-load');
+  }, 400);
+});
 
