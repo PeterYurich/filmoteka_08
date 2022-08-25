@@ -8,7 +8,7 @@ function oneCardMarkup(item) {
       <a>
           <p class="card-info__title">${item.title}</p>
           <p class="card-info__genre">
-              ${item.genre_ids}<span class="info-separator">${item.release_date}</span>
+              ${item.genre_ids}<span class="info-separator">${item.release_date}</span><span class="film-raiting">${item.vote_average}</span>
           </p>
       </a>
   </div>
