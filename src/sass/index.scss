@@ -7,7 +7,10 @@
 @import './utils/visually-hidden';
 
 
-@import './layout/film-grid';
+@import './components/film-modal-window';
+
 @import './layout/header';
-// @import './layout/one-card';
 @import './layout/film-grid';
+@import './layout/one-card';
+
+
