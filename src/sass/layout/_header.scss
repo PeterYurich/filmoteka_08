@@ -1,0 +1,151 @@
+.header {
+    height: 230px;
+    padding-top: 42px;
+    padding-bottom: 62px;
+    color: var(--dark-theme-text-color);
+
+    background-color: rgb(31, 2, 2);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.current-page {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--style-color);
+        border-radius: 1px;
+        bottom: -5px;
+    }
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_header {
+    width: 100%;
+}
+
+.logo-icon {
+    fill: var(--dark-theme-text-color);
+}
+
+.header-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.nav {
+    text-transform: uppercase;
+    @include font(500, 12, 14);
+}
+
+.input,
+.search-btn {
+    background: transparent;
+    border: none;
+    color: var(--dark-theme-text-color);
+    fill: var(--dark-theme-text-color);
+    outline: none;
+    border-bottom: 1px solid var(--secondary-text-color);
+}
+
+.search-btn {
+    border-bottom: none;
+    margin-left: 2px;
+
+}
+
+.nav-list {
+    display: flex;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+// mob responsive
+@media screen and (max-width: 320px) {
+    .logo-icon {
+        margin-right: 10px;
+    }
+
+    .nav-item:last-child {
+        margin-left: 0;
+    }
+
+    .nav-list {
+        display: block;
+    }
+
+    .nav-item:first-child {
+        margin-bottom: 10px;
+    }
+
+    .input {
+        width: 100%;
+    }
+}
+
+// mob adaptive
+@media screen and (min-width: 321px) {
+    .nav-item:last-child {
+        margin-left: 40px;
+    }
+
+    .input {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .logo-text,
+    .search-btn {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+
+    .header {
+        background-image: url(../images/header-back-mob.jpg);
+    }
+}
+
+// tablet
+@media screen and (min-width: 768px) {
+    .header {
+        height: 216px;
+        background-image: url(../images/header-back-tab.jpg)
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-icon {
+        margin-right: 20px;
+    }
+
+    .logo-text {
+        @include font(500, 30, 35)
+    }
+}
+
+// desktop
+@media screen and (min-width: 1280px) {}

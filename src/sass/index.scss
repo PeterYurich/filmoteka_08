@@ -6,11 +6,11 @@
 @import './utils/variables';
 @import './utils/visually-hidden';
 
-// <<<<<<< HEAD
 
-@import './layout/film-grid';
 @import './components/film-modal-window';
-// =======
-@import './layout/one-card';
+
+@import './layout/header';
 @import './layout/film-grid';
-// >>>>>>> f95e3f8991400faa207ff07546e17b5d04791f8c
+@import './layout/one-card';
+
+
