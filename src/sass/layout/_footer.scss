@@ -14,26 +14,47 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+    @media screen and (min-width: 320px) {
+    .cardFront {
+        width: 153px;
+        height: 153px;
+    }
+        .footerHeadline {
+            font-size: 30px;
+        }
+}
 
     @media screen and (min-width: 768px) {
-    background-position: left 0 top 364px;
-    }
+     .cardFront{
+     width: 153px;
+     height: 153px;
+     }
+     .footerHeadline {
+     font-size: 50px;
+     }
+}
       
     @media screen and (min-width: 1280px) {
-    background-position: center, center;
-    background-size: cover, 1280px;
-    }
+     .cardFront{
+     width: 256px;
+     height: 256px;
+     }
+      .footerHeadline{
+      font-size: 50px;
+     }
 }
+
  .footerHeadline {
      display: inline;
      color: #fff;
      margin: 0;
-     margin-bottom: 2vmin;
+     margin-bottom: 40px;
 
      color: #939393;
 
      font-weight: 100;
-     font-size: 4vmin;
+     //font-size: 50px;
      line-height: 30px;
  }
  .teamList {
@@ -44,17 +65,40 @@
     margin: 0;
     padding-left: 0;
     width: 90%;
+    gap: 40px;
  }
  
-.teanName {
+.teamName,
+.city{
     color: #939393;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.teamName {
+font-size: 20px;
 }
 
 .cardFront {
-    border-top-left-radius: 3vmin;
-    border-bottom-right-radius: 3vmin;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
     -o-object-fit: cover;
     object-fit: cover;
 
     background-color: #fff;
+}
+.is-hidden {
+    visibility: hidden;
+    position: fixed;
+    top: 200%;
+
+    height: 0%;
+
+    background-color: transparent;
+
+    .teamCard {
+        list-style: none;
+        height: 0px;
+        position: relative;      
+    }
 }
