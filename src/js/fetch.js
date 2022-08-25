@@ -2,7 +2,7 @@ import axios from "axios";
 
 export class FetchMovies {
     constructor() {
-        this.mediaTypes = 'movies'; 
+        this.mediaTypes = 'all'; 
         this.timeWindow = 'day';
     }
 
