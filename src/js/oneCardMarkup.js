@@ -2,7 +2,7 @@ function oneCardMarkup(item) {
     return `
     <div class="container photo-card">
         <a class="photo-card__link">
-            <img class="photo-card-img" src="${item.poster_path}" alt="${item.backdrop_path}" />
+            <img class="photo-card-img" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="https://image.tmdb.org/t/p/w500${item.backdrop_path}" />
         </a>
     <div class="card-info">
         <a>
@@ -14,4 +14,4 @@ function oneCardMarkup(item) {
     </div>
 </div>`;
 }
-export default { oneCardMarkup };
+export { oneCardMarkup };

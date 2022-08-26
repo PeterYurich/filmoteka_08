@@ -9,14 +9,15 @@ export class TheMovieDb {
         this.searchQuery = "";
     }
 
+    // mediaTypes: all, movie, tv, person;
+    // timeWindow: day, week;
     async fetchPopularMovies(mediaTypes, timeWindow) {
         const url = `${this.BASE_URL}/trending/${mediaTypes}/${timeWindow}?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}&include_adult=false`
 
         try {
             const response = await axios.get(url);
             const data = await response.data;
-            const items = await data.results;
-            return items;
+            return data;
         } catch (error) {
             console.log(error)
         }
