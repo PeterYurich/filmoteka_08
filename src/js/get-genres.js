@@ -20,4 +20,6 @@ try {
     }    
 }
 
-getGenres([28, 18])
+export {getGenres}
+
+// getGenres([28, 18])
