@@ -1,6 +1,13 @@
-
-        <div class="footerModal">
+        <div>
+            <button type="button" data-modal-open>Enter</button>
+        </div>
+        <div class="footerModal is-hidden" data-modal>
             <h3 class="footerHeadline">Worked on a project:</h3>
+            <button type="button" class="modal__close-btn" data-modal-close>
+                <!-- <svg class="modal-close__icon" width="18" height="18">
+                            <use href="./images/close-btn.svg"></use>
+                        </svg> -->
+            </button>
             <ul class="teamList">
                 <li class="teamCard">
                     <img class="cardFront" 
@@ -76,6 +83,7 @@
                 </li>
             </ul>
         </div>
+        <script src="/src/js/modal-footer-window.js"></script>
   
         
     
