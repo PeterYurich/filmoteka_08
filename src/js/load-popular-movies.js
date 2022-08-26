@@ -1,15 +1,26 @@
-import { FetchMovies } from "./fetch";
+import { TheMovieDb } from "./fetch";
+import { oneCardMarkup } from './oneCardMarkup';
+// import { getGenres } from './get-genres';
 
-const fetchMovies = new FetchMovies();
+const fetchMovies = new TheMovieDb();
 
-async function loadPopularMovies() {
+const mediaTypes = "movie"
+const timeWindow = "day"
+
+async function loadPopularMovies(mediaTypes, timeWindow) {
 
 try {
-    const items = await fetchMovies.fetchPopularMovies();
-        console.log(items)
+    const data = await fetchMovies.fetchPopularMovies(mediaTypes, timeWindow);
+    const items = await data.results;
+    const markup = await items.map(item => {
+        return oneCardMarkup(item)
+    }).join('');
+    console.log(markup)
+    const topListFilms = document.querySelector('.film-grid');
+    topListFilms.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
         console.log(error)
     }    
 }
 
-loadPopularMovies()
+loadPopularMovies("movie", "day")
