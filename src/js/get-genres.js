@@ -1,21 +1,23 @@
-import { FetchMovies } from "./fetch";
+import { TheMovieDb } from "./fetch";
 
-const fetchMovies = new FetchMovies();
+const fetchMovies = new TheMovieDb();
 
 async function getGenres(genreIds) {
 
 try {
-    const itemsOfGenres = await fetchMovies.fetchGenres();
+    const listOfGenres = await fetchMovies.fetchGenreList();
     const genreArray = [];
 
     for (i = 0; i < genreIds.length; i += 1) {
-        genreArray.push(itemsOfGenres.find(item => item.id === genreIds[i]))
+        genreArray.push(listOfGenres.find(item => item.id === genreIds[i]))
     };
 
     const genreNames = genreArray.map(item => item.name);
-    console.log(genreNames)
+    console.log("genreNames", genreNames)
     return genreNames
     } catch (error) {
         console.log(error)
     }    
 }
+
+getGenres([28, 18])
