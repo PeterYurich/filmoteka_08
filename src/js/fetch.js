@@ -40,7 +40,7 @@ export class TheMovieDb {
         const url = `${this.BASE_URL}/movie/${movieId}?api_key=${this.API_KEY}&language=en-US`
         try {
             const response = await axios.get(url)
-            // console.log("fetchMovieDetails res:", response.data)
+            
             return response.data
         } catch {
             console.log(error)

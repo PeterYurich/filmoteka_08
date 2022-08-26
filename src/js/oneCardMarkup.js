@@ -1,26 +1,25 @@
-function oneCardMarkup(item) {
+function oneCardMarkup(film) {
     return `
-    <div class="photo-card" data-id="${item.id}">
+    <div class="photo-card" data-id="${film.id}">
     <a class="photo-card__link">
-        <img class="photo-card-img" src="https://image.tmdb.org/t/p/w500${item.poster_path}"
-        alt="https://image.tmdb.org/t/p/w500${item.backdrop_path}" />
+        <img class="photo-card-img" src="https://image.tmdb.org/t/p/w500${film.posterPath}"
+        alt="https://image.tmdb.org/t/p/w500${film.posterPath}" />
     </a>
     <div class="card-info">
-        <h3 class="card-info__title">${item.title}</h3>
+        <h3 class="card-info__title">${film.title}</h3>
         <p>
         <span class="card-info__genre">
-            ${item.genre_ids}
+            ${film.genres}
         </span>
         <span class="release-date">
-            ${Number.parseInt(item.release_date)}
+            ${Number.parseInt(film.releaseYear)}
         </span>
         <span class="film-rating">
-            ${item.vote_average}
+            ${film.rating}
         </span>
         </p>
     </div>
     </div>
-`;
+`}
 
-}
 export { oneCardMarkup };

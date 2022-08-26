@@ -27,12 +27,12 @@ async function loadPopularMovies(mediaTypes, timeWindow) {
 
 
 
-        // const markup = await popFilmsInfo.map(item => {
-        //     return oneCardMarkup(film)
-        // }).join('');
+        const markup = await popFilmsInfo.map(item => {
+            return oneCardMarkup(film)
+        }).join('');
 
-        // const topListFilms = document.querySelector('.film-grid');
-        // topListFilms.insertAdjacentHTML('beforeend', markup);
+        const topListFilms = document.querySelector('.film-grid');
+        topListFilms.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
         console.log(error)
     }
