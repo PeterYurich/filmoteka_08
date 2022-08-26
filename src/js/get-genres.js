@@ -13,13 +13,17 @@ try {
     };
 
     const genreNames = genreArray.map(item => item.name);
-    console.log("genreNames", genreNames)
-    return genreNames
+    const [firstGenge, secondGenre, ...genres] = genreNames;
+
+    if (genreNames.length > 2) {
+        return `${firstGenge}, ${secondGenre}, Others`;
+    } else if (genreNames.length === 2) {
+        return `${firstGenge}, ${secondGenre}`;
+    } else if (genreNames.length === 1)
+        return `${firstGenge}`;
     } catch (error) {
         console.log(error)
     }    
 }
 
 export {getGenres}
-
-// getGenres([28, 18])

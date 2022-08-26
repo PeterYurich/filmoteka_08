@@ -1,4 +1,6 @@
 import { TheMovieDb } from "./fetch";
+import { oneCardMarkup } from './oneCardMarkup';
+// import { getGenres } from './get-genres';
 
 const fetchMovies = new TheMovieDb();
 
@@ -8,11 +10,17 @@ const timeWindow = "day"
 async function loadPopularMovies(mediaTypes, timeWindow) {
 
 try {
-    const items = await fetchMovies.fetchPopularMovies(mediaTypes, timeWindow);
-        console.log("pop movies:", items)
+    const data = await fetchMovies.fetchPopularMovies(mediaTypes, timeWindow);
+    const items = await data.results;
+    const markup = await items.map(item => {
+        return oneCardMarkup(item)
+    }).join('');
+    console.log(markup)
+    const topListFilms = document.querySelector('.film-grid');
+    topListFilms.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
         console.log(error)
     }    
 }
 
-loadPopularMovies(mediaTypes, timeWindow)
+loadPopularMovies("movie", "day")
