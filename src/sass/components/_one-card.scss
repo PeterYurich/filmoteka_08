@@ -1,27 +1,52 @@
+.photo-card {
+  border-radius: 5px;
+}
+.card-info {
+  position: relative;
+  color: var(--accent-color);
+}
 .card-info__title {
   color: var(--primary-color);
 }
 
 .card-info__genre {
   color: var(--accent-color);
+  padding-right: 10px;
 }
-
-.info-separator::before {
+.release-date {
+  padding-left: 10px;
+  margin-left: 10px;
+  border-left: 2px solid var(--accent-color);
+}
+.film-raiting {
   position: absolute;
-  top: 0;
-  right: -5px;
-  content: '';
-  width: 2px;
-  height: 100%;
-  border: 1px solid var(--accent-color);
-}
+  display: inline-block;
+  bottom: -3px;
+  right: 60%;
 
-// mob responsive
-@media screen and (max-width: 320) {
-  .photo-card {
-    width: 100%;
-  }
+  width: 36px;
+  height: 16px;
+  text-align: center;
+
+  padding-top: 1px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  border: 1px solid #ff6b08;
+  background: #ff6b01;
+  border-radius: 7px;
+  color: #ffff;
 }
+// .info-separator::before {
+//   position: absolute;
+//   top: 0;
+//   right: -5px;
+//   content: '';
+//   width: 2px;
+//   height: 100%;
+//   border: 1px solid var(--accent-color);
+// }
 
 // mob adaptive
 @media screen and (max-width: 767px) {
@@ -41,6 +66,9 @@
   .card-info {
     @include font(500, 12, 14);
   }
+  .film-raiting {
+    right: 66%;
+  }
 }
 
 // tablet
@@ -57,6 +85,10 @@
   }
   .card-info {
     @include font(500, 12, 16);
+  }
+  .film-raiting {
+    top: 20px;
+    right: 86%;
   }
 }
 
@@ -78,5 +110,12 @@
 
   .card-info {
     @include font(500, 20, 24);
+  }
+  .film-raiting {
+    top: 32px;
+    right: 37%;
+    width: 40px;
+    height: 20px;
+    padding-top: 3px;
   }
 }
