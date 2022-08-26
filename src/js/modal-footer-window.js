@@ -4,28 +4,28 @@ const refs = {
   modalTeam: document.querySelector('[data-modal-team]'),
 };
 
-refs.openModalBtnTeam.addEventListener('click', onOpenModal);
-refs.closeModalBtnTeam.addEventListener('click', onCloseModal);
-refs.modalTeam.addEventListener('click', onBackdropClick);
-window.addEventListener('keydown', onEscClose);
+refs.openModalBtnTeam.addEventListener('click', onOpenModalTeam);
+refs.closeModalBtnTeam.addEventListener('click', onCloseModalTeam);
+refs.modalTeam.addEventListener('click', footerModalClickTeam);
+window.addEventListener('keydown', onEscCloseTeam);
 
-function onOpenModal() {
-  window.addEventListener('keydown', onEscClose);
+function onOpenModalTeam() {
+  window.addEventListener('keydown', onEscCloseTeam);
   refs.modalTeam.classList.remove('is-hidden');
 }
 
-function onCloseModal() {
-  window.removeEventListener('keydown', onEscClose);
+function onCloseModalTeam() {
+  window.removeEventListener('keydown', onEscCloseTeam);
   refs.modalTeam.classList.add('is-hidden');
 }
 
-function onBackdropClick(e) {
+function footerModalClickTeam(e) {
   if (e.currentTarget === e.target) {
-    onCloseModal();
+    onCloseModalTeam();
   }
 }
-function onEscClose(e) {
+function onEscCloseTeam(e) {
   if (e.key === 'Escape') {
-    onCloseModal();
+    onCloseModalTeam();
   }
 }

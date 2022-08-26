@@ -1,138 +1,135 @@
-
-
 .footerModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-color_modal-footer);
-    background-position: no-repeat;
-    background-size: contain;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color_modal-footer);
+  background-position: no-repeat;
+  background-size: contain;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 320px) {
-    .cardFront {
-        width: 153px;
-        height: 153px;
-    }
+  .cardFront {
+    width: 153px;
+    height: 153px;
+  }
 
-    .footerHeadline {
-        font-size: 30px;
-    }
+  .footerHeadline {
+    font-size: 30px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .cardFront {
-        width: 153px;
-        height: 153px;
-    }
+  .cardFront {
+    width: 153px;
+    height: 153px;
+  }
 
-    .footerHeadline {
-        font-size: 50px;
-    }
+  .footerHeadline {
+    font-size: 50px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    .cardFront {
-        width: 256px;
-        height: 256px;
-    }
+  .cardFront {
+    width: 256px;
+    height: 256px;
+  }
 
-    .footerHeadline {
-        font-size: 50px;
-    }
+  .footerHeadline {
+    font-size: 50px;
+  }
 }
 
 .footerHeadline {
-    display: inline;
-    color: var(--dark-theme-text-color);
-    margin: 0;
-    margin-bottom: 40px;
+  display: inline;
+  color: var(--dark-theme-text-color);
+  margin: 0;
+  margin-bottom: 40px;
 
-    color: var(--secondary-text-modal-color);
+  color: var(--secondary-text-modal-color);
 
-    font-weight: 100;
-    //font-size: 50px;
-    line-height: 30px;
+  font-weight: 100;
+  //font-size: 50px;
+  line-height: 30px;
 }
 
 .teamList {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding-left: 0;
-    width: 90%;
-    gap: 40px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-left: 0;
+  width: 90%;
+  gap: 40px;
 }
 
 .teamName,
 .city {
-    color: var(--secondary-text-modal-color);
-    justify-content: center;
-    align-items: center;
-    display: flex;
+  color: var(--secondary-text-modal-color);
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .teamName {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .cardFront {
-    border-top-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-    -o-object-fit: cover;
-    object-fit: cover;
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  -o-object-fit: cover;
+  object-fit: cover;
 
-    background-color: var(--dark-theme-text-color);
+  background-color: var(--dark-theme-text-color);
 }
 
 .is-hidden {
-    visibility: hidden;
-    position: fixed;
-    top: 200%;
+  visibility: hidden;
+  position: fixed;
+  top: 200%;
 
-    height: 0%;
+  height: 0%;
 
-    background-color: transparent;
+  background-color: transparent;
 
-    .teamCard {
-        list-style: none;
-        height: 0px;
-        //position: relative;      
-    }
+  .teamCard {
+    list-style: none;
+    height: 0px;
+    //position: relative;
+  }
 }
 
-.modal__close-btn {
-    fill: var(--dark-theme-text-color);
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 250ms var(--timing-function);
-    ;
-    background-image: url(/src/images/close-btn.svg);
-    background-size: contain;
+.modal__close-btn-team {
+  fill: var(--dark-theme-text-color);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms var(--timing-function);
+  background-image: url(/src/images/close-btn.svg);
+  background-size: contain;
 }
 
 .modal__close-btn:focus,
 .modal__close-btn:hover {
-    background-color: var(--secondary-text-modal-color);
+  background-color: var(--secondary-text-modal-color);
 }
