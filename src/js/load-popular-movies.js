@@ -1,15 +1,18 @@
-import { FetchMovies } from "./fetch";
+import { TheMovieDb } from "./fetch";
 
-const fetchMovies = new FetchMovies();
+const fetchMovies = new TheMovieDb();
 
-async function loadPopularMovies() {
+const mediaTypes = "movie"
+const timeWindow = "day"
+
+async function loadPopularMovies(mediaTypes, timeWindow) {
 
 try {
-    const items = await fetchMovies.fetchPopularMovies();
-        console.log(items)
+    const items = await fetchMovies.fetchPopularMovies(mediaTypes, timeWindow);
+        console.log("pop movies:", items)
     } catch (error) {
         console.log(error)
     }    
 }
 
-loadPopularMovies()
+loadPopularMovies(mediaTypes, timeWindow)
