@@ -1,60 +1,67 @@
-.my-lib-header-button{
-   background-color: transparent;
-   border-color: var(--dark-theme-text-color);
-    
+.my-lib-header-button {
+    background-color: transparent;
+    border-color: var(--dark-theme-text-color);
+
     border-radius: 5px;
-   color: var(--dark-theme-text-color);
-   padding-top: 13px;
-   padding-bottom: 13px;
-   text-align: center;
-   width: 130px;
-   height: auto;
-  
+    color: var(--dark-theme-text-color);
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: center;
+    width: 130px;
+    height: auto;
+
 }
+
 .my-lib-header-button:first-child {
     margin-right: 20px;
 }
 
- .my-lib-header-button:hover,
- .my-lib-header-button:focus {
-     background-color: var(--accent-color);
+.my-lib-header-button:hover,
+.my-lib-header-button:focus {
+    background-color: var(--accent-color);
     border-color: transparent;
     box-shadow: 0px 8px 43px;
     transition-timing-function: var(--timing-function);
     transition-duration: var(--duration);
- }
- .button_list{
-  display: flex;
-  justify-content: center;
-  
- }
- .library-header{
+}
+
+.button_list {
+    display: flex;
+    justify-content: center;
+
+}
+
+.library-header {
     height: 230px;
     padding-top: 42px;
     padding-bottom: 62px;
     color: var(--dark-theme-text-color);
-    
+
     background-color: rgb(31, 2, 2);
     background-repeat: no-repeat;
     background-size: cover;
- }
+}
 
- // mob responsive
- @media screen and (max-width: 320px) {
-     .logo-icon {
-         margin-right: 10px;
-     }
-         .library-header {
-             background-image:linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mu_lib_header_mob.jpg);
-         }
-    
-         ;
-   
- }
+// mob responsive
+@media screen and (max-width: 320px) {
+    .logo-icon {
+        margin-right: 10px;
+    }
+
+    .library-header {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mu_lib_header_mob.jpg);
+    }
+
+    ;
+
+}
+
 @media screen and (max-width: 767px) {
     .library-header {
-            background-image:linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/my_lib_heder_tb.jpg);
-        };
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/my_lib_heder_tb.jpg);
+    }
+
+    ;
 }
 
 
@@ -62,6 +69,6 @@
 @media screen and (min-width: 768px) {
     .library-header {
         height: 216px;
-        background-image:linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/my_lib_back.jpg);
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/my_lib_back.jpg);
     }
 }
