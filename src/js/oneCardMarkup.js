@@ -1,6 +1,6 @@
 function oneCardMarkup(item) {
     return `
-    <div class="container photo-card">
+    <div class="photo-card">
         <a class="photo-card__link">
             <img class="photo-card-img" src="https://image.tmdb.org/t/p/w500${item.poster_path}" alt="https://image.tmdb.org/t/p/w500${item.backdrop_path}" />
         </a>
