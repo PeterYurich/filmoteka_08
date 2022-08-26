@@ -14,7 +14,7 @@ function oneCardMarkup(item) {
         <span class="release-date">
             ${Number.parseInt(item.release_date)}
         </span>
-        <span class="film-raiting">
+        <span class="film-rating">
             ${item.vote_average}
         </span>
         </p>
