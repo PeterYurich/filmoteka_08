@@ -2,7 +2,7 @@
   border-radius: 5px;
 }
 .card-info {
-  position: relative;
+  @include font(500, 12, 14);
   color: var(--accent-color);
 }
 .card-info__title {
@@ -11,42 +11,23 @@
 
 .card-info__genre {
   color: var(--accent-color);
-  padding-right: 10px;
 }
 .release-date {
-  padding-left: 10px;
-  margin-left: 10px;
+  padding-left: 5px;
   border-left: 2px solid var(--accent-color);
 }
 .film-rating {
-  position: absolute;
   display: inline-block;
-  bottom: -3px;
-  right: 60%;
-
   width: 36px;
   height: 16px;
+  padding: auto;
   text-align: center;
 
-  padding-top: 1px;
-
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  border: 1px solid #ff6b08;
-  background: #ff6b01;
-  border-radius: 7px;
-  color: #ffff;
+  border: 1px solid var(--accent-color);
+  background: var(--background-accent-color);
+  border-radius: 5px;
+  color: var(--accent-text-color);
 }
-// .info-separator::before {
-//   position: absolute;
-//   top: 0;
-//   right: -5px;
-//   content: '';
-//   width: 2px;
-//   height: 100%;
-//   border: 1px solid var(--accent-color);
-// }
 
 // mob adaptive
 @media screen and (max-width: 767px) {
@@ -66,7 +47,7 @@
   .card-info {
     @include font(500, 12, 14);
   }
-  .film-raiting {
+  .film-rating {
     right: 66%;
   }
 }
@@ -86,7 +67,7 @@
   .card-info {
     @include font(500, 12, 16);
   }
-  .film-raiting {
+  .film-rating {
     top: 20px;
     right: 86%;
   }
@@ -111,7 +92,7 @@
   .card-info {
     @include font(500, 20, 24);
   }
-  .film-raiting {
+  .film-rating {
     top: 32px;
     right: 37%;
     width: 40px;
