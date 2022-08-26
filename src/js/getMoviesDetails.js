@@ -8,17 +8,20 @@ async function getMoviesDetails(filmIds) {
         const selectedFilms = []
         for (let i = 0; i < filmIds.length; i += 1) {
             const film = await theMovieDb.fetchMovieDetails(filmIds[i])
-            selectedFilms.push(film) }
+            selectedFilms.push(film)
+        }
 
         // const selectedFilms = await filmIds.map( async id => await theMovieDb.fetchMovieDetails(id))
 
-            console.log("selectedFilms(from localStorage):", selectedFilms)
-        } 
+        // console.log("selectedFilms(from localStorage):", selectedFilms)
+
+        return selectedFilms
+    }
     catch (error) {
         console.log(error)
     }
 }
-getMoviesDetails([361743, 762504])
+// getMoviesDetails([361743, 762504])
 
 export { getMoviesDetails }
 
