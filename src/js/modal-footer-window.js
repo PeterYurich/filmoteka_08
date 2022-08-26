@@ -1,22 +1,22 @@
 const refs = {
-  openModalBtn: document.querySelector('[data-modal-open]'),
-  closeModalBtn: document.querySelector('[data-modal-close]'),
-  modal: document.querySelector('[data-modal]'),
+  openModalBtnTeam: document.querySelector('[data-modal-open-team]'),
+  closeModalBtnTeam: document.querySelector('[data-modal-close-team]'),
+  modalTeam: document.querySelector('[data-modal-team]'),
 };
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
-refs.closeModalBtn.addEventListener('click', onCloseModal);
-refs.modal.addEventListener('click', onBackdropClick);
+refs.openModalBtnTeam.addEventListener('click', onOpenModal);
+refs.closeModalBtnTeam.addEventListener('click', onCloseModal);
+refs.modalTeam.addEventListener('click', onBackdropClick);
 window.addEventListener('keydown', onEscClose);
 
 function onOpenModal() {
   window.addEventListener('keydown', onEscClose);
-  refs.modal.classList.remove('is-hidden');
+  refs.modalTeam.classList.remove('is-hidden');
 }
 
 function onCloseModal() {
   window.removeEventListener('keydown', onEscClose);
-  refs.modal.classList.add('is-hidden');
+  refs.modalTeam.classList.add('is-hidden');
 }
 
 function onBackdropClick(e) {
