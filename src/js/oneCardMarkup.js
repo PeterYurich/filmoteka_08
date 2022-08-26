@@ -21,5 +21,4 @@ function oneCardMarkup(film) {
     </div>
     </div>
 `}
-
 export { oneCardMarkup };
