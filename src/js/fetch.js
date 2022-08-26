@@ -17,7 +17,7 @@ export class TheMovieDb {
         try {
             const response = await axios.get(url);
             const data = await response.data;
-            return data;
+            return data.results
         } catch (error) {
             console.log(error)
         }
