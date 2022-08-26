@@ -13,7 +13,7 @@ async function getMoviesDetails(filmIds) {
 
         // const selectedFilms = await filmIds.map( async id => await theMovieDb.fetchMovieDetails(id))
 
-        console.log("selectedFilms(from localStorage):", selectedFilms)
+        // console.log("selectedFilms(from localStorage):", selectedFilms)
 
         return selectedFilms
     }

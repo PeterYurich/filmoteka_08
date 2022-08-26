@@ -9,9 +9,21 @@ async function loadSelectedMovies(ids) {
 
         const selectedFilmsTargetInfo = await selectedMovies.map(film => {
             const genresArray = film.genres.map(item => item.name)
-            const genres = genresArray.map(genre => {
-                return `${genre}`
-            }).join(", ")
+            const [firstGenre, secondGenre, ...others] = genresArray;
+            let genres = ""
+            switch (genresArray.length) {
+                case "1":
+                    genres = firstGenre;
+                break;
+
+                case "2":
+                    genres = [firstGenre, secondGenre].join(", ");
+                break;
+
+                default:
+                    genres = `${firstGenre}, ${secondGenre}, ...`;
+                        
+            }
             const title = film.original_title
             const releaseYear = Number.parseInt(film.release_date)
             const posterPath = film.poster_path
@@ -21,7 +33,7 @@ async function loadSelectedMovies(ids) {
             return { posterPath, title, genres, releaseYear, rating, id }
         })
 
-        console.log("selectedFilmsTargetInfo:", selectedFilmsTargetInfo)
+        // console.log("selectedFilmsTargetInfo:", selectedFilmsTargetInfo)
 
 
 

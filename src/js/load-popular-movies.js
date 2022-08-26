@@ -27,7 +27,7 @@ async function loadPopularMovies(mediaTypes, timeWindow) {
 
 
 
-        const markup = await popFilmsInfo.map(item => {
+        const markup = await popFilmsInfo.map(film => {
             return oneCardMarkup(film)
         }).join('');
 
@@ -38,4 +38,4 @@ async function loadPopularMovies(mediaTypes, timeWindow) {
     }
 }
 
-loadPopularMovies("movie", "day")
+loadPopularMovies(mediaTypes, timeWindow)
