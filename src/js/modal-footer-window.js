@@ -1,22 +1,23 @@
-const refs = {
+const refsTeam = {
   openModalBtnTeam: document.querySelector('[data-modal-open-team]'),
   closeModalBtnTeam: document.querySelector('[data-modal-close-team]'),
   modalTeam: document.querySelector('[data-modal-team]'),
 };
 
-refs.openModalBtnTeam.addEventListener('click', onOpenModalTeam);
-refs.closeModalBtnTeam.addEventListener('click', onCloseModalTeam);
-refs.modalTeam.addEventListener('click', footerModalClickTeam);
+refsTeam.openModalBtnTeam.addEventListener('click', onOpenModalTeam);
+refsTeam.closeModalBtnTeam.addEventListener('click', onCloseModalTeam);
+refsTeam.modalTeam.addEventListener('click', footerModalClickTeam);
 window.addEventListener('keydown', onEscCloseTeam);
 
-function onOpenModalTeam() {
+function onOpenModalTeam(e) {
+  e.preventDefault();
   window.addEventListener('keydown', onEscCloseTeam);
-  refs.modalTeam.classList.remove('is-hidden');
+  refsTeam.modalTeam.classList.remove('is-hidden');
 }
 
 function onCloseModalTeam() {
   window.removeEventListener('keydown', onEscCloseTeam);
-  refs.modalTeam.classList.add('is-hidden');
+  refsTeam.modalTeam.classList.add('is-hidden');
 }
 
 function footerModalClickTeam(e) {

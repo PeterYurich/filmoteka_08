@@ -15,7 +15,7 @@ try {
     const markup = await items.map(item => {
         return oneCardMarkup(item)
     }).join('');
-    console.log(markup)
+    // console.log(markup)
     const topListFilms = document.querySelector('.film-grid');
     topListFilms.insertAdjacentHTML('beforeend', markup);
     } catch (error) {
