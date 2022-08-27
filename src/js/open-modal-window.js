@@ -1,3 +1,8 @@
+import { modalMovieMarkup } from './modal-movie-markup';
+
+const card = document.querySelector('.photo-card');
+console.log(card);
+
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
