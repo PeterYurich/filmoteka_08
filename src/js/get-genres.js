@@ -30,9 +30,7 @@ try {
 
 async function df ()  {
     asd = await getGenres([18, 28, 12])
-    console.log(asd)
+    console.log("asd:", asd)
 }
-
-console.log(df())
 
 export {getGenres, df}
