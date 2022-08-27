@@ -1,13 +1,14 @@
-.photo-card {
+.photo-card-img {
   border-radius: 5px;
+  margin-bottom: 8px;
 }
-
 .card-info {
   @include font(500, 12, 14);
   color: var(--accent-color);
 }
 .card-info__title {
   color: var(--primary-color);
+  margin-bottom: 5px;
 }
 
 .card-info__genre {
@@ -34,18 +35,8 @@
 // mob adaptive
 @media screen and (max-width: 767px) {
   .photo-card {
-    width: 280px;
-    height: 443px;
+    margin-bottom: 20px;
   }
-
-  .photo-card__link {
-    margin-bottom: 10px;
-  }
-
-  .photo-card-img {
-    height: 402px;
-  }
-
   .card-info {
     @include font(500, 12, 14);
   }
@@ -55,13 +46,6 @@
 @media screen and (min-width: 768px) {
   .photo-card {
     width: 336px;
-    height: 494px;
-  }
-  .photo-card__link {
-    margin-bottom: 8px;
-  }
-  .photo-card-img {
-    height: 455px;
   }
   .card-info {
     @include font(500, 12, 16);
@@ -73,15 +57,10 @@
 @media screen and (min-width: 1280px) {
   .photo-card {
     width: 395px;
-    height: 634px;
-  }
-
-  .photo-card__link {
-    margin-bottom: 12px;
   }
 
   .photo-card-img {
-    height: 574px;
+    margin-bottom: 12px;
   }
 
   .card-info {
@@ -90,6 +69,6 @@
   .film-rating {
     width: 40px;
     height: 20px;
-    @include font(500, 12, 20);
+    @include font(500, 12, 22);
   }
 }

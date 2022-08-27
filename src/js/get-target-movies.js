@@ -1,51 +1,50 @@
-import { getMoviesDetails } from "./getMoviesDetails";
 import { oneCardMarkup } from './oneCardMarkup';
-import { getGenres, df } from './get-genres';
+import { TheMovieDb } from "./fetch";
 
-async function loadSelectedMovies(ids) {
+const theMovieDb = new TheMovieDb
+
+async function getTheMoviesTargetInfo(filmIds) {
 
     try {
-        const selectedMovies = await getMoviesDetails(ids);
+        const targetMovies = []
+        for (let i = 0; i < filmIds.length; i += 1) {
+            const film = await theMovieDb.fetchMovieDetails(filmIds[i])
+            targetMovies.push(film)
+        }
 
-        const selectedFilmsTargetInfo = await selectedMovies.map(film => {
+        // const selectedFilms = filmIds.map( async id => await theMovieDb.fetchMovieDetails(id))
+        //
+
+        const theMoviesTargetInfo = await targetMovies.map(film => {
             const genresArray = film.genres.map(item => item.name)
             const [firstGenre, secondGenre, ...others] = genresArray;
             let genres = ""
             switch (genresArray.length) {
                 case "1":
                     genres = firstGenre;
-                break;
+                    break;
 
                 case "2":
                     genres = [firstGenre, secondGenre].join(", ");
-                break;
+                    break;
 
                 default:
                     genres = `${firstGenre}, ${secondGenre}, ...`;
-                        
+
             }
             const title = film.original_title
             const releaseYear = Number.parseInt(film.release_date)
             const posterPath = film.poster_path
             const rating = film.vote_average.toFixed(2)
             const id = film.id
-
-            return { posterPath, title, genres, releaseYear, rating, id }
+            const description = film.overview
+            return { id, posterPath, title, genres, releaseYear, rating, description }
         })
+        return theMoviesTargetInfo
 
-        // console.log("selectedFilmsTargetInfo:", selectedFilmsTargetInfo)
-
-
-
-        const markup = await selectedFilmsTargetInfo.map(film => {
-            return oneCardMarkup(film)
-        }).join('');
-
-        const div = document.querySelector('.film-grid');
-        div.insertAdjacentHTML('afterbegin', markup);
     } catch (error) {
         console.log(error)
     }
 }
 
-loadSelectedMovies([361743, 762504])
+export { getTheMoviesTargetInfo }
