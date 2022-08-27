@@ -1,31 +1,33 @@
-// const refs = {
-//   openModalBtn: document.querySelector('[data-modal-open]'),
-//   closeModalBtn: document.querySelector('[data-modal-close]'),
-//   modal: document.querySelector('[data-modal]'),
-// };
 
-// refs.openModalBtn.addEventListener('click', onOpenModal);
-// refs.closeModalBtn.addEventListener('click', onCloseModal);
-// refs.modal.addEventListener('click', onBackdropClick);
-// window.addEventListener('keydown', onEscClose);
+const refsTeam = {
+    openModalBtnTeam: document.querySelector('[data-modal-open-team]'),
+    closeModalBtnTeam: document.querySelector('[data-modal-close-team]'),
+    modalTeam: document.querySelector('[data-modal-team]'),
+};
 
-// function onOpenModal() {
-//   window.addEventListener('keydown', onEscClose);
-//   refs.modal.classList.remove('is-hidden');
-// }
+refsTeam.openModalBtnTeam.addEventListener('click', onOpenModalTeam);
+refsTeam.closeModalBtnTeam.addEventListener('click', onCloseModalTeam);
+refsTeam.modalTeam.addEventListener('click', footerModalClickTeam);
+window.addEventListener('keydown', onEscCloseTeam);
 
-// function onCloseModal() {
-//   window.removeEventListener('keydown', onEscClose);
-//   refs.modal.classList.add('is-hidden');
-// }
+function onOpenModalTeam(e) {
+    e.preventDefault();
+    window.addEventListener('keydown', onEscCloseTeam);
+    refsTeam.modalTeam.classList.remove('is-hidden');
+}
 
-// function onBackdropClick(e) {
-//   if (e.currentTarget === e.target) {
-//     onCloseModal();
-//   }
-// }
-// function onEscClose(e) {
-//   if (e.key === 'Escape') {
-//     onCloseModal();
-//   }
-// }
+function onCloseModalTeam() {
+    window.removeEventListener('keydown', onEscCloseTeam);
+    refsTeam.modalTeam.classList.add('is-hidden');
+}
+
+function footerModalClickTeam(e) {
+    if (e.currentTarget === e.target) {
+        onCloseModalTeam();
+    }
+}
+function onEscCloseTeam(e) {
+    if (e.key === 'Escape') {
+        onCloseModalTeam();
+    }
+}
