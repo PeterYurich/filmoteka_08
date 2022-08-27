@@ -1,4 +1,3 @@
-
 const pagePreloader = document.querySelector('.mask');
 
 function showLoader() {
@@ -15,4 +14,3 @@ window.addEventListener('load', () => {
     pagePreloader.classList.add('hide-load');
   }, 400);
 });
-
