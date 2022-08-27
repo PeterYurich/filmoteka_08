@@ -47,16 +47,14 @@ export class TheMovieDb {
 
     async fetchRequestedMovies(query, mediaType) {
         const url = `${this.BASE_URL}/search/${mediaType}?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}&include_adult=false&query=${query}`
+        
         try {
             const response = await axios.get(url)
-            console.log("poi")
             return response.data
         } catch (error) {
             console.log(error)
         }
     }
-
-
 
     increasePage() {
         this.page += 1;

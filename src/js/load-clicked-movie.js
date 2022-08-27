@@ -3,7 +3,7 @@ import { getTheMoviesTargetInfo } from "./get-target-movies"
 
 async function loadClickedMovies(e) {
     e.preventDefault();
-    console.log("target:" e.target)
+    console.log("target:", e.target)
 
     const movieId = e.target.dataset.id;
 
@@ -24,4 +24,5 @@ async function loadClickedMovies(e) {
 }
 
 const grid = document.querySelector('.film-grid')
-form.addEventListener("click", loadClickedMovies)
+console.log(grid)
+grid.addEventListener("click", loadClickedMovies)
