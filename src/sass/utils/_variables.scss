@@ -1,17 +1,19 @@
 :root {
-    --major-font-family: 'Roboto', sans-serif;
+  --major-font-family: 'Roboto', sans-serif;
 
-    
-    --primary-color: #000;
-    --secondary-text-color: #545454;
-    --dark-theme-text-color: #fff;
-    --accent-color: #FF6B08;
-    --style-color: #FF001B;
+  --primary-color: #000;
+  --secondary-text-color: #545454;
+  --dark-theme-text-color: #fff;
+  --accent-color: #ff6b08;
+  --accent-text-color: #ffffff;
+  --background-accent-color: #ff6b01;
+  --style-color: #ff001b;
 
-    --background-color_bright-theme: #F7F7F7;
-    --secondary-text-modal-color: #8C8C8C;
+  --background-color_bright-theme: #f7f7f7;
+  --secondary-text-modal-color: #8c8c8c;
 
-    --duration: 300ms;
-    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --background-color_modal-footer: #0e0e0e;
 
+  --duration: 300ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
