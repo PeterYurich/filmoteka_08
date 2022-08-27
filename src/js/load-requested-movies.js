@@ -2,7 +2,6 @@ import { oneCardMarkup } from './oneCardMarkup';
 import { TheMovieDb } from "./fetch";
 import { getTheMoviesTargetInfo } from "./get-target-movies"
 
-
 const fetchMovies = new TheMovieDb();
 
 async function loadRequestedMovies(e) {
@@ -25,7 +24,6 @@ async function loadRequestedMovies(e) {
         containerMainPage.innerHTML = markup
     } catch (error) {
         console.log(error)
-
     }
 }
 

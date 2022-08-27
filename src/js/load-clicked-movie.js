@@ -16,8 +16,8 @@ async function loadClickedMovies(e) {
             return oneCardMarkup(film)
         }).join('');
 
-        const containerMainPage = document.querySelector('.film-grid');
-        containerMainPage.innerHTML = markup
+        // const containerMainPage = document.querySelector('.film-grid');
+        // containerMainPage.innerHTML = markup
     } catch (error) {
         console.log(error)
     }
