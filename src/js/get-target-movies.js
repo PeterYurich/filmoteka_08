@@ -44,17 +44,19 @@ async function getTheMoviesTargetInfo(filmIds) {
 
         console.log("theMoviesTargetInfo:", theMoviesTargetInfo)
 
-        const markup = await theMoviesTargetInfo.map(film => {
-            return oneCardMarkup(film)
-        }).join('');
+        return theMoviesTargetInfo
 
-        const div = document.querySelector('.film-grid');
-        div.insertAdjacentHTML('afterbegin', markup);
+        // const markup = await theMoviesTargetInfo.map(film => {
+        //     return oneCardMarkup(film)
+        // }).join('');
+
+        // const div = document.querySelector('.film-grid');
+        // div.insertAdjacentHTML('afterbegin', markup);
     } catch (error) {
         console.log(error)
     }
 }
 
-export { TargetMoviesInfo }
+export { getTheMoviesTargetInfo }
 
-getTheMoviesTargetInfo([361743, 762504])
+// getTheMoviesTargetInfo([361743, 762504])

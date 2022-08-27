@@ -1,9 +1,9 @@
 import { getMoviesDetails } from "./get-movies-details";
 import { oneCardMarkup } from './oneCardMarkup';
 import { TheMovieDb } from "./fetch";
-import { TargetMoviesInfo } from "./get-target-movies"
+import { getTheMoviesTargetInfo } from "./get-target-movies"
 
-const query = "forest"
+const query = "gun"
 const mediaType = "movie"
 
 const fetchMovies = new TheMovieDb();
@@ -20,9 +20,11 @@ async function loadRequestedMovies(query, mediaType) {
 
         console.log(foundMoviesIds)
 
+        const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds)
 
-        
-        const markup = await selectedFilmsTargetInfo.map(film => {
+        console.log("FilmsToRender:", FilmsToRender)
+
+        const markup = await FilmsToRender.map(film => {
             return oneCardMarkup(film)
         }).join('');
 
