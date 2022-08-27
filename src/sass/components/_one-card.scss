@@ -1,27 +1,45 @@
+.photo-card-img {
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.card-info {
+  @include font(500, 12, 14);
+  color: var(--accent-color);
+}
 .card-info__title {
   color: var(--primary-color);
+  margin-bottom: 5px;
 }
 
 .card-info__genre {
   color: var(--accent-color);
 }
 
-.info-separator::before {
-  position: absolute;
-  top: 0;
-  right: -5px;
-  content: '';
-  width: 2px;
-  height: 100%;
-  border: 1px solid var(--accent-color);
+.release-date {
+  padding-left: 5px;
+  border-left: 2px solid var(--accent-color);
 }
 
-// mob responsive
-@media screen and (max-width: 319px) {
-.photo-card {
-  width: 100%;
-  padding-top: 20px;
+.film-rating {
+  display: inline-block;
+  width: 36px;
+  height: 16px;
+  text-align: center;
+
+  border: 1px solid var(--accent-color);
+  background: var(--background-accent-color);
+  border-radius: 5px;
+  color: var(--accent-text-color);
 }
+
+// mob adaptive
+@media screen and (max-width: 767px) {
+  .card-info {
+    @include font(500, 12, 14);
+  }
+  .photo-card-img {
+    max-width: 280px;
+  }
 }
 
 // tablet
@@ -49,5 +67,10 @@
 
   .card-info {
     @include font(500, 20, 24);
+  }
+  .film-rating {
+    width: 40px;
+    height: 20px;
+    @include font(500, 12, 22);
   }
 }
