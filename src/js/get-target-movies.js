@@ -10,7 +10,7 @@ async function getTheMoviesTargetInfo(filmIds) {
             const film = await theMovieDb.fetchMovieDetails(filmIds[i])
             targetMovies.push(film)
         }
-
+        console.log(targetMovies)
         // const selectedFilms = filmIds.map( async id => await theMovieDb.fetchMovieDetails(id))
         //
 
@@ -18,18 +18,35 @@ async function getTheMoviesTargetInfo(filmIds) {
             const genresArray = film.genres.map(item => item.name)
             const [firstGenre, secondGenre, ...others] = genresArray;
             let genres = ""
-            switch (genresArray.length) {
-                case "1":
-                    genres = firstGenre;
-                    break;
+            // switch (genresArray.length) {
+            //     case "0":
+            //         genres = "genres aren't specified"
+            //         break
 
-                case "2":
-                    genres = [firstGenre, secondGenre].join(", ");
-                    break;
+            //         case "1":
+            //         genres = firstGenre;
+            //         break;
 
-                default:
+            //     case "2":
+            //         genres = [firstGenre, secondGenre].join(", ");
+            //         break;
+
+            //     default:
+            //         genres = `${firstGenre}, ${secondGenre}, ...`;
+            // }
+            function resolveGenres(genresArray) {
+                if (genresArray.length > 2) {
                     genres = `${firstGenre}, ${secondGenre}, ...`;
+                } else if (genresArray.length === 2) {
+                    genres = `${firstGenre}, ${secondGenre}`;
+                } else if (genresArray.length === 1) {
+                    genres = `${firstGenre}`
+                } else if (genresArray.length === 0) {
+                    genres = "genre isn't specified"
+                };
+
             }
+            resolveGenres(genresArray)
 
             const title = film.original_title
             const releaseYear = Number.parseInt(film.release_date)
