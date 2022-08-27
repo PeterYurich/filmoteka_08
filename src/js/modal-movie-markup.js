@@ -32,13 +32,13 @@ function modalMovieMarkup({
                 <ul class="modal__list-api list">
                     <li class="modal__list-item-api-value">
                         <p class="modal__list-item-value"><span
-                                class="modal__list-item-value-vote">${vote_average}</span>&nbsp;/&nbsp;${vote_count}</p>
+                                class="modal__list-item-value-vote">${vote}</span>&nbsp;/&nbsp;${votes}</p>
                     </li>
                     <li class="modal__list-item-api-value">
                         <p class="modal__list-item-value">${popularity}</p>
                     </li>
                     <li class="modal__list-item-api-value">
-                        <p class="modal__list-item-value-original-title">${original_title}</p>
+                        <p class="modal__list-item-value-original-title">${origTitle}</p>
                     </li>
                     <li class="modal__list-item-api-value">
                         <p class="modal__list-item-value-genre">${genre_ids}</p>

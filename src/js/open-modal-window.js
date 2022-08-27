@@ -41,3 +41,17 @@ function onEscClose(e) {
     onCloseModal();
   }
 }
+
+window.addEventListener('click', targ);
+function targ(e) {
+  console.log(e.target);
+}
+// const h = document.querySelector('.photo-card');
+
+// console.log('gvhgh', h);
+
+// const t = function clickOn(e) {
+//   const film = e.target.dataset.id;
+
+//   console.log(film);
+// };
