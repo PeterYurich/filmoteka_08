@@ -1,28 +1,37 @@
-import { getMoviesDetails } from "./getMoviesDetails";
 import { oneCardMarkup } from './oneCardMarkup';
-import { getGenres, df } from './get-genres';
+import { TheMovieDb } from "./fetch";
 
-async function loadSelectedMovies(ids) {
+const theMovieDb = new TheMovieDb
+
+async function getTheMoviesTargetInfo(ids) {
 
     try {
-        const selectedMovies = await getMoviesDetails(ids);
 
-        const selectedFilmsTargetInfo = await selectedMovies.map(film => {
+        const targetMovies = []
+        for (let i = 0; i < filmIds.length; i += 1) {
+            const film = await theMovieDb.fetchMovieDetails(filmIds[i])
+            targetMovies.push(film)
+        }
+
+        // const selectedFilms = filmIds.map( async id => await theMovieDb.fetchMovieDetails(id))
+        //
+
+        const theMoviesTargetInfo = await targetMovies.map(film => {
             const genresArray = film.genres.map(item => item.name)
             const [firstGenre, secondGenre, ...others] = genresArray;
             let genres = ""
             switch (genresArray.length) {
                 case "1":
                     genres = firstGenre;
-                break;
+                    break;
 
                 case "2":
                     genres = [firstGenre, secondGenre].join(", ");
-                break;
+                    break;
 
                 default:
                     genres = `${firstGenre}, ${secondGenre}, ...`;
-                        
+
             }
             const title = film.original_title
             const releaseYear = Number.parseInt(film.release_date)
@@ -33,11 +42,7 @@ async function loadSelectedMovies(ids) {
             return { posterPath, title, genres, releaseYear, rating, id }
         })
 
-        // console.log("selectedFilmsTargetInfo:", selectedFilmsTargetInfo)
-
-
-
-        const markup = await selectedFilmsTargetInfo.map(film => {
+        const markup = await theMoviesTargetInfo.map(film => {
             return oneCardMarkup(film)
         }).join('');
 
@@ -48,4 +53,6 @@ async function loadSelectedMovies(ids) {
     }
 }
 
-loadSelectedMovies([361743, 762504])
+export { TargetMoviesInfo }
+
+getTheMoviesTargetInfo([361743, 762504])

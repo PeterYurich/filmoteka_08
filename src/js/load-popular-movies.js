@@ -1,6 +1,6 @@
 import { TheMovieDb } from "./fetch";
 import { oneCardMarkup } from './oneCardMarkup';
-import { getGenres, df } from './get-genres';
+import { getGenres } from './get-genres';
 
 const fetchMovies = new TheMovieDb();
 
