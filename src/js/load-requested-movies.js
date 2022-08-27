@@ -14,7 +14,6 @@ async function loadRequestedMovies(e) {
 
     try {
         const ApiReply = await fetchMovies.fetchRequestedMovies(query, mediaType);
-        console.log("ApiReply:", ApiReply)
         const foundMovies = ApiReply.results
         const foundMoviesIds = foundMovies.map(film => film.id)
         const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds)

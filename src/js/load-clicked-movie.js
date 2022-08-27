@@ -16,13 +16,10 @@ async function loadClickedMovies(e) {
         try {
 
             const FilmsToRender = await getTheMoviesTargetInfo(arrayId)
-            console.log(FilmsToRender)
 
             const markup = await FilmsToRender.map(film => {
                 return modalMovieMarkup(film)
             }).join('');
-
-            console.log(markup)
 
             // const containerMainPage = document.querySelector('.film-grid');
             // containerMainPage.innerHTML = markup
