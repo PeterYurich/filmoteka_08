@@ -27,6 +27,7 @@ async function loadRequestedMovies() {
         containerMainPage.innerHTML = markup
     } catch (error) {
         console.log(error)
+        
     }
 }
 
