@@ -1,73 +1,44 @@
-.photo-card {
+.photo-card-img {
   border-radius: 5px;
+  margin-bottom: 8px;
 }
 .card-info {
-  position: relative;
+  @include font(500, 12, 14);
   color: var(--accent-color);
 }
 .card-info__title {
   color: var(--primary-color);
+  margin-bottom: 5px;
 }
 
 .card-info__genre {
   color: var(--accent-color);
-  padding-right: 10px;
 }
+
 .release-date {
-  padding-left: 10px;
-  margin-left: 10px;
+  padding-left: 5px;
   border-left: 2px solid var(--accent-color);
 }
-.film-raiting {
-  position: absolute;
-  display: inline-block;
-  bottom: -3px;
-  right: 60%;
 
+.film-rating {
+  display: inline-block;
   width: 36px;
   height: 16px;
   text-align: center;
 
-  padding-top: 1px;
-
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  border: 1px solid #ff6b08;
-  background: #ff6b01;
-  border-radius: 7px;
-  color: #ffff;
+  border: 1px solid var(--accent-color);
+  background: var(--background-accent-color);
+  border-radius: 5px;
+  color: var(--accent-text-color);
 }
-// .info-separator::before {
-//   position: absolute;
-//   top: 0;
-//   right: -5px;
-//   content: '';
-//   width: 2px;
-//   height: 100%;
-//   border: 1px solid var(--accent-color);
-// }
 
 // mob adaptive
 @media screen and (max-width: 767px) {
   .photo-card {
-    width: 280px;
-    height: 443px;
+    margin-bottom: 20px;
   }
-
-  .photo-card__link {
-    margin-bottom: 10px;
-  }
-
-  .photo-card-img {
-    height: 402px;
-  }
-
   .card-info {
     @include font(500, 12, 14);
-  }
-  .film-raiting {
-    right: 66%;
   }
 }
 
@@ -75,20 +46,9 @@
 @media screen and (min-width: 768px) {
   .photo-card {
     width: 336px;
-    height: 494px;
-  }
-  .photo-card__link {
-    margin-bottom: 8px;
-  }
-  .photo-card-img {
-    height: 455px;
   }
   .card-info {
     @include font(500, 12, 16);
-  }
-  .film-raiting {
-    top: 20px;
-    right: 86%;
   }
 }
 
@@ -97,25 +57,18 @@
 @media screen and (min-width: 1280px) {
   .photo-card {
     width: 395px;
-    height: 634px;
-  }
-
-  .photo-card__link {
-    margin-bottom: 12px;
   }
 
   .photo-card-img {
-    height: 574px;
+    margin-bottom: 12px;
   }
 
   .card-info {
     @include font(500, 20, 24);
   }
-  .film-raiting {
-    top: 32px;
-    right: 37%;
+  .film-rating {
     width: 40px;
     height: 20px;
-    padding-top: 3px;
+    @include font(500, 12, 22);
   }
 }
