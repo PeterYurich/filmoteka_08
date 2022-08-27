@@ -10,7 +10,6 @@ async function getTheMoviesTargetInfo(filmIds) {
             const film = await theMovieDb.fetchMovieDetails(filmIds[i])
             targetMovies.push(film)
         }
-        console.log(targetMovies)
         // const selectedFilms = filmIds.map( async id => await theMovieDb.fetchMovieDetails(id))
         //
 
