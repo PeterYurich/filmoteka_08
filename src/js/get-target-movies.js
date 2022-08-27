@@ -1,4 +1,3 @@
-import { oneCardMarkup } from './oneCardMarkup';
 import { TheMovieDb } from "./fetch";
 
 const theMovieDb = new TheMovieDb
@@ -30,15 +29,18 @@ async function getTheMoviesTargetInfo(filmIds) {
 
                 default:
                     genres = `${firstGenre}, ${secondGenre}, ...`;
-
             }
+
             const title = film.original_title
             const releaseYear = Number.parseInt(film.release_date)
             const posterPath = film.poster_path
             const rating = film.vote_average.toFixed(2)
             const id = film.id
             const description = film.overview
-            return { id, posterPath, title, genres, releaseYear, rating, description }
+            const votes = film.vote_count
+            const popularity = film.popularity
+            const originalTitle = film.original_title
+            return { id, posterPath, title, genres, releaseYear, rating, votes, popularity, originalTitle, description }
         })
         return theMoviesTargetInfo
 

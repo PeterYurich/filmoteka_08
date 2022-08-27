@@ -1,6 +1,4 @@
 import { modalMovieMarkup } from './modal-movie-markup';
-import { loadModal } from './load-movie-modal';
-import { oneCardMarkup } from './oneCardMarkup';
 
 // const card = document.querySelector('.photo-card');
 // console.log(card);
@@ -42,10 +40,10 @@ function onEscClose(e) {
   }
 }
 
-window.addEventListener('click', targ);
-function targ(e) {
-  console.log(e.target);
-}
+// window.addEventListener('click', targ);
+// function targ(e) {
+//   console.log(e.target);
+// }
 // const h = document.querySelector('.photo-card');
 
 // console.log('gvhgh', h);

@@ -2,22 +2,21 @@ import { oneCardMarkup } from './oneCardMarkup';
 import { TheMovieDb } from "./fetch";
 import { getTheMoviesTargetInfo } from "./get-target-movies"
 
-
 const fetchMovies = new TheMovieDb();
 
-async function loadRequestedMovies() {
-    console.log('asdf')
+async function loadRequestedMovies(e) {
+    e.preventDefault();
 
-    const query = "gun"
+    inputEl = document.querySelector('.input')
+
+    const query = inputEl.value
     const mediaType = "movie"
 
     try {
         const ApiReply = await fetchMovies.fetchRequestedMovies(query, mediaType);
-        console.log("reply", ApiReply)
         const foundMovies = ApiReply.results
         const foundMoviesIds = foundMovies.map(film => film.id)
         const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds)
-        console.log(FilmsToRender)
 
         const markup = await FilmsToRender.map(film => {
             return oneCardMarkup(film)
@@ -27,9 +26,8 @@ async function loadRequestedMovies() {
         containerMainPage.innerHTML = markup
     } catch (error) {
         console.log(error)
-        
     }
 }
 
-const form = document.querySelector('.search')
-form.addEventListener("submit", loadRequestedMovies())
+const form = document.querySelector('.search-form')
+form.addEventListener("submit", loadRequestedMovies)
