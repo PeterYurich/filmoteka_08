@@ -1,3 +1,11 @@
+.photo-card {
+  border-radius: 5px;
+}
+
+.card-info {
+  @include font(500, 12, 14);
+  color: var(--accent-color);
+}
 .card-info__title {
   color: var(--primary-color);
 }
@@ -6,21 +14,21 @@
   color: var(--accent-color);
 }
 
-.info-separator::before {
-  position: absolute;
-  top: 0;
-  right: -5px;
-  content: '';
-  width: 2px;
-  height: 100%;
-  border: 1px solid var(--accent-color);
+.release-date {
+  padding-left: 5px;
+  border-left: 2px solid var(--accent-color);
 }
 
-// mob responsive
-@media screen and (max-width: 320) {
-  .photo-card {
-    width: 100%;
-  }
+.film-rating {
+  display: inline-block;
+  width: 36px;
+  height: 16px;
+  text-align: center;
+
+  border: 1px solid var(--accent-color);
+  background: var(--background-accent-color);
+  border-radius: 5px;
+  color: var(--accent-text-color);
 }
 
 // mob adaptive
@@ -78,5 +86,10 @@
 
   .card-info {
     @include font(500, 20, 24);
+  }
+  .film-rating {
+    width: 40px;
+    height: 20px;
+    @include font(500, 12, 20);
   }
 }

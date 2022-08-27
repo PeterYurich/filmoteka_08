@@ -9,14 +9,15 @@ export class TheMovieDb {
         this.searchQuery = "";
     }
 
+    // mediaTypes: all, movie, tv, person;
+    // timeWindow: day, week;
     async fetchPopularMovies(mediaTypes, timeWindow) {
         const url = `${this.BASE_URL}/trending/${mediaTypes}/${timeWindow}?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}&include_adult=false`
 
         try {
             const response = await axios.get(url);
             const data = await response.data;
-            const items = await data.results;
-            return items;
+            return data.results
         } catch (error) {
             console.log(error)
         }
@@ -39,7 +40,7 @@ export class TheMovieDb {
         const url = `${this.BASE_URL}/movie/${movieId}?api_key=${this.API_KEY}&language=en-US`
         try {
             const response = await axios.get(url)
-            // console.log("fetchMovieDetails res:", response.data)
+            
             return response.data
         } catch {
             console.log(error)
@@ -65,5 +66,6 @@ export class TheMovieDb {
     }
 
 }
+
 
 
