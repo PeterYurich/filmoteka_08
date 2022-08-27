@@ -17,43 +17,20 @@
 }
 
 // mob responsive
-@media screen and (max-width: 320) {
-  .photo-card {
-    width: 100%;
-  }
-}
-
-// mob adaptive
 @media screen and (max-width: 767px) {
-  .photo-card {
-    width: 280px;
-    height: 443px;
-  }
-
-  .photo-card__link {
-    margin-bottom: 10px;
-  }
-
-  .photo-card-img {
-    height: 402px;
-  }
-
-  .card-info {
-    @include font(500, 12, 14);
-  }
+.photo-card {
+  width: 100%;
+  padding-top: 20px;
+}
 }
 
 // tablet
 @media screen and (min-width: 768px) {
-  .photo-card {
-    width: 336px;
-    height: 494px;
-  }
   .photo-card__link {
     margin-bottom: 8px;
   }
   .photo-card-img {
-    height: 455px;
+    height: 497px;
   }
   .card-info {
     @include font(500, 12, 16);
@@ -61,19 +38,13 @@
 }
 
 // desktop
-
 @media screen and (min-width: 1280px) {
-  .photo-card {
-    width: 395px;
-    height: 634px;
-  }
-
   .photo-card__link {
     margin-bottom: 12px;
   }
 
   .photo-card-img {
-    height: 574px;
+    height: 589px;
   }
 
   .card-info {

@@ -2,19 +2,23 @@
     .film-grid {
         display: flex;
         flex-wrap: wrap;
-        padding-top: 20px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .film-grid {
+        justify-content: space-around;
+        margin-top: 60px;
+        margin-bottom: 60px;
         gap: 32px;
-        padding-top: 60px;
     }
 }
 
 @media screen and (min-width: 1280px) {
     .film-grid {
-        row-gap: 16px;
+        row-gap: 32px;
+        column-gap: 16px;
     }
 }
