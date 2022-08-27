@@ -1,13 +1,21 @@
 .photo-card {
-  border-radius: 5px;
+  margin-bottom: 20px;
+  &:nth-child(n + 20) {
+    margin-bottom: 40px;
+  }
 }
 
+.photo-card-img {
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
 .card-info {
   @include font(500, 12, 14);
   color: var(--accent-color);
 }
 .card-info__title {
   color: var(--primary-color);
+  margin-bottom: 5px;
 }
 
 .card-info__genre {
@@ -38,10 +46,6 @@
     height: 443px;
   }
 
-  .photo-card__link {
-    margin-bottom: 10px;
-  }
-
   .photo-card-img {
     height: 402px;
   }
@@ -56,10 +60,13 @@
   .photo-card {
     width: 336px;
     height: 494px;
+    margin-bottom: 32px;
+
+    &:nth-child(n + 20) {
+      margin-bottom: 60px;
+    }
   }
-  .photo-card__link {
-    margin-bottom: 8px;
-  }
+
   .photo-card-img {
     height: 455px;
   }
@@ -76,20 +83,20 @@
     height: 634px;
   }
 
-  .photo-card__link {
-    margin-bottom: 12px;
-  }
-
   .photo-card-img {
     height: 574px;
+    margin-bottom: 12px;
   }
 
   .card-info {
     @include font(500, 20, 24);
+    &:last-child {
+      margin-bottom: 60px;
+    }
   }
   .film-rating {
     width: 40px;
     height: 20px;
-    @include font(500, 12, 20);
+    @include font(500, 12, 22);
   }
 }
