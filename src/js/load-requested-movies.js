@@ -5,8 +5,8 @@ import { getTheMoviesTargetInfo } from "./get-target-movies"
 
 const fetchMovies = new TheMovieDb();
 
-async function loadRequestedMovies() {
-    console.log('asdf')
+async function loadRequestedMovies(e) {
+    e.preventDefault();
 
     const query = "gun"
     const mediaType = "movie"
@@ -27,9 +27,9 @@ async function loadRequestedMovies() {
         containerMainPage.innerHTML = markup
     } catch (error) {
         console.log(error)
-        
+
     }
 }
 
-const form = document.querySelector('.search')
-form.addEventListener("submit", loadRequestedMovies())
+const form = document.querySelector('.search-btn')
+form.addEventListener("click", loadRequestedMovies)

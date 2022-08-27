@@ -7,7 +7,7 @@ const timeWindow = "day"
 
 const fetchMovies = new TheMovieDb();
 
-async function loadRequestedMovies(mediaType, timeWindow) {
+async function loadPopMovies(mediaType, timeWindow) {
 
     try {
         const ApiReply = await fetchMovies.fetchPopularMovies(mediaType, timeWindow);
@@ -27,4 +27,4 @@ async function loadRequestedMovies(mediaType, timeWindow) {
     }
 }
 
-loadRequestedMovies(mediaType, timeWindow)
+loadPopMovies(mediaType, timeWindow)
