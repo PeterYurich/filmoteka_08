@@ -6,7 +6,6 @@ const theMovieDb = new TheMovieDb
 async function getTheMoviesTargetInfo(filmIds) {
 
     try {
-
         const targetMovies = []
         for (let i = 0; i < filmIds.length; i += 1) {
             const film = await theMovieDb.fetchMovieDetails(filmIds[i])
@@ -38,25 +37,14 @@ async function getTheMoviesTargetInfo(filmIds) {
             const posterPath = film.poster_path
             const rating = film.vote_average.toFixed(2)
             const id = film.id
-
-            return { posterPath, title, genres, releaseYear, rating, id }
+            const description = film.overview
+            return { id, posterPath, title, genres, releaseYear, rating, description }
         })
-
-        console.log("theMoviesTargetInfo:", theMoviesTargetInfo)
-
         return theMoviesTargetInfo
 
-        // const markup = await theMoviesTargetInfo.map(film => {
-        //     return oneCardMarkup(film)
-        // }).join('');
-
-        // const div = document.querySelector('.film-grid');
-        // div.insertAdjacentHTML('afterbegin', markup);
     } catch (error) {
         console.log(error)
     }
 }
 
 export { getTheMoviesTargetInfo }
-
-// getTheMoviesTargetInfo([361743, 762504])
