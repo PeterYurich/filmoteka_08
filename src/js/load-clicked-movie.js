@@ -4,7 +4,6 @@ import { modalMovieMarkup } from "./modal-movie-markup"
 
 async function loadClickedMovies(e) {
         e.preventDefault();
-        console.log("target:", e.target)
         if (e.target.nodeName !== "IMG") {
             return;
         }
@@ -29,5 +28,4 @@ async function loadClickedMovies(e) {
     }
 
 const grid = document.querySelector('.film-grid')
-console.log(grid)
 grid.addEventListener("click", loadClickedMovies)

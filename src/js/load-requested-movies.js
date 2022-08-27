@@ -1,11 +1,15 @@
 import { oneCardMarkup } from './oneCardMarkup';
 import { TheMovieDb } from "./fetch";
 import { getTheMoviesTargetInfo } from "./get-target-movies"
+import { showLoader, hideLoader } from "./loader"
 
 const fetchMovies = new TheMovieDb();
 
 async function loadRequestedMovies(e) {
     e.preventDefault();
+    const containerMainPage = document.querySelector('.film-grid');
+    containerMainPage.innerHTML = ""
+    showLoader()
 
     inputEl = document.querySelector('.input')
 
@@ -22,7 +26,7 @@ async function loadRequestedMovies(e) {
             return oneCardMarkup(film)
         }).join('');
 
-        const containerMainPage = document.querySelector('.film-grid');
+        hideLoader()
         containerMainPage.innerHTML = markup
     } catch (error) {
         console.log(error)

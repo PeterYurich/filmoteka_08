@@ -1,19 +1,7 @@
 .film-grid {
-  //   padding: 12px;
   padding-top: 20px;
   padding-bottom: 40px;
 }
-
-// @media screen and (min-width: 320px) {
-//   .film-grid {
-//     display: inline-grid;
-//     grid-template-columns: auto;
-//     // flex-wrap: wrap;
-//     // &:not(:last-child) {
-//     //   margin-bottom: 20px;
-//     // }
-//   }
-// }
 
 @media screen and (min-width: 768px) {
   .film-grid {
