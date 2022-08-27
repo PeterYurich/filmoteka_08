@@ -3,7 +3,7 @@ import { TheMovieDb } from "./fetch";
 
 const theMovieDb = new TheMovieDb
 
-async function getTheMoviesTargetInfo(ids) {
+async function getTheMoviesTargetInfo(filmIds) {
 
     try {
 
@@ -41,6 +41,8 @@ async function getTheMoviesTargetInfo(ids) {
 
             return { posterPath, title, genres, releaseYear, rating, id }
         })
+
+        console.log("theMoviesTargetInfo:", theMoviesTargetInfo)
 
         const markup = await theMoviesTargetInfo.map(film => {
             return oneCardMarkup(film)

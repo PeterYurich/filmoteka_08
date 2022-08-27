@@ -1,6 +1,6 @@
 import loadPopularMovies from "./js/load-popular-movies"
 import getGenres from "./js/get-genres"
 import getMoviesDetails from "./js/get-movies-details"
-import loadSelectedMovies from "./js/load-target-movies"
+import loadSelectedMovies from "./js/get-target-movies"
 import loadRequiredMovies from "./js/load-requested-movies"
 // import "./js/loader"
