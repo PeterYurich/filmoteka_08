@@ -12,8 +12,8 @@ async function loadRequestedMovies(mediaType, timeWindow) {
     try {
         const ApiReply = await fetchMovies.fetchPopularMovies(mediaType, timeWindow);
 
-        // const foundMovies = ApiReply.results
-        const foundMoviesIds = ApiReply.map(film => film.id)
+        const foundMovies = ApiReply.results
+        const foundMoviesIds = foundMovies.map(film => film.id)
         const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds)
 
         const markup = await FilmsToRender.map(film => {

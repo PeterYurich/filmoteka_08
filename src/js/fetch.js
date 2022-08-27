@@ -47,6 +47,7 @@ export class TheMovieDb {
         const url = `${this.BASE_URL}/search/${mediaType}?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}&include_adult=false&query=${query}`
         try {
             const response = await axios.get(url)
+            console.log(response.data)
             return response.data
         } catch (error) {
             console.log(error)

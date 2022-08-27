@@ -1,6 +1,4 @@
 import { TheMovieDb } from './fetch';
-import { modalMovieMarkup } from './modal-movie-markup';
-import { getMoviesDetails } from './getMoviesDetails';
 
 const theMovieDb1 = new TheMovieDb();
 // let title = '';
