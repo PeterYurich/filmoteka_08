@@ -34,18 +34,21 @@
 
 // mob adaptive
 @media screen and (max-width: 767px) {
-  .photo-card {
-    margin-bottom: 20px;
-  }
   .card-info {
     @include font(500, 12, 14);
+  }
+  .photo-card-img {
+    max-width: 280px;
   }
 }
 
 // tablet
 @media screen and (min-width: 768px) {
-  .photo-card {
-    width: 336px;
+  .photo-card__link {
+    margin-bottom: 8px;
+  }
+  .photo-card-img {
+    height: 497px;
   }
   .card-info {
     @include font(500, 12, 16);
@@ -53,14 +56,13 @@
 }
 
 // desktop
-
 @media screen and (min-width: 1280px) {
-  .photo-card {
-    width: 395px;
+  .photo-card__link {
+    margin-bottom: 12px;
   }
 
   .photo-card-img {
-    margin-bottom: 12px;
+    height: 589px;
   }
 
   .card-info {
