@@ -1,7 +1,7 @@
 import { getTheMoviesTargetInfo } from './get-target-movies';
 import { modalMovieMarkup } from './modal-movie-markup';
 import { onOpenOnClose } from './open-close-func';
-let temp = '';
+import { onOpenModal } from './open-modal-window';
 
 async function loadClickedMovies(e) {
     e.preventDefault();
@@ -13,22 +13,18 @@ async function loadClickedMovies(e) {
     }
 
     try {
-    const arrayId = [];
-    const id = e.target.dataset.id;
-    arrayId.push(id);
-    console.log(arrayId);
-    temp = id;
-
-    console.log(temp);
+        const arrayId = [];
+        const id = e.target.dataset.id;
+        arrayId.push(id);
 
         const FilmsToRender = await getTheMoviesTargetInfo(arrayId);
 
         const markup = await FilmsToRender.map(film => {
             return modalMovieMarkup(film);
         }).join('');
-
         containerMovie.innerHTML = markup;
-        onOpenOnClose(e, temp);
+        onOpenOnClose(e, id);
+        onOpenModal()
     } catch (error) {
         console.log(error);
     }
