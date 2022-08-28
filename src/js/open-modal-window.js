@@ -12,8 +12,8 @@ window.addEventListener('keydown', onEscClose);
 export function onOpenModal(e) {
   window.addEventListener('keydown', onEscClose);
   refs.modal.classList.remove('is-hidden');
-  loadClickedMovies();
 }
+
 export function onCloseModal() {
   window.removeEventListener('keydown', onEscClose);
   refs.modal.classList.add('is-hidden');
