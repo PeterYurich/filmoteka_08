@@ -1,4 +1,3 @@
-import { modalMovieMarkup } from './modal-movie-markup';
 import { loadClickedMovies } from './load-clicked-movie';
 
 const refs = {
@@ -10,7 +9,7 @@ const refs = {
 refs.modal.addEventListener('click', onBackdropClick);
 window.addEventListener('keydown', onEscClose);
 
-export function onOpenModal() {
+export function onOpenModal(e) {
   window.addEventListener('keydown', onEscClose);
   refs.modal.classList.remove('is-hidden');
   loadClickedMovies();
