@@ -1,11 +1,12 @@
 .film-grid {
+  display: grid;
+  justify-content: center;
   padding-top: 20px;
   padding-bottom: 40px;
 }
 
 @media screen and (min-width: 768px) {
   .film-grid {
-    display: grid;
     grid-template-columns: auto auto;
     gap: 32px;
     padding-bottom: 60px;

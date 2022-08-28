@@ -32,6 +32,15 @@
   color: var(--accent-text-color);
 }
 
+.photo-card {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-card:hover {
+  transform: scale(1.03);
+  cursor: zoom-in;
+}
+
 // mob adaptive
 @media screen and (max-width: 767px) {
   .photo-card {
