@@ -1,6 +1,5 @@
 import { onOpenModal, onCloseModal } from './open-modal-window';
 import { loadClickedMovies } from './load-clicked-movie';
-import { onAddToWatched } from './watched-local';
 
 const myLibrary = {
   watched: [],
