@@ -14,69 +14,42 @@ export function onOpenOnClose(e, temp) {
 
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
-
+  // ADD LOCAL STORAGE AND DEL=======////////
   function onAddToWatched(e) {
     const idMovie = temp;
-    myLibrary.watched.push(idMovie);
+    const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
 
-    localStorage.setItem('watched', JSON.stringify(myLibrary.watched));
-    addToWatched.textContent = 'Remove watched';
-    const xx = localStorage.getItem('watched');
-    console.log(xx);
-    if (xx.includes(idMovie)) {
-      const h = myLibrary.watched.indexOf(idMovie);
-      console.log(h);
-      console.log('da');
-      const tt = JSON.parse(localStorage.getItem('watched'));
-      tt.splice(h, 1);
-      localStorage.setItem('watched', JSON.stringify(tt));
-      console.log(tt);
+    if (positionArray >= 0) {
+      myLibrary.watched.splice(positionArray, 1);
+      addToWatched.classList.remove('btn-remove');
+      addToWatched.textContent = 'Add to watched';
+    } else {
+      myLibrary.watched.push(idMovie);
+      addToWatched.classList.add('btn-remove');
+      addToWatched.textContent = 'Remove watched';
     }
-    // for (let i = 0; i < myLibrary.watched.length; i += 1) {
-    //   // const ad = localStorage.getItem('i');
-    //   if (ad === localStorage.getItem('i')) {
-    //     localStorage.removeItem('i');
-    //     addToWatched.textContent = 'Add to watched';
-    //   }
-    // }
-
-    // localStorage.removeItem('watched');
-    // addToWatched.textContent = 'Add to watched';
+    localStorage.setItem('watched', JSON.stringify(myLibrary.watched));
+    // const xx = localStorage.getItem('watched');
   }
   addToWatched.addEventListener('click', onAddToWatched);
 
   function onAddToQueue(e) {
-    const idMovieQueue = temp;
-    myLibrary.queue.push(idMovieQueue);
+    const idMovie = temp;
+    const positionArray = myLibrary.queue.findIndex(item => item === idMovie);
+
+    if (positionArray >= 0) {
+      myLibrary.queue.splice(positionArray, 1);
+      addToQueue.classList.remove('btn-remove');
+      addToQueue.textContent = 'Add to queue';
+    } else {
+      myLibrary.queue.push(idMovie);
+      addToQueue.classList.add('btn-remove');
+      addToQueue.textContent = 'Remove queue';
+    }
     localStorage.setItem('queue', JSON.stringify(myLibrary.queue));
-    addToQueue.textContent = 'Remove queue';
-    console.log(localStorage.getItem('queue'));
   }
   addToQueue.addEventListener('click', onAddToQueue);
 
   const closeModalBtn = document.querySelector('[data-modal-close]');
   closeModalBtn.addEventListener('click', () => onCloseModal());
 }
-
-// function onAddToWatched(e) {
-
-//   const idMovie = temp;
-//   myLibrary.watched.push(idMovie);
-
-//   for (let i = 0; i < myLibrary.watched.length; i += 1) {
-//     const ad = localStorage.getItem('i')
-//     if (ad !== idMovie) {
-//           localStorage.setItem('watched', JSON.stringify(myLibrary.watched));
-//   addToWatched.textContent = 'Remove watched';
-//   console.log(localStorage.getItem('watched'));
-//     }
-//    else {
-//       localStorage.removeItem('i');
-//       addToWatched.textContent = 'Add to watched';
-//   }
-
-// const idMovie = temp;
-// myLibrary.watched.push(idMovie);
-// localStorage.setItem('watched', JSON.stringify(myLibrary.watched));
-// addToWatched.textContent = 'Remove watched';
-// console.log(localStorage.getItem('watched'));

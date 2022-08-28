@@ -167,11 +167,13 @@ margin-bottom: 8px;
 
 .modal__btn:hover,
 .modal__btn:focus {
+    border-color: var(--accent-color);
+}
+.btn-remove{
     background-color: var(--accent-color);
     color: var(--dark-theme-text-color);
     border: none;
 }
-
 // .btn-add-to-watched {}
 
 // .btn-add-to-queue {}

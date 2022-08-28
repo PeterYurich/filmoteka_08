@@ -2,6 +2,7 @@ import { getTheMoviesTargetInfo } from './get-target-movies';
 import { modalMovieMarkup } from './modal-movie-markup';
 import { onOpenOnClose } from './open-close-func';
 let temp = '';
+
 async function loadClickedMovies(e) {
   // e.preventDefault();
   const containerMovie = document.querySelector('[data-modal]');
