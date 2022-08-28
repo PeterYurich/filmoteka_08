@@ -45,7 +45,7 @@ function DisplayList(items, wrapper, rows_per_page, page) {
   for (let i = 0; i < paginatedItems.length; i++) {
     let item = paginatedItems[i];
 
-    let item_element = document.createElement('div');
+    let item_element = document.createElement('div'); // рендерить масив і додає потрібний клас для пагінації
     item_element.classList.add('item');
     item_element.innerText = item;
 
