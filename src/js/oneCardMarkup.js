@@ -5,7 +5,8 @@ function oneCardMarkup(film) {
         <img class="photo-card-img" data-id="${film.id}" src="https://image.tmdb.org/t/p/w500${
           film.posterPath
         }"
-        alt="https://image.tmdb.org/t/p/w500${film.posterPath}" />
+        alt="https://image.tmdb.org/t/p/w500${film.posterPath}"
+        onerror="this.onerror=null;this.src='https://i.ibb.co/ZdbF6pS/plug.jpg'" />
     </a>
     <div class="card-info">
         <h3 class="card-info__title">${film.title}</h3>
