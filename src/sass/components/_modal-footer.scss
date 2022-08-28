@@ -1,6 +1,6 @@
-body.modalFooter-open {
-    overflow: hidden;
-}
+// body.footerModal {
+//     overflow: hidden;
+// }
 .footerModal {
   position: fixed;
   top: 0;
@@ -14,7 +14,10 @@ body.modalFooter-open {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  pointer-events: none;
+  overflow-x: hidden;
 }
+
 
 @media screen and (min-width: 320px) {
   .cardFront {
@@ -25,6 +28,9 @@ body.modalFooter-open {
   .footerHeadline {
     font-size: 30px;
   }
+  // .footerModal{
+  //   overflow: scroll;
+  // }
 }
 
 @media screen and (min-width: 768px) {
@@ -39,10 +45,10 @@ body.modalFooter-open {
 }
 
 @media screen and (min-width: 1280px) {
-  .cardFront {
-    width: 256px;
-    height: 256px;
-  }
+  // .cardFront {
+  //   width: 256px;
+  //   height: 256px;
+  // }
 
   .footerHeadline {
     font-size: 50px;
@@ -70,10 +76,13 @@ body.modalFooter-open {
   margin: 0;
   padding-left: 0;
   width: 90%;
+  //column-count: 3;
   gap: 40px;
+  list-style: none;
 }
 
 .teamName,
+.teamRoles,
 .city {
   color: var(--secondary-text-modal-color);
   justify-content: center;
@@ -81,8 +90,10 @@ body.modalFooter-open {
   display: flex;
 }
 
-.teamName {
+.teamName,
+.teamRoles {
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .cardFront {
@@ -92,6 +103,9 @@ body.modalFooter-open {
   object-fit: cover;
 
   background-color: var(--dark-theme-text-color);
+}
+.cardRear {
+  padding: 20px 10px 20px 10px;
 }
 
 .is-hidden {

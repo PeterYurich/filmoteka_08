@@ -4,7 +4,7 @@ const refsTeam = {
     closeModalBtnTeam: document.querySelector('[data-modal-close-team]'),
     modalTeam: document.querySelector('[data-modal-team]'),
 };
-
+console.log(refsTeam.openModalBtnTeam);
 refsTeam.openModalBtnTeam.addEventListener('click', onOpenModalTeam);
 refsTeam.closeModalBtnTeam.addEventListener('click', onCloseModalTeam);
 refsTeam.modalTeam.addEventListener('click', footerModalClickTeam);
