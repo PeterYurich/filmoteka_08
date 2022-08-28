@@ -1,5 +1,8 @@
 function modalMovieMarkup(film) {
-    return `
+  return `
+      <div class="modal">
+        <button type="button" class="modal__close-btn" data-modal-close>
+        </button>
         <img src="https://image.tmdb.org/t/p/w500${film.posterPath}" class="modal__img" alt="${film.originalTitle}">
         <div class="modal__overview-wrapper">
             <h2 class="modal__title">${film.title}</h2>
@@ -43,7 +46,9 @@ function modalMovieMarkup(film) {
                 <button type="button" class="modal__btn btn-add-to-watched">add to watched</button>
                 <button type="button" class="modal__btn btn-add-to-queue">add to queue</button>
             </div>
+            <div class="id" hidden>${film.id}</div>
         </div>
+ </div>
 `;
 }
 
