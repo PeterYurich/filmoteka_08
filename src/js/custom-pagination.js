@@ -1,4 +1,5 @@
 // const { Pagination } = require("tui-pagination");
+import { TheMovieDb } from './fetch';
 
 const list_items = [
   'Film 1',
@@ -26,10 +27,23 @@ const list_items = [
 const list_element = document.getElementById('list');
 const paginations_element = document.getElementById('pagination');
 
+const fetch = new TheMovieDb();
+
 let current_page = 1;
 let rows = 5;
 
+function setupPagination(items, wrapper, rows_per_page) {
+  wrapper.innerHTML = '';
+  let page_count = Math.ceil(items.length / rows_per_page);
+
+  for (let i = 1; i < page_count + 1; i++) {
+    let btn = PaginationButton(i, items);
+    wrapper.appendChild(btn);
+  }
+}
+
 function DisplayList(items, wrapper, rows_per_page, page) {
+  //Функція для розмітки масиву та підв'язки до пагінації
   wrapper.innerHTML = '';
   page--;
   let start = rows_per_page * page;
@@ -49,16 +63,8 @@ function DisplayList(items, wrapper, rows_per_page, page) {
   }
 }
 
-function setupPagination(items, wrapper, rows_per_page) {
-  wrapper.innerHTML = '';
-  let page_count = Math.ceil(items.length / rows_per_page);
-
-  for (let i = 1; i < page_count + 1; i++) {
-    let btn = PaginationButton(i, items);
-    wrapper.appendChild(btn);
-  }
-}
 function PaginationButton(page, items) {
+  //функція додає кнопки та вішає слухача подій
   let button = document.createElement('button');
   button.innerText = page;
 
