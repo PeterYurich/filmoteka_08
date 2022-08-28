@@ -6,7 +6,7 @@ const myLibrary = {
   queue: [],
 };
 
-export function onOpenOnClose(id) {
+export function onOpenOnClose(e,id) {
 
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
