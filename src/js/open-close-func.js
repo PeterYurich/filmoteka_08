@@ -6,16 +6,13 @@ const myLibrary = {
   queue: [],
 };
 
-export function onOpenOnClose(e, temp) {
-  const grid = document.querySelector('.film-grid');
-
-  grid.addEventListener('click', () => onOpenModal(e));
+export function onOpenOnClose(id) {
 
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
   // ADD LOCAL STORAGE AND DEL=======////////
   function onAddToWatched(e) {
-    const idMovie = temp;
+    const idMovie = id;
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
 
     if (positionArray >= 0) {
@@ -33,7 +30,7 @@ export function onOpenOnClose(e, temp) {
   addToWatched.addEventListener('click', onAddToWatched);
 
   function onAddToQueue(e) {
-    const idMovie = temp;
+    const idMovie = id;
     const positionArray = myLibrary.queue.findIndex(item => item === idMovie);
 
     if (positionArray >= 0) {
