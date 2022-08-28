@@ -20,6 +20,7 @@ main .list .item:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 .pagenumbers button {
   width: 40px;
@@ -41,7 +42,7 @@ main .list .item:hover {
   background-color: #ff6b08;
   color: #ffffff;
 }
-.pagenumbers button.active {
+.btn-active {
   background-color: #ff6b08;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
   color: #ffffff;
