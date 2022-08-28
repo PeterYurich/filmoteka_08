@@ -15,7 +15,7 @@
   align-items: center;
   flex-direction: column;
   pointer-events: none;
-  overflow-x: hidden;
+  resize: none;
 }
 
 
@@ -60,6 +60,8 @@
   color: var(--dark-theme-text-color);
   margin: 0;
   margin-bottom: 40px;
+  margin-top: 10px;
+  
 
   color: var(--secondary-text-modal-color);
 
@@ -79,6 +81,7 @@
   //column-count: 3;
   gap: 40px;
   list-style: none;
+  overflow-x: hidden;
 }
 
 .teamName,
@@ -105,7 +108,7 @@
   background-color: var(--dark-theme-text-color);
 }
 .cardRear {
-  padding: 20px 10px 20px 10px;
+  padding: 10px 5px 10px 5px;
 }
 
 .is-hidden {
@@ -125,16 +128,16 @@
 }
 
 .modal__close-btn-team {
-  fill: var(--dark-theme-text-color);
+  color: var(--dark-theme-text-color);
   position: absolute;
-  top: 8px;
-  right: 8px;
-  margin-bottom: 8px;
+  top: 10px;
+  right: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border: none;
@@ -148,5 +151,5 @@
 
 .modal__close-btn:focus,
 .modal__close-btn:hover {
-  background-color: var(--secondary-text-modal-color);
+  background-color: var(--dark-theme-text-color);
 }
