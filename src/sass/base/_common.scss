@@ -7,13 +7,15 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
-    list-style: none;
 }
 
 body {
     font-family: var(--major-font-family);
     color: var(--primary-color);
     letter-spacing: 0.08em;
+
+    min-height: 100vh;
+
     position: relative;
 }
 
