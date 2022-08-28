@@ -7,14 +7,14 @@ const myLibrary = {
 };
 
 export function onOpenOnClose(e,id) {
-
+export function onOpenOnClose(e, id) {
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
   // ADD LOCAL STORAGE AND DEL=======////////
   function onAddToWatched(e) {
     const idMovie = id;
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
-
+    console.log('find');
     if (positionArray >= 0) {
       myLibrary.watched.splice(positionArray, 1);
       addToWatched.classList.remove('btn-remove');
