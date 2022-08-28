@@ -32,16 +32,6 @@ const fetch = new TheMovieDb();
 let current_page = 1;
 let rows = 5;
 
-function setupPagination(items, wrapper, rows_per_page) {
-  wrapper.innerHTML = '';
-  let page_count = Math.ceil(items.length / rows_per_page);
-
-  for (let i = 1; i < page_count + 1; i++) {
-    let btn = PaginationButton(i, items);
-    wrapper.appendChild(btn);
-  }
-}
-
 function DisplayList(items, wrapper, rows_per_page, page) {
   //Функція для розмітки масиву та підв'язки до пагінації
   wrapper.innerHTML = '';
@@ -60,6 +50,17 @@ function DisplayList(items, wrapper, rows_per_page, page) {
     item_element.innerText = item;
 
     wrapper.appendChild(item_element);
+  }
+}
+
+function setupPagination(items, wrapper, rows_per_page) {
+  //функція змінює нумерацію
+  wrapper.innerHTML = '';
+  let page_count = Math.ceil(items.length / rows_per_page);
+
+  for (let i = 1; i < page_count + 1; i++) {
+    let btn = PaginationButton(i, items);
+    wrapper.appendChild(btn);
   }
 }
 
