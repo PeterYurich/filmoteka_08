@@ -54,14 +54,14 @@
 
 .footerHeadline {
   display: inline;
-  color: var(--dark-theme-text-color);
+  //color: var(--dark-theme-text-color);
   margin: 0;
   margin-bottom: 40px;
+  margin-top: 20px;
 
 
 
   color: var(--secondary-text-modal-color);
-
   font-weight: 100;
   //font-size: 50px;
   line-height: 30px;
@@ -90,12 +90,14 @@
   display: flex;
 }
 
-.teamName,
+
 .teamRoles {
   font-size: 20px;
   margin-bottom: 10px;
 }
-
+.teamName{
+  margin-bottom: 10px;
+}
 .cardFront {
   border-top-left-radius: 60px;
   border-bottom-right-radius: 60px;
@@ -132,7 +134,7 @@
   flex-direction: column;
 
   .githab__icon {
-    fill: #fff;
+    fill: var(--dark-theme-text-color);
 
     &:hover {
       opacity: 0.5;
