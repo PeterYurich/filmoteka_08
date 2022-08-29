@@ -22,7 +22,7 @@ main .list .item:hover {
   align-items: center;
   margin-bottom: 40px;
 }
-.pagenumbers button {
+.page-button {
   width: 40px;
   height: 40px;
   appearance: none;
@@ -38,7 +38,7 @@ main .list .item:hover {
   text-shadow: 0px 0 px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0 px 4px rgba(0, 0, 0, 0.2);
 }
-.pagenumbers button:hover {
+.page-button:hover {
   background-color: #ff6b08;
   color: #ffffff;
 }
