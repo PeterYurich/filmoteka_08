@@ -7,15 +7,13 @@ const queue = document.querySelector('#queue')
 watched.addEventListener('click', loadWatchedMovies)
 queue.addEventListener('click', loadQueuedMovies)
 
-function loadWatchedMovies(e) {
+async function loadWatchedMovies(e) {
     e.preventDefault()
     let watchedMoviesIds = localStorage.getItem("watched")
     if (!watchedMoviesIds) {
         watchedMoviesIds = {}
     }
     else { watchedMoviesIds = JSON.parse(watchedMoviesIds) }
-    
-async function loadWatched() {
 
     try {
         console.log(watchedMoviesIds)
@@ -31,8 +29,7 @@ async function loadWatched() {
     } catch (error) {
         console.log(error)
     }
-}
-loadWatched()
+
 }
 
 function loadQueuedMovies(e) {
