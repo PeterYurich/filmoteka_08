@@ -1,1 +1,0 @@
-{"mappings":"oeAAAA,EAAA,S","sources":["src/my_library.js"],"sourcesContent":["import \"./js/modal-footer-window\"\nimport \"./js/loader\"\nimport \"./js/open-modal-window\"\n"],"names":["parcelRequire"],"version":3,"file":"my_library.65a62ba6.js.map"}
