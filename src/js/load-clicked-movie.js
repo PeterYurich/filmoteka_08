@@ -1,4 +1,4 @@
-import { getTheMoviesTargetInfo } from './get-target-movies';
+import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { modalMovieMarkup } from './modal-movie-markup';
 import { addToWanthedAddtoQuequeCloseModal } from './add-to-localstorage-close-btn';
 import { onOpenModal } from './open-close-movie-modal';

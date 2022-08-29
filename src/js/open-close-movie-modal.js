@@ -25,6 +25,7 @@ function onBackdropClick(e) {
     onCloseModal();
   }
 }
+
 function onEscClose(e) {
   if (e.key === 'Escape') {
     onCloseModal();

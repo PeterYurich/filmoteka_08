@@ -1,6 +1,6 @@
-import { oneCardMarkup } from './oneCardMarkup';
+import { oneCardMarkup } from './one-card-markup';
 import { TheMovieDb } from './fetch';
-import { getTheMoviesTargetInfo } from './get-target-movies';
+import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from './loader';
 import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
 

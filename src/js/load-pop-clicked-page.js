@@ -1,13 +1,15 @@
 import { TheMovieDb } from "./fetch.js"
-import { oneCardMarkup } from './oneCardMarkup';
-import { getTheMoviesTargetInfo } from './get-target-movies';
-import { makePopPaginationMarkup } from './make-pop-pagination-markup';
+import { oneCardMarkup } from './one-card-markup';
+import { getTheMoviesTargetInfo } from './get-movies-target-info';
+import { makePopPaginationMarkup, paginationWrapper } from './make-pop-pagination-markup';
 
 async function loadPopClickedPage(e) {
     e.preventDefault();
 
     const clickedPage = e.target.textContent;
     const fetchMovies = new TheMovieDb()
+
+    paginationWrapper.innerHTML = '';
 
     try {
         const ApiReply = await fetchMovies.fetchPopularMovies(clickedPage);
