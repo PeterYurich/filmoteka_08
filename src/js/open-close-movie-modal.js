@@ -1,5 +1,3 @@
-import { loadClickedMovies } from './load-clicked-movie';
-
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
@@ -10,25 +8,26 @@ const refs = {
 refs.modal.addEventListener('click', onBackdropClick);
 window.addEventListener('keydown', onEscClose);
 
-export function onOpenModal() {
+export function showModalMovieWindow() {
+  refs.body.classList.add('overflow');
   window.addEventListener('keydown', onEscClose);
   refs.modal.classList.remove('is-hidden');
-  refs.body.classList.add('overflow-hidden');
 }
 
-export function onCloseModal() {
+export function hideModalMovieWindow() {
+  refs.body.classList.remove('overflow');
   window.removeEventListener('keydown', onEscClose);
   refs.modal.classList.add('is-hidden');
-  refs.body.classList.remove('overflow-hidden');
 }
 
 function onBackdropClick(e) {
   if (e.currentTarget === e.target) {
-    onCloseModal();
+    hideModalMovieWindow();
   }
 }
+
 function onEscClose(e) {
   if (e.key === 'Escape') {
-    onCloseModal();
+    hideModalMovieWindow();
   }
 }
