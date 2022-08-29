@@ -45,12 +45,10 @@ export function addToWatchedAddToQueueCloseModal(id) {
       myLibrary.queue.splice(positionArray, 1);
       addToQueue.classList.remove('btn-remove');
       addToQueue.textContent = 'Add to queue';
-      console.log('add to queue net ese v ls');
     } else {
       myLibrary.queue.push(idMovie);
       addToQueue.classList.add('btn-remove');
       addToQueue.textContent = 'Remove queue';
-      console.log('dobavljaet v massiv queue');
     }
     localStorage.setItem('queue', JSON.stringify(myLibrary.queue));
   }
