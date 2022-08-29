@@ -7,6 +7,7 @@ function makeRequestedPaginationMarkup(ApiReply) {
     const pageAmount = ApiReply.total_pages;
     const currentPage = ApiReply.page
 
+
     // початок сторінок
     if (currentPage === 1) {
         for (let i = currentPage; i < currentPage + 5; i++) {
@@ -32,6 +33,17 @@ function makeRequestedPaginationMarkup(ApiReply) {
     // середина сторінок (за замовчуванням)
     if (currentPage >= 2 && currentPage <= pageAmount - 3) {
         for (let i = currentPage - 1; i < currentPage + 4; i++) {
+            paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${i}</button>`)
+        }
+    }
+
+    // якщо мало
+    if (pageAmount === 1) {
+        paginationWrapper.innerHTML = '';
+    } else if (pageAmount >= 2 && pageAmount <= 10) {
+        paginationWrapper.innerHTML = '';
+
+        for (let i = 1; i < pageAmount; i++) {
             paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${i}</button>`)
         }
     }

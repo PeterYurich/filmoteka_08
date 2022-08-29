@@ -21,6 +21,9 @@ async function loadRequestedMovies(e) {
     try {
         const ApiReply = await fetchMovies.fetchRequestedMovies(query, page);
         const foundMovies = ApiReply.results;
+        if (foundMovies.length === 0) {
+            alert(`the film "${query} is not exist`)
+        }
         const foundMoviesIds = foundMovies.map(film => film.id);
         const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
