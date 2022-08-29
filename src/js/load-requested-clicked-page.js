@@ -2,7 +2,7 @@ import { oneCardMarkup } from './one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from './loader';
-import { makeRequestedPaginationMarkup } from './make-requested-pagination-markup';
+import { makeRequestedPaginationMarkup, paginationWrapper } from './make-requested-pagination-markup';
 
 
 async function loadRequestedClickedPage(e) {
@@ -12,7 +12,7 @@ async function loadRequestedClickedPage(e) {
     const fetchMovies = new TheMovieDb();
 
     const containerMainPage = document.querySelector('.film-grid');
-    containerMainPage.innerHTML = '';
+    paginationWrapper.innerHTML = '';
     showLoader();
 
     inputEl = document.querySelector('.input');
@@ -26,7 +26,7 @@ async function loadRequestedClickedPage(e) {
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
-        const markup = await filmsToRender.map(film => {
+        const markup = filmsToRender.map(film => {
             return oneCardMarkup(film);
         }).join('');
 

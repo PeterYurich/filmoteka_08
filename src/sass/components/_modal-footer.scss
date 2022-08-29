@@ -1,6 +1,3 @@
-// body.footerModal {
-//     overflow: hidden;
-// }
 .footerModal {
   position: fixed;
   top: 0;
@@ -8,7 +5,6 @@
   left: 0;
   display: flex;
   background-color: var(--background-color_modal-footer);
-  //background-position: no-repeat;
   background-size: contain;
   justify-content: center;
   align-items: center;
@@ -36,10 +32,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  // .cardFront {
-  //   width: 256px;
-  //   height: 256px;
-  // }
 
   .footerHeadline {
     font-size: 50px;
@@ -54,7 +46,6 @@
 
 .footerHeadline {
   display: inline;
-  //color: var(--dark-theme-text-color);
   margin: 0;
   margin-bottom: 40px;
   margin-top: 20px;
@@ -75,7 +66,6 @@
   margin: 0;
   padding-left: 0;
   width: 90%;
-  //column-count: 3;
   gap: 30px;
   list-style: none;
   overflow-x: hidden;
@@ -123,7 +113,6 @@
   .teamCard {
     list-style: none;
     height: 0px;
-    //position: relative;
   }
 }
 

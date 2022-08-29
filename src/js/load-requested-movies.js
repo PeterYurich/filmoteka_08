@@ -2,7 +2,7 @@ import { oneCardMarkup } from './one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from './loader';
-import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
+import {makeRequestedPaginationMarkup, paginationWrapper} from './make-requested-pagination-markup'
 import Notiflix from 'notiflix';
 
 const fetchMovies = new TheMovieDb();
@@ -12,7 +12,7 @@ const page = 1
 async function loadRequestedMovies(e) {
     e.preventDefault();
     const containerMainPage = document.querySelector('.film-grid');
-    containerMainPage.innerHTML = '';
+    paginationWrapper.innerHTML = '';
     showLoader();
 
     inputEl = document.querySelector('.input');

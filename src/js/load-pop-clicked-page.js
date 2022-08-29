@@ -7,9 +7,9 @@ async function loadPopClickedPage(e) {
     e.preventDefault();
 
     const clickedPage = e.target.textContent;
-    const fetchMovies = new TheMovieDb()
-
     paginationWrapper.innerHTML = '';
+    
+    const fetchMovies = new TheMovieDb()
 
     try {
         const ApiReply = await fetchMovies.fetchPopularMovies(clickedPage);
