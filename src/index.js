@@ -2,9 +2,11 @@ import './js/loader';
 import './js/load-pop-movies';
 import './js/load-requested-movies';
 
+
+import './js/open-close-movie-modal';
+import './js/load-clicked-movie';
 import './js/open-modal-window';
 import './js/modal-footer-window';
-import './js/load-clicked-movie';
 
 class Asd {
     constructor({a}) {
@@ -17,3 +19,4 @@ class Asd {
 const df = 5
 
 const qwe = new Asd({a: df})
+
