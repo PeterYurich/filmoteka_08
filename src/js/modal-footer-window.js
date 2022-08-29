@@ -14,13 +14,13 @@ function onOpenModalTeam(e) {
   e.preventDefault();
   window.addEventListener('keydown', onEscCloseTeam);
   refsTeam.modalTeam.classList.remove('is-hidden');
-  refsTeam.body.classList.add('body-hiden');
+  refsTeam.body.classList.add('hidden');
 }
 
 function onCloseModalTeam() {
   window.removeEventListener('keydown', onEscCloseTeam);
   refsTeam.modalTeam.classList.add('is-hidden');
-  refsTeam.body.classList.remove('body-hiden');
+  refsTeam.body.classList.remove('hidden');
 }
 
 function footerModalClickTeam(e) {
