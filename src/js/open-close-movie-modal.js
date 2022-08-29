@@ -8,13 +8,13 @@ const refs = {
 refs.modal.addEventListener('click', onBackdropClick);
 window.addEventListener('keydown', onEscClose);
 
-export function onOpenModal(e) {
+export function showModalMovieWindow() {
   refs.body.classList.add('overflow');
   window.addEventListener('keydown', onEscClose);
   refs.modal.classList.remove('is-hidden');
 }
 
-export function onCloseModal() {
+export function hideModalMovieWindow() {
   refs.body.classList.remove('overflow');
   window.removeEventListener('keydown', onEscClose);
   refs.modal.classList.add('is-hidden');
@@ -22,12 +22,12 @@ export function onCloseModal() {
 
 function onBackdropClick(e) {
   if (e.currentTarget === e.target) {
-    onCloseModal();
+    hideModalMovieWindow();
   }
 }
 
 function onEscClose(e) {
   if (e.key === 'Escape') {
-    onCloseModal();
+    hideModalMovieWindow();
   }
 }
