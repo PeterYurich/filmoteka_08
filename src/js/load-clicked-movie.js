@@ -21,9 +21,9 @@ async function loadClickedMovies(e) {
     const id = e.target.dataset.id;
     arrayId.push(id);
 
-    const FilmsToRender = await getTheMoviesTargetInfo(arrayId);
+    const filmsToRender = await getTheMoviesTargetInfo(arrayId);
 
-    const markup = await FilmsToRender.map(film => {
+    const markup = await filmsToRender.map(film => {
       return modalMovieMarkup(film);
     }).join('');
     containerMovie.innerHTML = markup;
