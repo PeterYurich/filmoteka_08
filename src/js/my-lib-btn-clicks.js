@@ -4,6 +4,7 @@ import { getTheMoviesTargetInfo } from "./get-movies-target-info"
 const watched = document.querySelector('#watched')
 const queue = document.querySelector('#queue')
 
+
 watched.addEventListener('click', loadWatchedMovies)
 queue.addEventListener('click', loadQueuedMovies)
 
@@ -23,6 +24,8 @@ async function loadWatchedMovies() {
     } catch (error) {
         console.log(error)
     }
+    watched.classList.add('active-btn')
+    queue.classList.remove('active-btn')
 }
 
 async function loadQueuedMovies() {
@@ -41,6 +44,8 @@ async function loadQueuedMovies() {
     } catch (error) {
         console.log(error)
     }
+    watched.classList.remove('active-btn')
+    queue.classList.add('active-btn')
 }
 
 // function loadQueuedMovies(e) {
