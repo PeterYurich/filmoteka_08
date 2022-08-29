@@ -53,15 +53,15 @@ export class TheMovieDb {
         }
     }
 
-    get query() {
-        return this.searchQuery;
-    }
+    // get query() {
+    //     return this.searchQuery;
+    // }
 
-    set query(newQuery) {
-        this.searchQuery = newQuery;
-    }
+    // set query(newQuery) {
+    //     this.searchQuery = newQuery;
+    // }
 
-    resetPage() {
-        this.page = 1;
-    }
+    // resetPage() {
+    //     this.page = 1;
+    // }
 }
