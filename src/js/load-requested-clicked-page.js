@@ -2,14 +2,15 @@ import { oneCardMarkup } from './oneCardMarkup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-target-movies';
 import { showLoader, hideLoader } from './loader';
-import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
+import { makeRequestedPaginationMarkup } from './make-requested-pagination-markup';
 
-const fetchMovies = new TheMovieDb();
 
-const page = 1
-
-async function loadRequestedMovies(e) {
+async function loadRequestedClickedPage(e) {
     e.preventDefault();
+
+    const clickedPage = e.target.textContent;
+    const fetchMovies = new TheMovieDb();
+
     const containerMainPage = document.querySelector('.film-grid');
     containerMainPage.innerHTML = '';
     showLoader();
@@ -19,7 +20,8 @@ async function loadRequestedMovies(e) {
     const query = inputEl.value;
 
     try {
-        const ApiReply = await fetchMovies.fetchRequestedMovies(query, page);
+        const ApiReply = await fetchMovies.fetchRequestedMovies(query, clickedPage);
+// console.log(ApiReply)
         const foundMovies = ApiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
@@ -30,11 +32,12 @@ async function loadRequestedMovies(e) {
 
         hideLoader();
         containerMainPage.innerHTML = markup;
+
         makeRequestedPaginationMarkup(ApiReply)
+        // addRequestListener()
     } catch (error) {
         console.log(error);
     }
 }
 
-const form = document.querySelector('.search-form');
-form.addEventListener('submit', loadRequestedMovies);
+export { loadRequestedClickedPage }
