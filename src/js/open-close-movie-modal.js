@@ -19,7 +19,7 @@ export function hideModalMovieWindow() {
   // if (url.indexOf('https://peteryurich.github.io/filmoteka_08/my_library.html') != -1) {
   //   window.location.reload(true);
   // }
-  if (url.indexOf('http://localhost:1234/index.html') != -1) {
+  if (url.indexOf('http://localhost:1234/my_library.html') != -1) {
     window.location.reload(true);
   }
   refs.body.classList.remove('overflow');
