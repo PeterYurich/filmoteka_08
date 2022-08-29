@@ -2,15 +2,15 @@ import { oneCardMarkup } from './one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from './loader';
-import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
-import Notiflix from 'notiflix';
+import { makeRequestedPaginationMarkup } from './make-requested-pagination-markup';
 
-const fetchMovies = new TheMovieDb();
 
-const page = 1
-
-async function loadRequestedMovies(e) {
+async function loadRequestedClickedPage(e) {
     e.preventDefault();
+
+    const clickedPage = e.target.textContent;
+    const fetchMovies = new TheMovieDb();
+
     const containerMainPage = document.querySelector('.film-grid');
     containerMainPage.innerHTML = '';
     showLoader();
@@ -20,27 +20,24 @@ async function loadRequestedMovies(e) {
     const query = inputEl.value;
 
     try {
-        const ApiReply = await fetchMovies.fetchRequestedMovies(query, page);
-        
-        Notiflix.Notify.success(`${ApiReply.total_results} movies are found` )
+        const ApiReply = await fetchMovies.fetchRequestedMovies(query, clickedPage);
+// console.log(ApiReply)
         const foundMovies = ApiReply.results;
-        if (foundMovies.length === 0) {
-            alert(`the film "${query} is not exist`)
-        }
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
-        const markup = filmsToRender.map(film => {
+        const markup = await filmsToRender.map(film => {
             return oneCardMarkup(film);
         }).join('');
 
         hideLoader();
         containerMainPage.innerHTML = markup;
+
         makeRequestedPaginationMarkup(ApiReply)
+        // addRequestListener()
     } catch (error) {
         console.log(error);
     }
 }
 
-const form = document.querySelector('.search-form');
-form.addEventListener('submit', loadRequestedMovies);
+export { loadRequestedClickedPage }

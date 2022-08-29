@@ -5,18 +5,17 @@ export class TheMovieDb {
         this.BASE_URL = 'https://api.themoviedb.org/3';
         this.API_KEY = '298b3ba9f2c0a557e7d7fc47b0ac595b';
         this.lang = 'en-US';
-        this.page = 1;
+        // this.page = page;
         this.searchQuery = '';
+        this.mediaType = 'movie';
+        this.timeWindow = 'day';
     }
 
-    async fetchPopularMovies(mediaTypes, timeWindow) {
-        const url = `${this.BASE_URL}/trending/${mediaTypes}/${timeWindow}?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}&include_adult=false`;
-
+    async fetchPopularMovies(page) {
+        const url = `${this.BASE_URL}/trending/${this.mediaType}/${this.timeWindow}?api_key=${this.API_KEY}&page=${page}&language=${this.lang}&include_adult=false`;
         try {
             const response = await axios.get(url);
-            const data = await response.data;
-            console.log(data)
-            return data;
+            return response.data;
         } catch (error) {
             console.log(error);
         }
@@ -44,8 +43,8 @@ export class TheMovieDb {
         }
     }
 
-    async fetchRequestedMovies(query, mediaType) {
-        const url = `${this.BASE_URL}/search/${mediaType}?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}&include_adult=false&query=${query}`
+    async fetchRequestedMovies(query, page) {
+        const url = `${this.BASE_URL}/search/${this.mediaType}?api_key=${this.API_KEY}&page=${page}&language=${this.lang}&include_adult=false&query=${query}`
         try {
             const response = await axios.get(url)
             return response.data
@@ -54,18 +53,15 @@ export class TheMovieDb {
         }
     }
 
-    increasePage() {
-        this.page += 1;
-    }
-    get query() {
-        return this.searchQuery;
-    }
+    // get query() {
+    //     return this.searchQuery;
+    // }
 
-    set query(newQuery) {
-        this.searchQuery = newQuery;
-    }
+    // set query(newQuery) {
+    //     this.searchQuery = newQuery;
+    // }
 
-    resetPage() {
-        this.page = 1;
-    }
+    // resetPage() {
+    //     this.page = 1;
+    // }
 }
