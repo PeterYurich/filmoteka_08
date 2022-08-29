@@ -1,29 +1,26 @@
-body.modalFooter-open {
-    overflow: hidden;
-}
+// body.footerModal {
+//     overflow: hidden;
+// }
 .footerModal {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
   display: flex;
-  width: 100%;
-  height: 100%;
   background-color: var(--background-color_modal-footer);
-  background-position: no-repeat;
+  //background-position: no-repeat;
   background-size: contain;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 99;
 }
+
 
 @media screen and (min-width: 320px) {
   .cardFront {
-    width: 153px;
-    height: 153px;
-  }
-
-  .footerHeadline {
-    font-size: 30px;
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -34,29 +31,37 @@ body.modalFooter-open {
   }
 
   .footerHeadline {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .cardFront {
-    width: 256px;
-    height: 256px;
-  }
+  // .cardFront {
+  //   width: 256px;
+  //   height: 256px;
+  // }
 
   .footerHeadline {
     font-size: 50px;
   }
 }
 
+@media screen and (max-width: 320px) {
+  .teamCard {
+    min-width: 300px;
+  }
+}
+
 .footerHeadline {
   display: inline;
-  color: var(--dark-theme-text-color);
+  //color: var(--dark-theme-text-color);
   margin: 0;
   margin-bottom: 40px;
+  margin-top: 20px;
+
+
 
   color: var(--secondary-text-modal-color);
-
   font-weight: 100;
   //font-size: 50px;
   line-height: 30px;
@@ -70,10 +75,14 @@ body.modalFooter-open {
   margin: 0;
   padding-left: 0;
   width: 90%;
-  gap: 40px;
+  //column-count: 3;
+  gap: 30px;
+  list-style: none;
+  overflow-x: hidden;
 }
 
 .teamName,
+.teamRoles,
 .city {
   color: var(--secondary-text-modal-color);
   justify-content: center;
@@ -81,10 +90,14 @@ body.modalFooter-open {
   display: flex;
 }
 
-.teamName {
-  font-size: 20px;
-}
 
+.teamRoles {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.teamName{
+  margin-bottom: 10px;
+}
 .cardFront {
   border-top-left-radius: 60px;
   border-bottom-right-radius: 60px;
@@ -92,6 +105,10 @@ body.modalFooter-open {
   object-fit: cover;
 
   background-color: var(--dark-theme-text-color);
+}
+
+.cardRear {
+  padding: 10px 5px 10px 5px;
 }
 
 .is-hidden {
@@ -110,29 +127,44 @@ body.modalFooter-open {
   }
 }
 
+.teamCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .githab__icon {
+    fill: var(--dark-theme-text-color);
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
 .modal__close-btn-team {
-  fill: var(--dark-theme-text-color);
   position: absolute;
-  top: 8px;
-  right: 8px;
-  margin-bottom: 8px;
+  top: 10px;
+  right: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border: none;
-  background-color: transparent;
   padding: 0;
-  cursor: pointer;
-  transition: background-color 250ms var(--timing-function);
   background-image: url(/src/images/close-btn.svg);
   background-size: contain;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
-.modal__close-btn:focus,
-.modal__close-btn:hover {
-  background-color: var(--secondary-text-modal-color);
+.body-hiden {
+  overflow: hidden;
 }
