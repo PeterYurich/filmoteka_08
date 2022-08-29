@@ -5,12 +5,23 @@ const myLibrary = {
   queue: [],
 };
 
+const localStorageWatched = JSON.parse(localStorage.getItem('watched'));
+if (localStorageWatched !== null) {
+  myLibrary.watched.push(...localStorageWatched);
+}
+
+const localStorageQueue = JSON.parse(localStorage.getItem('queue'));
+if (localStorageQueue !== null) {
+  myLibrary.queue.push(...localStorageQueue);
+}
+
 export function addToWatchedAddToQueueCloseModal(id) {
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
 
   function onAddToWatched() {
     const idMovie = id;
+
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
 
     if (positionArray >= 0) {
@@ -34,10 +45,12 @@ export function addToWatchedAddToQueueCloseModal(id) {
       myLibrary.queue.splice(positionArray, 1);
       addToQueue.classList.remove('btn-remove');
       addToQueue.textContent = 'Add to queue';
+      console.log('add to queue net ese v ls');
     } else {
       myLibrary.queue.push(idMovie);
       addToQueue.classList.add('btn-remove');
       addToQueue.textContent = 'Remove queue';
+      console.log('dobavljaet v massiv queue');
     }
     localStorage.setItem('queue', JSON.stringify(myLibrary.queue));
   }
