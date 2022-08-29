@@ -24,9 +24,9 @@ async function loadRequestedClickedPage(e) {
 // console.log(ApiReply)
         const foundMovies = ApiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
-        const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
+        const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
-        const markup = await FilmsToRender.map(film => {
+        const markup = await filmsToRender.map(film => {
             return oneCardMarkup(film);
         }).join('');
 

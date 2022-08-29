@@ -1,6 +1,6 @@
 function modalMovieMarkup(film) {
-  return `
-      <div class="modal">
+    return `
+    <div class="modal">
         <button type="button" class="modal__close-btn" data-modal-close>
         </button>
         <img src="https://image.tmdb.org/t/p/w500${film.posterPath}" class="modal__img" alt="${film.originalTitle}">
@@ -48,7 +48,7 @@ function modalMovieMarkup(film) {
             </div>
             <div class="id" hidden>${film.id}</div>
         </div>
- </div>
+    </div>
 `;
 }
 

@@ -7,7 +7,6 @@ function makeRequestedPaginationMarkup(ApiReply) {
     const pageAmount = ApiReply.total_pages;
     const currentPage = ApiReply.page
 
-
     // початок сторінок
     if (currentPage === 1) {
         for (let i = currentPage; i < currentPage + 5; i++) {
