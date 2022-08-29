@@ -12,7 +12,7 @@ export class TheMovieDb {
     }
 
     async fetchPopularMovies(page) {
-        const url = `${this.BASE_URL}/trending/${this.mediaType}/${this.timeWindow}?api_key=${this.API_KEY}&page=${page}&language=${this.lang}&include_adult=false`;
+        const url = `${this.BASE_URL}/trending/${this.mediaType}/${this.timeWindow}?api_key=${this.API_KEY}&page=${page}`;
         try {
             const response = await axios.get(url);
             return response.data;
