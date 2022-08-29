@@ -23,7 +23,7 @@ async function loadPopularMovies() {
             return { posterPath, title, genres, releaseData, rating }
         })
 
-        console.log(popFilmsInfo)
+        // console.log(popFilmsInfo)
 
         const markup = await popFilmsInfo.map(film => {
             return oneCardMarkup(film)
