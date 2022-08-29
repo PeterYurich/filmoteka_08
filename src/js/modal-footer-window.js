@@ -28,11 +28,13 @@ function footerModalClickTeam(e) {
     onCloseModalTeam();
   }
 }
+
 function onEscCloseTeam(e) {
   if (e.key === 'Escape') {
     onCloseModalTeam();
   }
 }
+
 // const refsTeam = {
 //     openModalBtnTeam: document.querySelector('[data-modal-open-team]'),
 //     closeModalBtnTeam: document.querySelector('[data-modal-close-team]'),
