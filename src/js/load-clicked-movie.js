@@ -1,5 +1,6 @@
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { modalMovieMarkup } from './modal-movie-markup';
+// import { addToWatchedAddToQueueCloseModal } from './add-to-localstorage-close-btn';
 import { addToWatchedAddToQueueCloseModal } from './add-to-localstorage-close-btn';
 import { showModalMovieWindow } from './open-close-movie-modal';
 import {
@@ -23,9 +24,11 @@ async function loadClickedMovies(e) {
 
     const filmsToRender = await getTheMoviesTargetInfo(arrayId);
 
-    const markup = await filmsToRender.map(film => {
-      return modalMovieMarkup(film);
-    }).join('');
+    const markup = await filmsToRender
+      .map(film => {
+        return modalMovieMarkup(film);
+      })
+      .join('');
     containerMovie.innerHTML = markup;
     showModalMovieWindow();
     addToWatchedAddToQueueCloseModal(id);
