@@ -5,6 +5,8 @@ import { showLoader, hideLoader } from './loader';
 import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
 import Notiflix from 'notiflix';
 
+const reguestMessage = document.querySelector('.alert');
+
 const fetchMovies = new TheMovieDb();
 
 const page = 1
@@ -25,7 +27,10 @@ async function loadRequestedMovies(e) {
         Notiflix.Notify.success(`${ApiReply.total_results} movies are found` )
         const foundMovies = ApiReply.results;
         if (foundMovies.length === 0) {
-            alert(`the film "${query} is not exist`)
+            reguestMessage.classList.remove('hide-load');
+        }
+        if (foundMovies.length !== 0) {
+            reguestMessage.classList.add('hide-load');
         }
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);

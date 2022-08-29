@@ -68,13 +68,24 @@
     display: flex;
 }
 
+.wrapper {
+    display: block;
+}
+
 .search {
     display: flex;
     justify-content: center;
 }
 
+.alert {
+    text-align: center;
+    color: #FF001B;
+    font-size: 4vw;
+    margin-top: 12px;
+}
+
 // mob responsive
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 319px) {
     .logo-icon {
         margin-right: 10px;
     }
@@ -97,7 +108,7 @@
 }
 
 // mob adaptive
-@media screen and (min-width: 321px) {
+@media screen and (min-width: 320px) {
     .nav-item:last-child {
         margin-left: 40px;
     }
@@ -144,6 +155,11 @@
 
     .logo-text {
         @include font(500, 30, 35)
+    }
+
+    .alert {
+        font-size: 15px;
+        margin-top: 15px;
     }
 }
 
