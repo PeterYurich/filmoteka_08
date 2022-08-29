@@ -5,27 +5,30 @@ import { makePopPaginationMarkup, paginationWrapper } from './make-pop-paginatio
 
 async function loadPopClickedPage(e) {
     e.preventDefault();
+    if (e.target.nodeName !== "BUTTON") { return }
+
+
+    paginationWrapper.innerHTML = '';
 
     const clickedPage = e.target.textContent;
-    paginationWrapper.innerHTML = '';
-    
-    const fetchMovies = new TheMovieDb()
+    const fetchMovies = new TheMovieDb(clickedPage)
+    // fetchMovies.page(clickedPage)
 
     try {
-        const ApiReply = await fetchMovies.fetchPopularMovies(clickedPage);
+        const apiReply = await fetchMovies.fetchPopularMovies();
 
-        const foundMovies = ApiReply.results;
+        const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
-        const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
+        const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
-        const markup = await FilmsToRender.map(film => {
+        const markup = filmsToRender.map(film => {
             return oneCardMarkup(film);
         }).join('');
 
         const containerMainPage = document.querySelector('.film-grid');
         containerMainPage.innerHTML = markup;
 
-        makePopPaginationMarkup(ApiReply);
+        makePopPaginationMarkup(apiReply);
 
     } catch (error) {
         console.log(error);

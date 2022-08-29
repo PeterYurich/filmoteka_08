@@ -2,10 +2,10 @@ import { loadRequestedClickedPage } from "./load-requested-clicked-page"
 
 const paginationWrapper = document.getElementById('pagination');
 
-function makeRequestedPaginationMarkup(ApiReply) {
+function makeRequestedPaginationMarkup(apiReply) {
     paginationWrapper.innerHTML = '';
-    const pageAmount = ApiReply.total_pages;
-    const currentPage = ApiReply.page
+    const pageAmount = apiReply.total_pages;
+    const currentPage = apiReply.page
 
     if (pageAmount === 0) { return }
 
@@ -52,7 +52,7 @@ function makeRequestedPaginationMarkup(ApiReply) {
     const buttons = document.querySelectorAll(".page-button")
 
     for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].textContent == ApiReply.page) {
+        if (buttons[i].textContent == apiReply.page) {
             //якщо поточна сторінка дорівнює конкретної сторінкі масиву
             buttons[i].classList.add("btn-active");
         }
