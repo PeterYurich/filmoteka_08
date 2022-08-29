@@ -15,6 +15,13 @@ export function showModalMovieWindow() {
 }
 
 export function hideModalMovieWindow() {
+  let url = window.location.href;
+  // if (url.indexOf('https://peteryurich.github.io/filmoteka_08/my_library.html') != -1) {
+  //   window.location.reload(true);
+  // }
+  if (url.indexOf('http://localhost:1234/index.html') != -1) {
+    window.location.reload(true);
+  }
   refs.body.classList.remove('overflow');
   window.removeEventListener('keydown', onEscClose);
   refs.modal.classList.add('is-hidden');
