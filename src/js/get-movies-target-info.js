@@ -5,13 +5,14 @@ const theMovieDb = new TheMovieDb
 async function getTheMoviesTargetInfo(filmIds) {
 
     try {
-        const targetMovies = []
-        for (let i = 0; i < filmIds.length; i += 1) {
-            const film = await theMovieDb.fetchMovieDetails(filmIds[i])
-            targetMovies.push(film)
-        }
-        // const selectedFilms = filmIds.map( async id => await theMovieDb.fetchMovieDetails(id))
-        //
+        // const targetMovies = []
+        // for (let i = 0; i < filmIds.length; i += 1) {
+        //     const film = await theMovieDb.fetchMovieDetails(filmIds[i])
+        //     targetMovies.push(film)
+        // }
+
+        const targetMoviesPromise = filmIds.map(id => theMovieDb.fetchMovieDetails(id))
+        const targetMovies = await Promise.all(targetMoviesPromise).then(res => res)
 
         const theMoviesTargetInfo = await targetMovies.map(film => {
             const genresArray = film.genres.map(item => item.name)

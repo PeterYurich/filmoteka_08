@@ -1,20 +1,20 @@
-main .list {
-  width: 100%;
-  max-width: 768px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  margin-top: 25px;
-}
-main .list .item {
-  padding: 15px;
-  border-bottom: 1px solid #ccc;
-}
-main .list .item:last-of-type {
-  border-bottom: none;
-}
-main .list .item:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
+// main .list {
+//   width: 100%;
+//   max-width: 768px;
+//   background-color: #fff;
+//   border: 1px solid #ccc;
+//   margin-top: 25px;
+// }
+// main .list .item {
+//   padding: 15px;
+//   border-bottom: 1px solid #ccc;
+// }
+// main .list .item:last-of-type {
+//   border-bottom: none;
+// }
+// main .list .item:hover {
+//   background: rgba(0, 0, 0, 0.05);
+// }
 .page-numbers {
   display: flex;
   flex-wrap: wrap;
@@ -46,4 +46,8 @@ main .list .item:hover {
   background-color: #ff6b08;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
   color: #ffffff;
+}
+
+.film-list-section {
+  padding-bottom: 60px;
 }

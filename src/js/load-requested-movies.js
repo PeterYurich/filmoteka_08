@@ -3,6 +3,7 @@ import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from './loader';
 import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
+import Notiflix from 'notiflix';
 
 const fetchMovies = new TheMovieDb();
 
@@ -20,6 +21,8 @@ async function loadRequestedMovies(e) {
 
     try {
         const ApiReply = await fetchMovies.fetchRequestedMovies(query, page);
+        
+        Notiflix.Notify.success(`${ApiReply.total_results} movies are found` )
         const foundMovies = ApiReply.results;
         if (foundMovies.length === 0) {
             alert(`the film "${query} is not exist`)
