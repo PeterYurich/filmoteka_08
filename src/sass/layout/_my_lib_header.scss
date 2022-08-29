@@ -49,6 +49,11 @@
     margin-right: auto;
    
 }
+.active-btn{
+background-color: var(--accent-color);
+transition-timing-function: var(--timing-function);
+transition-duration: var(--duration);
+}
 
 // mob responsive
 @media screen and (max-width: 320px) {
