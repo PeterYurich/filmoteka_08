@@ -1,20 +1,18 @@
-import { onOpenModal, onCloseModal } from './open-modal-window';
-import { loadClickedMovies } from './load-clicked-movie';
+import { hideModalMovieWindow } from './open-close-movie-modal';
 
 const myLibrary = {
   watched: [],
   queue: [],
 };
 
-export function onOpenOnClose(e,id) {
-export function onOpenOnClose(e, id) {
+export function addToWatchedAddToQueueCloseModal(id) {
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
-  // ADD LOCAL STORAGE AND DEL=======////////
-  function onAddToWatched(e) {
+
+  function onAddToWatched() {
     const idMovie = id;
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
-    console.log('find');
+
     if (positionArray >= 0) {
       myLibrary.watched.splice(positionArray, 1);
       addToWatched.classList.remove('btn-remove');
@@ -25,11 +23,10 @@ export function onOpenOnClose(e, id) {
       addToWatched.textContent = 'Remove watched';
     }
     localStorage.setItem('watched', JSON.stringify(myLibrary.watched));
-    // const xx = localStorage.getItem('watched');
   }
   addToWatched.addEventListener('click', onAddToWatched);
 
-  function onAddToQueue(e) {
+  function onAddToQueue() {
     const idMovie = id;
     const positionArray = myLibrary.queue.findIndex(item => item === idMovie);
 
@@ -47,5 +44,5 @@ export function onOpenOnClose(e, id) {
   addToQueue.addEventListener('click', onAddToQueue);
 
   const closeModalBtn = document.querySelector('[data-modal-close]');
-  closeModalBtn.addEventListener('click', () => onCloseModal());
+  closeModalBtn.addEventListener('click', hideModalMovieWindow);
 }

@@ -1,13 +1,18 @@
+import { TheMovieDb } from "./fetch.js"
 import { oneCardMarkup } from './one-card-markup';
-import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { makePopPaginationMarkup } from './make-pop-pagination-markup';
+import { makePopPaginationMarkup, paginationWrapper } from './make-pop-pagination-markup';
 
-const fetchMovies = new TheMovieDb()
+async function loadPopClickedPage(e) {
+    e.preventDefault();
 
-async function loadPopMovies() {
+    const clickedPage = e.target.textContent;
+    const fetchMovies = new TheMovieDb()
+
+    paginationWrapper.innerHTML = '';
+
     try {
-        const ApiReply = await fetchMovies.fetchPopularMovies("1");
+        const ApiReply = await fetchMovies.fetchPopularMovies(clickedPage);
 
         const foundMovies = ApiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
@@ -20,10 +25,11 @@ async function loadPopMovies() {
         const containerMainPage = document.querySelector('.film-grid');
         containerMainPage.innerHTML = markup;
 
-        makePopPaginationMarkup(ApiReply)
+        makePopPaginationMarkup(ApiReply);
+
     } catch (error) {
         console.log(error);
     }
 }
 
-loadPopMovies();
+export { loadPopClickedPage }

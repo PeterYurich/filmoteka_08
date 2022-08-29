@@ -1,26 +1,26 @@
-import { oneCardMarkup } from './oneCardMarkup'
-import { TheMovieDb } from "./fetch";
-import { getTheMoviesTargetInfo } from "./get-target-movies"
+import { oneCardMarkup } from './one-card-markup'
+import { getTheMoviesTargetInfo } from "./get-movies-target-info"
 
 const watched = document.querySelector('#watched')
 const queue = document.querySelector('#queue')
 
-watched.addEventListener('click', setItemWatched)
-queue.addEventListener('click', setItemQueue)
+watched.addEventListener('click', loadWatchedMovies)
+queue.addEventListener('click', loadQueuedMovies)
 
-function setItemWatched(e) {
+function loadWatchedMovies(e) {
     e.preventDefault()
-    let getWatchedFilm = localStorage.getItem("watched")
-    if (!getWatchedFilm) {
-        getWatchedFilm = {}
+    let watchedMoviesIds = localStorage.getItem("watched")
+    if (!watchedMoviesIds) {
+        watchedMoviesIds = {}
     }
-    else { getWatchedFilm = JSON.parse(getWatchedFilm) }
+    else { watchedMoviesIds = JSON.parse(watchedMoviesIds) }
     
-async function loadWatchedMovies() {
+async function loadWatched() {
 
     try {
-        const foundMoviesIds = getWatchedFilm.map(film => film.id)
-        const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds)
+        console.log(watchedMoviesIds)
+        // console.log(watchedMoviesIds)
+        const FilmsToRender = await getTheMoviesTargetInfo(watchedMoviesIds)
 
         const markup = await FilmsToRender.map(film => {
             return oneCardMarkup(film)
@@ -32,10 +32,10 @@ async function loadWatchedMovies() {
         console.log(error)
     }
 }
-loadWatchedMovies()
+loadWatched()
 }
 
-function setItemQueue(e) {
+function loadQueuedMovies(e) {
     e.preventDefault()
     let getQueueFilm = localStorage.getItem("watched")
     if (!getQueueFilm) {
@@ -43,7 +43,7 @@ function setItemQueue(e) {
     }
     else { getQueueFilm = JSON.parse(getQueueFilm) }
     
-    async function loadQueueMovies() {
+    async function loadQueue() {
 
     try {
         const foundMoviesIds = getQueueFilm.map(film => film.id)
@@ -59,5 +59,5 @@ function setItemQueue(e) {
         console.log(error)
     }
 }
-loadQueueMovies()
+loadQueue()
 }
