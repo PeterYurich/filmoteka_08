@@ -1,15 +1,15 @@
-import { onOpenModal, onCloseModal } from './open-close-movie-modal';
+import { hideModalMovieWindow } from './open-close-movie-modal';
 
 const myLibrary = {
   watched: [],
   queue: [],
 };
 
-export function addToWanthedAddtoQuequeCloseModal(e, id) {
+export function addToWatchedAddToQueueCloseModal(id) {
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
 
-  function onAddToWatched(e) {
+  function onAddToWatched() {
     const idMovie = id;
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
 
@@ -26,7 +26,7 @@ export function addToWanthedAddtoQuequeCloseModal(e, id) {
   }
   addToWatched.addEventListener('click', onAddToWatched);
 
-  function onAddToQueue(e) {
+  function onAddToQueue() {
     const idMovie = id;
     const positionArray = myLibrary.queue.findIndex(item => item === idMovie);
 
@@ -44,5 +44,5 @@ export function addToWanthedAddtoQuequeCloseModal(e, id) {
   addToQueue.addEventListener('click', onAddToQueue);
 
   const closeModalBtn = document.querySelector('[data-modal-close]');
-  closeModalBtn.addEventListener('click', () => onCloseModal());
+  closeModalBtn.addEventListener('click', hideModalMovieWindow);
 }

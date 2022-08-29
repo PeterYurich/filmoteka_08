@@ -1,10 +1,10 @@
-import { getTheMoviesTargetInfo } from './get-target-movies';
+import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { modalMovieMarkup } from './modal-movie-markup';
-import { addToWanthedAddtoQuequeCloseModal } from './add-to-localstorage-close-btn';
-import { onOpenModal } from './open-close-movie-modal';
+import { addToWatchedAddToQueueCloseModal } from './add-to-localstorage-close-btn';
+import { showModalMovieWindow } from './open-close-movie-modal';
 import {
-  checkButtonAddtoWatched,
-  checkButtonAddtoQueue,
+  checkButtonAddToWatched,
+  checkButtonAddToQueue,
 } from './check-buttons-in-movie-modal';
 
 async function loadClickedMovies(e) {
@@ -27,11 +27,10 @@ async function loadClickedMovies(e) {
       return modalMovieMarkup(film);
     }).join('');
     containerMovie.innerHTML = markup;
-    onOpenModal();
-    addToWanthedAddtoQuequeCloseModal(e, id);
-    // onOpenModal();
-    checkButtonAddtoWatched(e);
-    checkButtonAddtoQueue(e);
+    showModalMovieWindow();
+    addToWatchedAddToQueueCloseModal(id);
+    checkButtonAddToWatched(e);
+    checkButtonAddToQueue(e);
   } catch (error) {
     console.log(error);
   }

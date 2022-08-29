@@ -1,5 +1,4 @@
 import { loadPopClickedPage } from "./load-pop-clicked-page"
-import { loadRequestedClickedPage } from "./load-requested-clicked-page"
 const paginationWrapper = document.getElementById('pagination');
 
 function makePopPaginationMarkup(ApiReply) {
@@ -54,4 +53,4 @@ function makePopPaginationMarkup(ApiReply) {
 
 
 
-export { makePopPaginationMarkup}
+export { makePopPaginationMarkup, paginationWrapper }

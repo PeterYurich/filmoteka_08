@@ -1,4 +1,4 @@
-export function checkButtonAddtoWatched(e) {
+export function checkButtonAddToWatched(e) {
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const localStorageWathed = JSON.parse(localStorage.getItem('watched'));
   const idMovie = e.target.dataset.id;
@@ -11,7 +11,7 @@ export function checkButtonAddtoWatched(e) {
   }
 }
 
-export function checkButtonAddtoQueue(e) {
+export function checkButtonAddToQueue(e) {
   const addToQueue = document.querySelector('.btn-add-to-queue');
   const localStorageQueue = JSON.parse(localStorage.getItem('queue'));
   const idMovie = e.target.dataset.id;

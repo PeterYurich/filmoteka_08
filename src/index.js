@@ -5,7 +5,6 @@ import './js/load-requested-movies';
 
 import './js/open-close-movie-modal';
 import './js/load-clicked-movie';
-import './js/open-modal-window';
 import './js/modal-footer-window';
 
 class Asd {
