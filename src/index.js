@@ -18,3 +18,5 @@ class Asd {
 const df = 5
 
 const qwe = new Asd({a: df})
+
+import "./js/(load-popular-movies)"

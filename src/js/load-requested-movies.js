@@ -30,7 +30,7 @@ async function loadRequestedMovies(e) {
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
-        const markup = await filmsToRender.map(film => {
+        const markup = filmsToRender.map(film => {
             return oneCardMarkup(film);
         }).join('');
 
