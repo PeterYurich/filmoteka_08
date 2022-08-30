@@ -23,11 +23,12 @@ function onCloseModalTeam() {
   refsTeam.body.classList.remove('hidden');
 }
 
-function footerModalClickTeam(e) {
-  if (e.currentTarget === e.target) {
-    onCloseModalTeam();
-  }
-}
+
+// function footerModalClickTeam(e) {
+//   if (e.currentTarget === e.target) {
+//     onCloseModalTeam();
+//   }
+// }
 
 function onEscCloseTeam(e) {
   if (e.key === 'Escape') {
