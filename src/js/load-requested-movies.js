@@ -2,6 +2,15 @@ import { oneCardMarkup } from './one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from './loader';
+import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
+import Notiflix from 'notiflix';
+
+const reguestMessage = document.querySelector('.alert');
+
+const fetchMovies = new TheMovieDb();
+
+const page = 1
+
 import {makeRequestedPaginationMarkup, paginationWrapper} from './make-requested-pagination-markup'
 
 async function loadRequestedMovies(e) {
@@ -22,7 +31,10 @@ async function loadRequestedMovies(e) {
         
         const foundMovies = apiReply.results;
         if (foundMovies.length === 0) {
-            alert(`the film "${query} is not exist`)
+            reguestMessage.classList.remove('hide-load');
+        }
+        if (foundMovies.length !== 0) {
+            reguestMessage.classList.add('hide-load');
         }
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
