@@ -2,38 +2,42 @@ import { oneCardMarkup } from './one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from './loader';
-import { makeRequestedPaginationMarkup } from './make-requested-pagination-markup';
+import { makeRequestedPaginationMarkup, paginationWrapper } from './make-requested-pagination-markup';
 
 
 async function loadRequestedClickedPage(e) {
     e.preventDefault();
+    if (e.target.nodeName !== "BUTTON") { return }
 
+    const inputEl = document.querySelector('.input');
     const clickedPage = e.target.textContent;
-    const fetchMovies = new TheMovieDb();
-
+    
+    
     const containerMainPage = document.querySelector('.film-grid');
-    containerMainPage.innerHTML = '';
+    paginationWrapper.innerHTML = '';
     showLoader();
-
-    inputEl = document.querySelector('.input');
-
+    
+    
     const query = inputEl.value;
+    const fetchMovies = new TheMovieDb(clickedPage, query);
+    // fetchMovies.query(query)
+    // fetchMovies.page(clickedPage)
 
     try {
-        const ApiReply = await fetchMovies.fetchRequestedMovies(query, clickedPage);
+        const apiReply = await fetchMovies.fetchRequestedMovies();
 // console.log(ApiReply)
-        const foundMovies = ApiReply.results;
+        const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
-        const markup = await filmsToRender.map(film => {
+        const markup = filmsToRender.map(film => {
             return oneCardMarkup(film);
         }).join('');
 
         hideLoader();
         containerMainPage.innerHTML = markup;
 
-        makeRequestedPaginationMarkup(ApiReply)
+        makeRequestedPaginationMarkup(apiReply)
         // addRequestListener()
     } catch (error) {
         console.log(error);

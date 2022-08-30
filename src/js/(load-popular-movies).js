@@ -1,20 +1,20 @@
 // import { TheMovieDb } from "./fetch";
-// import { oneCardMarkup } from './oneCardMarkup';
-// import { getGenres } from './get-genres';
+// import { oneCardMarkup } from './one-card-markup';
+// import { getGenres } from './(get-genres)';
 
 // const fetchMovies = new TheMovieDb();
 
-// const mediaTypes = "movie"
-// const timeWindow = "day"
 
-// async function loadPopularMovies(mediaTypes, timeWindow) {
+
+// async function loadPopularMovies() {
 
 //     try {
-//         const popMovies = await fetchMovies.fetchPopularMovies(mediaTypes, timeWindow);
+//         const ApiReply = await fetchMovies.fetchPopularMovies("1");
 
-//         const popFilmsInfo = await popMovies.map(film => {
-//             const genres = getGenres(film.genre_ids)
-//             // const genres = genresArray.value
+//         const foundMovies = ApiReply.results;
+//         const popFilmsInfo = await foundMovies.map(async film => {
+//             const genresPromise = await getGenres(film.genre_ids)
+//             const genres = await Promise.all(genresPromise).then(res => res)
 //             const title = film.title
 //             const releaseData = film.release_date
 //             const posterPath = film.poster_path
@@ -23,9 +23,7 @@
 //             return { posterPath, title, genres, releaseData, rating }
 //         })
 
-//         console.log(popFilmsInfo)
-
-
+//         // console.log(popFilmsInfo)
 
 //         const markup = await popFilmsInfo.map(film => {
 //             return oneCardMarkup(film)
@@ -38,4 +36,4 @@
 //     }
 // }
 
-// loadPopularMovies(mediaTypes, timeWindow)
+// loadPopularMovies()

@@ -1,18 +1,18 @@
 import axios from 'axios';
 
 export class TheMovieDb {
-    constructor() {
+    constructor(page, query) {
         this.BASE_URL = 'https://api.themoviedb.org/3';
         this.API_KEY = '298b3ba9f2c0a557e7d7fc47b0ac595b';
         this.lang = 'en-US';
-        // this.page = page;
-        this.searchQuery = '';
+        this.page = page;
+        this.query = query;
         this.mediaType = 'movie';
         this.timeWindow = 'day';
     }
 
-    async fetchPopularMovies(page) {
-        const url = `${this.BASE_URL}/trending/${this.mediaType}/${this.timeWindow}?api_key=${this.API_KEY}&page=${page}&language=${this.lang}&include_adult=false`;
+    async fetchPopularMovies() {
+        const url = `${this.BASE_URL}/trending/${this.mediaType}/${this.timeWindow}?api_key=${this.API_KEY}&page=${this.page}`;
         try {
             const response = await axios.get(url);
             return response.data;
@@ -26,15 +26,14 @@ export class TheMovieDb {
         try {
             const response = await axios.get(url);
             const data = await response.data;
-            const genres = await data.genres;
-            return genres;
+            return data.genres;
         } catch (error) {
             console.log(error);
         }
     }
 
     async fetchMovieDetails(movieId) {
-        const url = `${this.BASE_URL}/movie/${movieId}?api_key=${this.API_KEY}&language=en-US`;
+        const url = `${this.BASE_URL}/movie/${movieId}?api_key=${this.API_KEY}`;
         try {
             const response = await axios.get(url);
             return response.data;
@@ -43,8 +42,8 @@ export class TheMovieDb {
         }
     }
 
-    async fetchRequestedMovies(query, page) {
-        const url = `${this.BASE_URL}/search/${this.mediaType}?api_key=${this.API_KEY}&page=${page}&language=${this.lang}&include_adult=false&query=${query}`
+    async fetchRequestedMovies() {
+        const url = `${this.BASE_URL}/search/${this.mediaType}?api_key=${this.API_KEY}&page=${this.page}&language=${this.lang}&include_adult=false&query=${this.query}`
         try {
             const response = await axios.get(url)
             return response.data
@@ -53,15 +52,19 @@ export class TheMovieDb {
         }
     }
 
-    get query() {
-        return this.searchQuery;
-    }
+    // get query() {
+    //     return this.query;
+    // }
 
-    set query(newQuery) {
-        this.searchQuery = newQuery;
-    }
+    // set query(newQuery) {
+    //     this.query = newQuery;
+    // }
 
-    resetPage() {
-        this.page = 1;
-    }
+    // get page() {
+    //     return this.page;
+    // }
+
+    // set page(newPage) {
+    //     this.page = newPage;
+    // }
 }

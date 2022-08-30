@@ -5,12 +5,23 @@ const myLibrary = {
   queue: [],
 };
 
+const localStorageWatched = JSON.parse(localStorage.getItem('watched'));
+if (localStorageWatched !== null) {
+  myLibrary.watched.push(...localStorageWatched);
+}
+
+const localStorageQueue = JSON.parse(localStorage.getItem('queue'));
+if (localStorageQueue !== null) {
+  myLibrary.queue.push(...localStorageQueue);
+}
+
 export function addToWatchedAddToQueueCloseModal(id) {
   const addToWatched = document.querySelector('.btn-add-to-watched');
   const addToQueue = document.querySelector('.btn-add-to-queue');
 
   function onAddToWatched() {
     const idMovie = id;
+
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
 
     if (positionArray >= 0) {

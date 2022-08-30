@@ -20,7 +20,7 @@ body.overflow{
 }
 
 .backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, -50%) scale(0.001);
 }
 
 .modal {

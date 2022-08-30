@@ -1,5 +1,5 @@
 function modalMovieMarkup(film) {
-    return `
+  return `
     <div class="modal">
         <button type="button" class="modal__close-btn" data-modal-close>
         </button>
@@ -18,7 +18,7 @@ function modalMovieMarkup(film) {
                         <p class="modal__list-item-title">Original Title</p>
                     </li>
                     <li class="modal__list-description-item">
-                        <p class="modal__list-item-title">Genre</p>
+                        <p class="modal__list-item-title">Genres</p>
                     </li>
                 </ul>
                 <ul class="modal__list-api list">
