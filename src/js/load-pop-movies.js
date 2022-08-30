@@ -11,7 +11,6 @@ async function loadPopMovies() {
     try {
         const apiReply = await fetchMovies.fetchPopularMovies();
 
-        Notiflix.Notify.success(`${apiReply.total_results} movies are found`)
         const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
