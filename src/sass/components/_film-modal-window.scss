@@ -86,10 +86,21 @@ margin-bottom: 20px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .modal__list-item {
     display: flex;
+}
+.modal__list-description{
+    width: 35%;
+    height: 100%;
+
+}
+.modal__list-api{
+    vertical-align: top;
+    width: 65%;
+    height: 100%;
 }
 .modal__list-description-item:not(:last-child){
     margin-bottom: 8px;

@@ -115,12 +115,19 @@
   }
 }
 
+<<<<<<< HEAD
 .github__icon {
   fill: var(--dark-theme-text-color);
 
   &:hover {
     opacity: 0.5;
   }
+=======
+.teamCard:focus,
+.teamCard:hover {
+  transform: scale(1.2);
+   box-shadow: rgba(224, 218, 218, 0.1);
+>>>>>>> 7733c52d2d884667ba665cfd4448794499191526
 }
 
 

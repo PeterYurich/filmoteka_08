@@ -5,3 +5,4 @@ import './js/load-requested-movies';
 import './js/open-close-movie-modal';
 import './js/load-clicked-movie';
 import './js/modal-footer-window';
+import './js/scroll-button';
