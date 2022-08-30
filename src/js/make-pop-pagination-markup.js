@@ -1,10 +1,10 @@
 import { loadPopClickedPage } from "./load-pop-clicked-page"
 const paginationWrapper = document.getElementById('pagination');
 
-function makePopPaginationMarkup(ApiReply) {
+function makePopPaginationMarkup(apiReply) {
     paginationWrapper.innerHTML = '';
-    const pageAmount = ApiReply.total_pages;
-    const currentPage = ApiReply.page
+    const pageAmount = apiReply.total_pages;
+    const currentPage = apiReply.page
 
     // початок сторінок
     if (currentPage === 1) {
@@ -38,7 +38,7 @@ function makePopPaginationMarkup(ApiReply) {
     const buttons = document.querySelectorAll(".page-button")
 
     for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].textContent == ApiReply.page) {
+        if (buttons[i].textContent == apiReply.page) {
             //якщо поточна сторінка дорівнює конкретної сторінкі масиву
             buttons[i].classList.add("btn-active");
         }
@@ -46,11 +46,5 @@ function makePopPaginationMarkup(ApiReply) {
     paginationWrapper.addEventListener("click", loadPopClickedPage)
 
 }
-
-// function addRequestListener() {
-//     paginationWrapper.addEventListener("click", loadRequestedClickedPage)
-// }
-
-
 
 export { makePopPaginationMarkup, paginationWrapper }

@@ -11,21 +11,25 @@ const fetchMovies = new TheMovieDb();
 
 const page = 1
 
+import {makeRequestedPaginationMarkup, paginationWrapper} from './make-requested-pagination-markup'
+
 async function loadRequestedMovies(e) {
     e.preventDefault();
     const containerMainPage = document.querySelector('.film-grid');
-    containerMainPage.innerHTML = '';
+    paginationWrapper.innerHTML = '';
     showLoader();
-
-    inputEl = document.querySelector('.input');
-
+    
+    
+    const inputEl = document.querySelector('.input');
+    
     const query = inputEl.value;
-
+    const fetchMovies = new TheMovieDb(1, query);
+    // fetchMovies.query(query)
+    
     try {
-        const ApiReply = await fetchMovies.fetchRequestedMovies(query, page);
+        const apiReply = await fetchMovies.fetchRequestedMovies();
         
-        Notiflix.Notify.success(`${ApiReply.total_results} movies are found` )
-        const foundMovies = ApiReply.results;
+        const foundMovies = apiReply.results;
         if (foundMovies.length === 0) {
             reguestMessage.classList.remove('hide-load');
         }
@@ -41,7 +45,7 @@ async function loadRequestedMovies(e) {
 
         hideLoader();
         containerMainPage.innerHTML = markup;
-        makeRequestedPaginationMarkup(ApiReply)
+        makeRequestedPaginationMarkup(apiReply)
     } catch (error) {
         console.log(error);
     }

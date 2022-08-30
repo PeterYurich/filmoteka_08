@@ -5,14 +5,14 @@ import { makePopPaginationMarkup } from './make-pop-pagination-markup';
 import Notiflix from 'notiflix';
 
 
-const fetchMovies = new TheMovieDb()
 
 async function loadPopMovies() {
+    const fetchMovies = new TheMovieDb(1)
     try {
-        const ApiReply = await fetchMovies.fetchPopularMovies("1");
+        const apiReply = await fetchMovies.fetchPopularMovies();
 
-        Notiflix.Notify.success(`${ApiReply.total_results} movies are found` )
-        const foundMovies = ApiReply.results;
+        Notiflix.Notify.success(`${apiReply.total_results} movies are found`)
+        const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
 
@@ -23,7 +23,7 @@ async function loadPopMovies() {
         const containerMainPage = document.querySelector('.film-grid');
         containerMainPage.innerHTML = markup;
 
-        makePopPaginationMarkup(ApiReply)
+        makePopPaginationMarkup(apiReply)
     } catch (error) {
         console.log(error);
     }

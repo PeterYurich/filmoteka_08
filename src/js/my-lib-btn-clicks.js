@@ -15,7 +15,7 @@ async function loadWatchedMovies() {
 
     try {
         const filmsToRender = await getTheMoviesTargetInfo(watchedMoviesIds)
-        const markup = await filmsToRender.map(film => {
+        const markup =  filmsToRender.map(film => {
             return oneCardMarkup(film)
         }).join('');
 
@@ -35,7 +35,7 @@ async function loadQueuedMovies() {
 
     try {
         const filmsToRender = await getTheMoviesTargetInfo(queuedMoviesIds)
-        const markup = await filmsToRender.map(film => {
+        const markup = filmsToRender.map(film => {
             return oneCardMarkup(film)
         }).join('');
 
@@ -47,30 +47,3 @@ async function loadQueuedMovies() {
     watched.classList.remove('active-btn')
     queue.classList.add('active-btn')
 }
-
-// function loadQueuedMovies(e) {
-//     e.preventDefault()
-//     let getQueueFilm = localStorage.getItem("watched")
-//     if (!getQueueFilm) {
-//         getQueueFilm = {}
-//     }
-//     else { getQueueFilm = JSON.parse(getQueueFilm) }
-
-//     async function loadQueue() {
-
-//         try {
-//             const foundMoviesIds = getQueueFilm.map(film => film.id)
-//             const FilmsToRender = await getTheMoviesTargetInfo(foundMoviesIds)
-
-//             const markup = await FilmsToRender.map(film => {
-//                 return oneCardMarkup(film)
-//             }).join('');
-
-//             const containerMyLibPage = document.querySelector('.my-lib_film-grid');
-//             containerMyLibPage.innerHTML = markup
-//         } catch (error) {
-//             console.log(error)
-//         }
-//     }
-//     loadQueue()
-// }
