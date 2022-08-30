@@ -12,5 +12,5 @@ export { showLoader, hideLoader };
 window.addEventListener('load', () => {
   setTimeout(() => {
     pagePreloader.classList.add('hide-load');
-  }, 400);
+  }, 200);
 });
