@@ -47,3 +47,4 @@ async function loadQueuedMovies() {
     watched.classList.remove('active-btn')
     queue.classList.add('active-btn')
 }
+loadQueuedMovies()
