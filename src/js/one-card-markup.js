@@ -1,6 +1,6 @@
 function oneCardMarkup(film) {
     return `
-<div class="photo-card" ">
+<div class="movie-card" ">
     <div class="img-wrapper">
         <img class="photo-card-img" data-id="${film.id}" src="https://image.tmdb.org/t/p/w500${film.posterPath}"
         alt="https://image.tmdb.org/t/p/w500${film.posterPath}"
