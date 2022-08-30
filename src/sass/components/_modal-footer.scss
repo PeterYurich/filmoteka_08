@@ -83,13 +83,13 @@
   padding: 5px 5px 10px 5px;
 }
 
-// .is-hidden {
-//   visibility: hidden;
-//   position: fixed;
-//   top: -100%;
-//   height: 0%;
-//   background-color: transparent;
-// }
+.is-hidden {
+  visibility: hidden;
+  position: fixed;
+  top: -100%;
+  height: 0%;
+  background-color: transparent;
+}
 
 .person-card {
   display: flex;
@@ -108,6 +108,11 @@
     box-shadow: 0px 0px 30px 8px rgba(166, 166, 166, 1);
   }
 
+  &:focus,
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(190, 182, 182, 0.12);
+  }
 }
 
 .github__icon {
@@ -121,11 +126,6 @@
 
 
 
-.person-card:focus,
-.person-card:hover {
-  transform: scale(1.1);
-  box-shadow: rgba(190, 182, 182, 0.12);
-}
 
 .modal__close-btn-team {
   position: absolute;
@@ -169,9 +169,18 @@
 
 // mob adaptive
 @media screen and (min-width: 320px) {
+  .team-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+  .person-card {
+    width: 140px;
+  }
+
   .person-image {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 140px;
   }
 
   .footerHeadline {
@@ -188,7 +197,7 @@
 //  tablet
 @media screen and (min-width: 768px) {
   .person-image {
-    width: 153px;
+    width: 100%;
     height: 153px;
   }
 
