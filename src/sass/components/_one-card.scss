@@ -25,6 +25,7 @@
   width: 36px;
   height: 16px;
   text-align: center;
+  line-height: 1.2;
 
   border: 1px solid var(--accent-color);
   background: var(--background-accent-color);
@@ -59,6 +60,9 @@
   .card-info {
     @include font(500, 12, 16);
   }
+  .film-rating {
+    line-height: 1.2;
+  }
 }
 
 // desktop
@@ -79,5 +83,6 @@
     width: 40px;
     height: 20px;
     @include font(500, 12, 22);
+    line-height: 1.6;
   }
 }
