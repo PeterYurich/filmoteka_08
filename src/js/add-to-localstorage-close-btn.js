@@ -23,13 +23,16 @@ export function addToWatchedAddToQueueCloseModal(id) {
     const idMovie = id;
 
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
-
+    const positionArrayQueue = myLibrary.queue.findIndex(
+      item => item === idMovie
+    );
     if (positionArray >= 0) {
       myLibrary.watched.splice(positionArray, 1);
       addToWatched.classList.remove('btn-remove');
       addToWatched.textContent = 'Add to watched';
     } else {
       myLibrary.watched.push(idMovie);
+      myLibrary.queue.splice(positionArrayQueue, 1);
       addToWatched.classList.add('btn-remove');
       addToWatched.textContent = 'Remove watched';
     }
@@ -40,13 +43,16 @@ export function addToWatchedAddToQueueCloseModal(id) {
   function onAddToQueue() {
     const idMovie = id;
     const positionArray = myLibrary.queue.findIndex(item => item === idMovie);
-
+    const positionArrayWatched = myLibrary.watched.findIndex(
+      item => item === idMovie
+    );
     if (positionArray >= 0) {
       myLibrary.queue.splice(positionArray, 1);
       addToQueue.classList.remove('btn-remove');
       addToQueue.textContent = 'Add to queue';
     } else {
       myLibrary.queue.push(idMovie);
+      myLibrary.watched.splice(positionArrayWatched, 1);
       addToQueue.classList.add('btn-remove');
       addToQueue.textContent = 'Remove queue';
     }
