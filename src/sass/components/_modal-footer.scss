@@ -14,14 +14,25 @@
   align-items: center;
   flex-direction: column;
   z-index: 99;
+  width: 100%;
+  height: 100%;
 }
-
+.teamSection1,
+.teamSection2,
+.teamSection3 {
+  //flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 30px;
+}
 
 @media screen and (min-width: 320px) {
   .cardFront {
     width: 120px;
     height: 120px;
   }
+ 
 }
 
 @media screen and (min-width: 768px) {
@@ -50,27 +61,36 @@
   .teamCard {
     min-width: 300px;
   }
+  .teamSection1,
+  .teamSection2,
+  .teamSection3 {
+    display: block;
+   }
+  .modal__close-btn-team {
+  width: 30px;
+  height: 30px;
+  }
 }
 
 .footerHeadline {
   display: inline;
   //color: var(--dark-theme-text-color);
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-top: 20px;
 
 
 
   color: var(--secondary-text-modal-color);
   font-weight: 100;
-  //font-size: 50px;
   line-height: 30px;
 }
 
 .teamList {
   justify-content: center;
   align-items: center;
-  display: flex;
+  //display: flex;
+  display: block;
   flex-wrap: wrap;
   margin: 0;
   padding-left: 0;
@@ -80,6 +100,7 @@
   list-style: none;
   overflow-x: hidden;
 }
+
 
 .teamName,
 .teamRoles,
@@ -95,8 +116,14 @@
   font-size: 20px;
   margin-bottom: 10px;
 }
+.gitAndName{
+  display: flex;
+ 
+}
 .teamName{
-  margin-bottom: 10px;
+  margin-left: 10px;
+  //line-height: 1.2;
+
 }
 .cardFront {
   border-top-left-radius: 60px;
@@ -108,7 +135,7 @@
 }
 
 .cardRear {
-  padding: 10px 5px 10px 5px;
+  padding: 5px 5px 10px 5px;
 }
 
 .is-hidden {
