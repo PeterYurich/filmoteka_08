@@ -1,4 +1,4 @@
-.photo-card-img {
+.img-wrapper {
   border-radius: 5px;
 }
 
@@ -45,10 +45,10 @@
 
 .img-wrapper {
   margin-bottom: 8px;
+  height: 355px;
 }
 
 .photo-card-img {
-  height: 355px;
   object-fit: cover;
 }
 
@@ -80,7 +80,7 @@
     line-height: 1.2;
   }
 
-  .photo-card-img {
+  .img-wrapper {
     height: 455px;
   }
 }
@@ -92,7 +92,7 @@
     max-width: 395px;
   }
 
-  .photo-card-img {
+  .img-wrapper {
     margin-bottom: 12px;
     height: 574px;
   }
@@ -100,7 +100,7 @@
   .card-info {
     @include font(500, 20, 24);
   }
-  
+
   .film-rating {
     width: 40px;
     height: 20px;

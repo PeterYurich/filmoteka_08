@@ -2,7 +2,7 @@ function oneCardMarkup(film) {
     return `
 <div class="movie-card" ">
     <div class="img-wrapper">
-        <img class="photo-card-img" data-id="${film.id}" src="https://image.tmdb.org/t/p/w500${film.posterPath}"
+        <imgfd class="photo-card-img" data-id="${film.id}" src="https://image.tmdb.org/t/p/w500${film.posterPath}"
         alt="https://image.tmdb.org/t/p/w500${film.posterPath}"
         onerror="this.onerror=null;this.src='https://i.ibb.co/ZdbF6pS/plug.jpg'" />
     </div>

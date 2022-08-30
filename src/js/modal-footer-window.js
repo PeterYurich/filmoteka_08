@@ -7,7 +7,6 @@ const refsTeam = {
 
 refsTeam.openModalBtnTeam.addEventListener('click', onOpenModalTeam);
 refsTeam.closeModalBtnTeam.addEventListener('click', onCloseModalTeam);
-refsTeam.modalTeam.addEventListener('click', footerModalClickTeam);
 window.addEventListener('keydown', onEscCloseTeam);
 
 function onOpenModalTeam(e) {
@@ -22,13 +21,6 @@ function onCloseModalTeam() {
   refsTeam.modalTeam.classList.add('is-hidden');
   refsTeam.body.classList.remove('hidden');
 }
-
-
-// function footerModalClickTeam(e) {
-//   if (e.currentTarget === e.target) {
-//     onCloseModalTeam();
-//   }
-// }
 
 function onEscCloseTeam(e) {
   if (e.key === 'Escape') {
