@@ -1,0 +1,211 @@
+.footerModal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--background-color_modal-footer);
+    transition: opacity 500ms var(--timing-function), visibility 500ms var(--timing-function);
+
+    overflow: scroll;
+}
+
+.team-list {
+    overflow: visible;
+    width: 90%;
+
+    display: block;
+}
+
+.footerHeadline {
+    display: inline;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+
+    color: var(--secondary-text-modal-color);
+    font-weight: 100;
+    line-height: 30px;
+    font-style: var(--modal-title-style);
+}
+
+
+.person-info {
+    margin-top: 10px;
+}
+
+.teamName,
+.teamRoles,
+.city {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-style: var(--modal-fond-family);
+    color: var(--secondary-text-modal-color);
+}
+
+.teamRoles {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.gitAndName {
+    display: flex;
+}
+
+.teamName {
+    margin-left: 10px;
+}
+
+.person-image {
+    border-bottom-right-radius: 60px;
+    object-fit: cover;
+    background-color: var(--dark-theme-text-color);
+}
+
+.person-info {
+    padding: 5px 5px 10px 5px;
+}
+
+.is-hidden {
+    visibility: hidden;
+    position: fixed;
+    top: -100%;
+    height: 0%;
+    background-color: transparent;
+}
+
+.person-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--background-color_modal-footer);
+
+    border-top-left-radius: 60px;
+    overflow: hidden;
+
+    &:focus,
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: rgba(190, 182, 182, 0.12);
+        box-shadow: 0px 0px 30px 8px rgba(166, 166, 166, 1);
+    }
+}
+
+.github__icon {
+    fill: var(--dark-theme-text-color);
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.modal__close-btn-team {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 33px;
+    height: 33px;
+
+    border-radius: 50%;
+    background-image: url(/src/images/close-btn.svg);
+    background-size: contain;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    transition: 200ms var(--timing-function);
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+// mob responsive
+@media screen and (max-width: 320px) {
+    .person-card {
+        max-width: 300px;
+    }
+
+    .modal__close-btn-team {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+// mob adaptive
+@media screen and (min-width: 320px) {
+    .team-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    .person-card {
+        width: 140px;
+    }
+
+    .person-image {
+        width: 100%;
+        height: 140px;
+    }
+
+    .footerHeadline {
+        font-style: var(--modal-tile-style);
+    }
+
+    .modal__close-btn-team {
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+//  tablet
+@media screen and (min-width: 768px) {
+    .person-image {
+        width: 100%;
+        height: 153px;
+    }
+
+    .footerHeadline {
+        font-size: 40px;
+    }
+
+    .team-modal-window-row {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        gap: 30px;
+    }
+}
+
+// desktop
+@media screen and (min-width: 1280px) {
+
+    .footerHeadline {
+        font-size: 40px;
+        font-style: var(--modal-tile-style);
+    }
+}
