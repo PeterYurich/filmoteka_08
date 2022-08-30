@@ -1,6 +1,5 @@
 .photo-card-img {
   border-radius: 5px;
-  margin-bottom: 8px;
 }
 .card-info {
   @include font(500, 12, 14);
@@ -42,13 +41,28 @@
   cursor: pointer;
 }
 
+.img-wrapper {
+  margin-bottom: 8px;
+}
+
+.photo-card-img {
+  height: 574px;
+}
+
 // mob adaptive
 @media screen and (max-width: 767px) {
   .photo-card {
     margin-bottom: 20px;
+    padding-left: 20;
+    padding-right: 20px;
   }
+
   .card-info {
     @include font(500, 12, 14);
+  }
+
+  .photo-card-img {
+    height: 355px;
   }
 }
 
@@ -63,6 +77,10 @@
   .film-rating {
     line-height: 1.2;
   }
+
+  .photo-card-img {
+    height: 455px;
+  }
 }
 
 // desktop
@@ -74,6 +92,7 @@
 
   .photo-card-img {
     margin-bottom: 12px;
+    height: 574px;
   }
 
   .card-info {

@@ -3,7 +3,7 @@
 }
 
 // mob responsive
-.container {
+body .container {
     width: 100vw;
     padding-left: 20px;
     padding-right: 20px;
@@ -29,7 +29,5 @@
 @media screen and (min-width: 1280px) {
     .container {
         width: 1280px;
-        padding-left: 32px;
-        padding-right: 32px;
     }
 }

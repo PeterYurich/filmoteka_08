@@ -1,12 +1,12 @@
 function oneCardMarkup(film) {
     return `
-    <div class="photo-card" ">
-    <a class="photo-card__link">
-        <img class="photo-card-img" data-id="${film.id}" src="https://image.tmdb.org/t/p/w500${film.posterPath
-        }"
+<div class="photo-card" ">
+    <div class="img-wrapper">
+        <img class="photo-card-img" data-id="${film.id}" src="https://image.tmdb.org/t/p/w500${film.posterPath}"
         alt="https://image.tmdb.org/t/p/w500${film.posterPath}"
         onerror="this.onerror=null;this.src='https://i.ibb.co/ZdbF6pS/plug.jpg'" />
-    </a>
+    </div>
+    
     <div class="card-info">
         <h3 class="card-info__title">${film.title}</h3>
         <p>
@@ -21,7 +21,7 @@ function oneCardMarkup(film) {
         </span>
         </p>
     </div>
-    </div>
+</div>
 `;
 }
 export { oneCardMarkup };
