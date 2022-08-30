@@ -145,6 +145,11 @@
     .logo-text {
         @include font(500, 30, 35)
     }
+
+    .header-line {
+        margin-bottom: 40px;
+    }
+
 }
 
 // desktop

@@ -1,20 +1,15 @@
 import { TheMovieDb } from "./fetch";
 
-const theMovieDb = new TheMovieDb
 
 async function getTheMoviesTargetInfo(filmIds) {
+    
+    const theMovieDb = new TheMovieDb()
 
     try {
-        // const targetMovies = []
-        // for (let i = 0; i < filmIds.length; i += 1) {
-        //     const film = await theMovieDb.fetchMovieDetails(filmIds[i])
-        //     targetMovies.push(film)
-        // }
-
         const targetMoviesPromise = filmIds.map(id => theMovieDb.fetchMovieDetails(id))
         const targetMovies = await Promise.all(targetMoviesPromise).then(res => res)
 
-        const theMoviesTargetInfo = await targetMovies.map(film => {
+        const theMoviesTargetInfo = targetMovies.map(film => {
             const genresArray = film.genres.map(item => item.name)
             const [firstGenre, secondGenre, ...others] = genresArray;
             let genres = ""
