@@ -3,82 +3,29 @@
   top: 0;
   bottom: 0;
   left: 0;
+
   display: flex;
-  background-color: var(--background-color_modal-footer);
-  background-size: contain;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
+
   z-index: 99;
   width: 100%;
   height: 100%;
+  
+  background-color: var(--background-color_modal-footer);
   transition: opacity 500ms var(--timing-function), visibility 500ms var(--timing-function);
 }
-.teamSection1,
-.teamSection2,
-.teamSection3 {
-  //flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 30px;
-}
 
-.cardRear {
-margin-top: 10px;
-}
+.teamList {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
 
+  overflow: visible;
+  width: 90%;
 
-@media screen and (min-width: 320px) {
-  .cardFront {
-    width: 120px;
-    height: 120px;
-  }
-
-  .footerHeadline {
-    //font-size: 30px;
-    font-style: var(--modal-tile-style);
-  }
-  .modal__close-btn-team {
-    width: 30px;
-    height: 30px;
-  }
- 
-}
-
-@media screen and (min-width: 768px) {
-  .cardFront {
-    width: 153px;
-    height: 153px;
-  }
-
-  .footerHeadline {
-    font-size: 40px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-
-  .footerHeadline {
-    font-size: 40px;
-    font-style: var(--modal-tile-style);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .teamCard {
-    min-width: 300px;
-  }
-  .teamSection1,
-  .teamSection2,
-  .teamSection3 {
-    display: block;
-    transition: transform .25s cubic-bezier(.4, 0, .2, 1);
-   }
-  .modal__close-btn-team {
-  width: 30px;
-  height: 30px;
-  }
+  display: block;
 }
 
 .footerHeadline {
@@ -94,72 +41,61 @@ margin-top: 10px;
   font-style: var(--modal-title-style);
 }
 
-.teamList {
+.teamSection1,
+.teamSection2,
+.teamSection3 {
   justify-content: center;
-  align-items: center;
-  //display: flex;
-  display: block;
-  flex-wrap: wrap;
-  margin: 0;
-  padding-left: 0;
-  width: 90%;
+  display: flex;
   gap: 30px;
-  list-style: none;
-  overflow-x: hidden;
 }
 
+.person-info {
+  margin-top: 10px;
+}
 
 .teamName,
 .teamRoles,
 .city {
-  color: var(--secondary-text-modal-color);
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
+  
   font-style: var(--modal-fond-family);
+  color: var(--secondary-text-modal-color);
 }
-
 
 .teamRoles {
   font-size: 20px;
   margin-bottom: 10px;
 }
-.gitAndName{
-  display: flex;
- 
-}
-.teamName{
-  margin-left: 10px;
-  //line-height: 1.2;
 
+.gitAndName {
+  display: flex;
 }
+
+.teamName {
+  margin-left: 10px;
+}
+
 .cardFront {
   border-top-left-radius: 60px;
   border-bottom-right-radius: 60px;
-  -o-object-fit: cover;
   object-fit: cover;
 
   background-color: var(--dark-theme-text-color);
 }
 
-.cardRear {
+.person-info {
   padding: 5px 5px 10px 5px;
 }
 
-.is-hidden {
-  visibility: hidden;
-  position: fixed;
-  top: 200%;
-
-  height: 0%;
-
-  background-color: transparent;
-
-  .teamCard {
-    list-style: none;
-    height: 0px;
-  }
-}
+// .is-hidden {
+//   visibility: hidden;
+//   position: fixed;
+//   top: -100%;
+//   height: 0%;
+//   background-color: transparent;
+// }
 
 .teamCard {
   display: flex;
@@ -168,7 +104,8 @@ margin-top: 10px;
   flex-direction: column;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+  background-color: var(--background-color_modal-footer);
+  
   .githab__icon {
     fill: var(--dark-theme-text-color);
 
@@ -181,7 +118,7 @@ margin-top: 10px;
 .teamCard:focus,
 .teamCard:hover {
   transform: scale(1.2);
-    box-shadow: rgba(190, 182, 182, 0.1);
+  box-shadow: rgba(190, 182, 182, 0.1);
 }
 
 .modal__close-btn-team {
@@ -209,4 +146,62 @@ margin-top: 10px;
 
 .hidden {
   overflow: hidden;
+}
+
+// mob responsive
+@media screen and (max-width: 320px) {
+  .teamCard {
+    min-width: 300px;
+  }
+
+  .teamSection1,
+  .teamSection2,
+  .teamSection3 {
+    display: block;
+    transition: transform .25s cubic-bezier(.4, 0, .2, 1);
+  }
+
+  .modal__close-btn-team {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+// mob adaptive
+@media screen and (min-width: 320px) {
+  .cardFront {
+    width: 120px;
+    height: 120px;
+  }
+
+  .footerHeadline {
+    font-style: var(--modal-tile-style);
+  }
+
+  .modal__close-btn-team {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+//  tablet
+@media screen and (min-width: 768px) {
+  .cardFront {
+    width: 153px;
+    height: 153px;
+  }
+
+  .footerHeadline {
+    font-size: 40px;
+  }
+}
+
+// desktop
+@media screen and (min-width: 1280px) {
+
+  .footerHeadline {
+    font-size: 40px;
+    font-style: var(--modal-tile-style);
+  }
 }
