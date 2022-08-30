@@ -12,12 +12,14 @@
   z-index: 99;
   width: 100%;
   height: 100%;
-  
+
   background-color: var(--background-color_modal-footer);
   transition: opacity 500ms var(--timing-function), visibility 500ms var(--timing-function);
+
+  overflow: scroll;
 }
 
-.teamList {
+.team-list {
   // display: flex;
   // flex-direction: column;
   // align-items: center;
@@ -41,13 +43,7 @@
   font-style: var(--modal-title-style);
 }
 
-.teamSection1,
-.teamSection2,
-.teamSection3 {
-  justify-content: center;
-  display: flex;
-  gap: 30px;
-}
+.team-modal-window-row {}
 
 .person-info {
   margin-top: 10px;
@@ -59,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   font-style: var(--modal-fond-family);
   color: var(--secondary-text-modal-color);
 }
@@ -77,11 +73,9 @@
   margin-left: 10px;
 }
 
-.cardFront {
-  border-top-left-radius: 60px;
+.person-image {
   border-bottom-right-radius: 60px;
   object-fit: cover;
-
   background-color: var(--dark-theme-text-color);
 }
 
@@ -97,44 +91,55 @@
 //   background-color: transparent;
 // }
 
-.teamCard {
+.person-card {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--background-color_modal-footer);
-  
-  .githab__icon {
-    fill: var(--dark-theme-text-color);
 
-    &:hover {
-      opacity: 0.5;
-    }
+  border-top-left-radius: 60px;
+  overflow: hidden;
+
+
+  &:hover {
+    box-shadow: 0px 0px 30px 8px rgba(166, 166, 166, 1);
+  }
+
+}
+
+.github__icon {
+  fill: var(--dark-theme-text-color);
+
+  &:hover {
+    opacity: 0.5;
   }
 }
 
-.teamCard:focus,
-.teamCard:hover {
-  transform: scale(1.2);
-  box-shadow: rgba(190, 182, 182, 0.1);
+
+
+
+.person-card:focus,
+.person-card:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(190, 182, 182, 0.12);
 }
 
 .modal__close-btn-team {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  margin-bottom: 10px;
+  top: 20px;
+  right: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+
+  width: 33px;
+  height: 33px;
+
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border: none;
-  padding: 0;
   background-image: url(/src/images/close-btn.svg);
   background-size: contain;
   cursor: pointer;
@@ -142,6 +147,8 @@
   &:hover {
     opacity: 0.5;
   }
+
+  transition: 200ms var(--timing-function);
 }
 
 .hidden {
@@ -150,15 +157,8 @@
 
 // mob responsive
 @media screen and (max-width: 320px) {
-  .teamCard {
-    min-width: 300px;
-  }
-
-  .teamSection1,
-  .teamSection2,
-  .teamSection3 {
-    display: block;
-    transition: transform .25s cubic-bezier(.4, 0, .2, 1);
+  .person-card {
+    max-width: 300px;
   }
 
   .modal__close-btn-team {
@@ -169,7 +169,7 @@
 
 // mob adaptive
 @media screen and (min-width: 320px) {
-  .cardFront {
+  .person-image {
     width: 120px;
     height: 120px;
   }
@@ -179,21 +179,28 @@
   }
 
   .modal__close-btn-team {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 
 }
 
 //  tablet
 @media screen and (min-width: 768px) {
-  .cardFront {
+  .person-image {
     width: 153px;
     height: 153px;
   }
 
   .footerHeadline {
     font-size: 40px;
+  }
+
+  .team-modal-window-row {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 30px;
   }
 }
 
