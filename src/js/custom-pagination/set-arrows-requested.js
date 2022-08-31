@@ -13,7 +13,6 @@ async function goToNextRequestedPage() {
     paginationWrapper.innerHTML = '';
     showLoader();
 
-
     const query = inputEl.value;
     const fetchMovies = new TheMovieDb(nextPageNumber, query);
 
