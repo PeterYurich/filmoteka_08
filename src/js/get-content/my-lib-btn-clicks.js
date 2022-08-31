@@ -56,5 +56,4 @@ onQueue()
 watched.addEventListener('click', onWatched)
 queue.addEventListener('click', onQueue)
 
-
 export { loadQueuedMovies, loadWatchedMovies, }
