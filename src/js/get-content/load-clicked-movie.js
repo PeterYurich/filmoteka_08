@@ -1,12 +1,11 @@
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { modalMovieMarkup } from './modal-movie-markup';
-// import { addToWatchedAddToQueueCloseModal } from './add-to-localstorage-close-btn';
-import { addToWatchedAddToQueueCloseModal } from './add-to-localstorage-close-btn';
-import { showModalMovieWindow } from './open-close-movie-modal';
+import { modalMovieMarkup } from '../modal-windows/modal-movie-markup';
+import { addToWatchedAddToQueueCloseModal } from '../modal-windows/add-to-localstorage-close-btn';
+import { showModalMovieWindow } from '../modal-windows/open-close-movie-modal';
 import {
   checkButtonAddToWatched,
   checkButtonAddToQueue,
-} from './check-buttons-in-movie-modal';
+} from '../modal-windows/check-buttons-in-movie-modal';
 
 async function loadClickedMovies(e) {
   e.preventDefault();

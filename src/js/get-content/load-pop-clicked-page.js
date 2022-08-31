@@ -1,7 +1,7 @@
 import { TheMovieDb } from "./fetch.js"
-import { oneCardMarkup } from './one-card-markup';
+import { oneCardMarkup } from '../components/one-card-markup';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { makePopPaginationMarkup, paginationWrapper } from './make-pop-pagination-markup';
+import { makePopPaginationMarkup, paginationWrapper } from '../custom-pagination/make-pop-pagination-markup';
 
 async function loadPopClickedPage(e) {
     e.preventDefault();

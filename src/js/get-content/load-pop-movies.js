@@ -1,8 +1,7 @@
-import { oneCardMarkup } from './one-card-markup';
+import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { makePopPaginationMarkup } from './make-pop-pagination-markup';
-import Notiflix from 'notiflix';
+import { makePopPaginationMarkup } from '../custom-pagination/make-pop-pagination-markup';
 
 
 

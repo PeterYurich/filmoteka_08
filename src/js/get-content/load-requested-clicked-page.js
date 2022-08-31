@@ -1,8 +1,8 @@
-import { oneCardMarkup } from './one-card-markup';
+import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { showLoader, hideLoader } from './loader';
-import { makeRequestedPaginationMarkup, paginationWrapper } from './make-requested-pagination-markup';
+import { showLoader, hideLoader } from '../components/loader';
+import { makeRequestedPaginationMarkup, paginationWrapper } from '../custom-pagination/make-requested-pagination-markup';
 
 
 async function loadRequestedClickedPage(e) {

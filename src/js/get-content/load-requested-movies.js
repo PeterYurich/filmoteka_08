@@ -1,17 +1,15 @@
-import { oneCardMarkup } from './one-card-markup';
+import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { showLoader, hideLoader } from './loader';
-import {makeRequestedPaginationMarkup} from './make-requested-pagination-markup'
-import Notiflix from 'notiflix';
+import { showLoader, hideLoader } from '../components/loader';
+import {makeRequestedPaginationMarkup, paginationWrapper} from '../custom-pagination/make-requested-pagination-markup'
 
-const reguestMessage = document.querySelector('.alert');
+const requestMessage = document.querySelector('.alert');
 
 const fetchMovies = new TheMovieDb();
 
 const page = 1
 
-import {makeRequestedPaginationMarkup, paginationWrapper} from './make-requested-pagination-markup'
 
 async function loadRequestedMovies(e) {
     e.preventDefault();
@@ -31,10 +29,10 @@ async function loadRequestedMovies(e) {
         
         const foundMovies = apiReply.results;
         if (foundMovies.length === 0) {
-            reguestMessage.classList.remove('hide-load');
+            requestMessage.classList.remove('hide-load');
         }
         if (foundMovies.length !== 0) {
-            reguestMessage.classList.add('hide-load');
+            requestMessage.classList.add('hide-load');
         }
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);

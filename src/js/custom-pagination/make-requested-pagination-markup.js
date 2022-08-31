@@ -1,10 +1,13 @@
-import { loadPopClickedPage } from "./load-pop-clicked-page"
+import { loadRequestedClickedPage } from "../get-content/load-requested-clicked-page"
+
 const paginationWrapper = document.getElementById('pagination');
 
-function makePopPaginationMarkup(apiReply) {
+function makeRequestedPaginationMarkup(apiReply) {
     paginationWrapper.innerHTML = '';
     const pageAmount = apiReply.total_pages;
     const currentPage = apiReply.page
+
+    if (pageAmount === 0) { return }
 
     // початок сторінок
     if (currentPage === 1) {
@@ -35,6 +38,17 @@ function makePopPaginationMarkup(apiReply) {
         }
     }
 
+    // якщо мало
+    if (pageAmount === 1) {
+        paginationWrapper.innerHTML = '';
+    } else if (pageAmount >= 2 && pageAmount <= 10) {
+        paginationWrapper.innerHTML = '';
+
+        for (let i = 1; i < pageAmount; i++) {
+            paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${i}</button>`)
+        }
+    }
+
     const buttons = document.querySelectorAll(".page-button")
 
     for (let i = 0; i < buttons.length; i++) {
@@ -43,8 +57,9 @@ function makePopPaginationMarkup(apiReply) {
             buttons[i].classList.add("btn-active");
         }
     }
-    paginationWrapper.addEventListener("click", loadPopClickedPage)
+    // paginationWrapper.addEventListener("click", loadPopClickedPage)
+    paginationWrapper.addEventListener("click", loadRequestedClickedPage)
 
 }
 
-export { makePopPaginationMarkup, paginationWrapper }
+export { makeRequestedPaginationMarkup, paginationWrapper }

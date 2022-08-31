@@ -1,4 +1,4 @@
-import { oneCardMarkup } from './one-card-markup'
+import { oneCardMarkup } from '../components/one-card-markup'
 import { getTheMoviesTargetInfo } from "./get-movies-target-info"
 
 const watched = document.querySelector('#watched')
@@ -15,7 +15,7 @@ async function loadWatchedMovies() {
 
     try {
         const filmsToRender = await getTheMoviesTargetInfo(watchedMoviesIds)
-        const markup =  filmsToRender.map(film => {
+        const markup = filmsToRender.map(film => {
             return oneCardMarkup(film)
         }).join('');
 
@@ -48,3 +48,5 @@ async function loadQueuedMovies() {
     queue.classList.add('active-btn')
 }
 loadQueuedMovies()
+
+// export { loadQueuedMovies, loadWatchedMovies }

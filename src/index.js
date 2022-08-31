@@ -1,8 +1,8 @@
-import './js/loader';
-import './js/load-pop-movies';
-import './js/load-requested-movies';
+import './js/components/loader';
+import './js/get-content/load-pop-movies';
+import './js/get-content/load-requested-movies';
 
-import './js/open-close-movie-modal';
-import './js/load-clicked-movie';
-import './js/modal-footer-window';
-import './js/scroll-button';
+import './js/modal-windows/open-close-movie-modal';
+import './js/get-content/load-clicked-movie';
+import './js/modal-windows/modal-footer-window';
+import './js/components/scroll-button';

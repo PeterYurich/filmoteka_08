@@ -1,8 +1,8 @@
 function modalMovieMarkup(film) {
-  const showAllgenresgenresAll = film.genresArray.join(', ');
+    const showAllgenresgenresAll = film.genresArray.join(', ');
 
-  return `
-  
+    return `
+    
     <div class="modal">
         <button type="button" class="modal__close-btn" data-modal-close>
         </button>
