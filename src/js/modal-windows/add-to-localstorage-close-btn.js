@@ -24,8 +24,7 @@ export function addToWatchedAddToQueueCloseModal(id) {
 
     const positionArray = myLibrary.watched.findIndex(item => item === idMovie);
     const positionArrayQueue = myLibrary.queue.findIndex(
-      item => item === idMovie
-    );
+      item => item === idMovie);
     if (positionArray >= 0) {
       myLibrary.watched.splice(positionArray, 1);
       addToWatched.classList.remove('btn-remove');
