@@ -3,10 +3,8 @@ import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { setPopPagination } from '../custom-pagination/set-pop-pagination';
 
-
-
-async function loadPopMovies() {
-    const fetchMovies = new TheMovieDb(1)
+async function loadPopMovies(page) {
+    const fetchMovies = new TheMovieDb(page)
     try {
         const apiReply = await fetchMovies.fetchPopularMovies();
 
@@ -27,4 +25,4 @@ async function loadPopMovies() {
     }
 }
 
-loadPopMovies();
+loadPopMovies(1);

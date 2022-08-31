@@ -11,21 +11,18 @@ async function loadRequestedClickedPage(e) {
 
     const inputEl = document.querySelector('.input');
     const clickedPage = e.target.textContent;
-    
-    
+
+
     const containerMainPage = document.querySelector('.film-grid');
     paginationWrapper.innerHTML = '';
     showLoader();
-    
-    
+
+
     const query = inputEl.value;
     const fetchMovies = new TheMovieDb(clickedPage, query);
-    // fetchMovies.query(query)
-    // fetchMovies.page(clickedPage)
 
     try {
         const apiReply = await fetchMovies.fetchRequestedMovies();
-// console.log(ApiReply)
         const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
@@ -38,7 +35,6 @@ async function loadRequestedClickedPage(e) {
         containerMainPage.innerHTML = markup;
 
         setRequestedPagination(apiReply)
-        // addRequestListener()
     } catch (error) {
         console.log(error);
     }
