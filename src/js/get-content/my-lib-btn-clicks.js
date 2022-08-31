@@ -4,9 +4,6 @@ import { getTheMoviesTargetInfo } from "./get-movies-target-info"
 const watched = document.querySelector('#watched')
 const queue = document.querySelector('#queue')
 
-watched.addEventListener('click', loadWatchedMovies)
-queue.addEventListener('click', loadQueuedMovies)
-
 async function loadWatchedMovies() {
     let watchedMoviesIds = localStorage.getItem("watched")
     if (!watchedMoviesIds) { watchedMoviesIds = {} }
@@ -23,11 +20,9 @@ async function loadWatchedMovies() {
     } catch (error) {
         console.log(error)
     }
-    watched.classList.add('active-btn')
-    queue.classList.remove('active-btn')
 }
 
-async function loadQueuedMovies() {
+async function loadQueuedMovies() {    
     let queuedMoviesIds = localStorage.getItem("queue")
     if (!queuedMoviesIds) { queuedMoviesIds = {} }
     else { queuedMoviesIds = JSON.parse(queuedMoviesIds) }
@@ -43,9 +38,23 @@ async function loadQueuedMovies() {
     } catch (error) {
         console.log(error)
     }
+}
+
+function onQueue () {
     watched.classList.remove('active-btn')
     queue.classList.add('active-btn')
+    loadQueuedMovies()
 }
-loadQueuedMovies()
 
-export { loadQueuedMovies, loadWatchedMovies }
+function onWatched () {
+    watched.classList.add('active-btn')
+    queue.classList.remove('active-btn')
+    loadWatchedMovies()
+}
+
+onQueue()
+watched.addEventListener('click', onWatched)
+queue.addEventListener('click', onQueue)
+
+
+export { loadQueuedMovies, loadWatchedMovies, }
