@@ -3,10 +3,10 @@ import { oneCardMarkup } from '../components/one-card-markup';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { setPopPagination } from '../custom-pagination/set-pop-pagination';
 import { paginationWrapper } from '../custom-pagination/make-pagination-markup'
+
 async function loadPopClickedPage(e) {
         e.preventDefault();
         if (e.target.nodeName !== "BUTTON") { return }
-
 
         paginationWrapper.innerHTML = '';
 

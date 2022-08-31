@@ -6,11 +6,11 @@ function showLoader() {
 function hideLoader() {
   pagePreloader.classList.add('hide-load');
 }
-
-export { showLoader, hideLoader };
-
 window.addEventListener('load', () => {
   setTimeout(() => {
     pagePreloader.classList.add('hide-load');
-  }, 200);
+  }, 1);
 });
+
+export { showLoader, hideLoader };
+
