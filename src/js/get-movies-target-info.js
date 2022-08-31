@@ -33,7 +33,7 @@ async function getTheMoviesTargetInfo(filmIds) {
       // }
       function resolveGenres(genresArray) {
         if (genresArray.length > 2) {
-          genres = `${firstGenre}, ${secondGenre}, ...`;
+          genres = `${firstGenre}, ${secondGenre}, others...`;
         } else if (genresArray.length === 2) {
           genres = `${firstGenre}, ${secondGenre}`;
         } else if (genresArray.length === 1) {

@@ -7,14 +7,14 @@
 @import './utils/visually-hidden';
 
 @import './components/film-modal-window';
-@import './components/one-card';
-@import './components/film-modal-window';
-@import './components/one-card';
+@import './components/movie-card';
 @import './components/loader';
-// @import './components/modal-footer';
+@import './components/team-modal-window';
 @import './components/custom-pagination';
 
 @import './layout/film-grid';
 @import './layout/header';
 @import './layout/footer';
 @import './layout/my_lib_header';
+
+
