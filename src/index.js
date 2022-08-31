@@ -7,4 +7,4 @@ import './js/get-content/load-clicked-movie';
 import './js/modal-windows/team-modal-window';
 import './js/components/scroll-button';
 
-import './js/(load-popular-movies)'
+// import './js/(load-popular-movies)'
