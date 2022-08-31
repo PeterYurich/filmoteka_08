@@ -1,5 +1,3 @@
-import { loadPopMovies } from "../get-content/load-pop-movies";
-import { loadRequestedMovies } from "../get-content/load-requested-movies";
 
 let currentPageNumber = 1
 
@@ -82,12 +80,6 @@ function makePaginationMarkup(apiReply) {
             nextPageBtn.remove()
         }
     }
-
-    // поведінка стрілочок
-
-    // 
-
-    // loadRequestedMovies
 
     const buttons = document.querySelectorAll(".page-button")
 

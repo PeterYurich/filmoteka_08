@@ -1,19 +1,24 @@
 import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from '../get-content/fetch';
 import { getTheMoviesTargetInfo } from '../get-content/get-movies-target-info';
-import { setPopPagination } from '../custom-pagination/set-pop-pagination';
+import { setRequestedPagination } from './set-requested-pagination';
 
 import { currentPageNumber } from './make-pagination-markup'
 
-async function goToNextPopPage() {
+async function goToNextRequestedPage() {
 
     nextPageNumber = currentPageNumber + 1;
 
-    const fetchMovies = new TheMovieDb(nextPageNumber)
-    try {
-        const apiReply = await fetchMovies.fetchPopularMovies();
+    const containerMainPage = document.querySelector('.film-grid');
+    paginationWrapper.innerHTML = '';
+    showLoader();
 
-        console.log("worked");
+
+    const query = inputEl.value;
+    const fetchMovies = new TheMovieDb(nextPageNumber, query);
+
+    try {
+        const apiReply = await fetchMovies.fetchRequestedMovies();
         const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
@@ -22,25 +27,29 @@ async function goToNextPopPage() {
             return oneCardMarkup(film);
         }).join('');
 
-        const containerMainPage = document.querySelector('.film-grid');
+        hideLoader();
         containerMainPage.innerHTML = markup;
 
-        setPopPagination(apiReply)
+        setRequestedPagination(apiReply)
     } catch (error) {
         console.log(error);
     }
 }
 
-async function goToPreviousPopPage() {
+async function goToPreviousRequestedPage() {
     // loadPopMovies(nextPage);
 
     previousPageNumber = currentPageNumber - 1;
+    const containerMainPage = document.querySelector('.film-grid');
+    paginationWrapper.innerHTML = '';
+    showLoader();
 
-    const fetchMovies = new TheMovieDb(previousPageNumber)
+
+    const query = inputEl.value;
+    const fetchMovies = new TheMovieDb(previousPageNumber, query);
+
     try {
-        const apiReply = await fetchMovies.fetchPopularMovies();
-
-        console.log("worked");
+        const apiReply = await fetchMovies.fetchRequestedMovies();
         const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
@@ -49,13 +58,13 @@ async function goToPreviousPopPage() {
             return oneCardMarkup(film);
         }).join('');
 
-        const containerMainPage = document.querySelector('.film-grid');
+        hideLoader();
         containerMainPage.innerHTML = markup;
 
-        setPopPagination(apiReply)
+        setRequestedPagination(apiReply)
     } catch (error) {
         console.log(error);
     }
 }
 
-export { goToNextPopPage, goToPreviousPopPage }
+export { goToNextRequestedPage, goToPreviousRequestedPage }
