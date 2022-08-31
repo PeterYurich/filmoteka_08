@@ -2,18 +2,15 @@ import { TheMovieDb } from "./get-content/fetch";
 import { oneCardMarkup } from './components/one-card-markup';
 import { getGenres } from './(get-genres)';
 
-
-
-
 async function loadPopularMovies() {
     const fetchMovies = new TheMovieDb(1);
-
     try {
         const apiReply = await fetchMovies.fetchPopularMovies();
         const foundMovies = apiReply.results;
         const popFilmsInfo = await foundMovies.map(async film => {
-            const genres = await getGenres(film.genre_ids)
-
+            const genresPromise = await getGenres(film.genre_ids)
+            const genres = await Promise.all(genresPromise).then(res => res)
+console.log(genres)
             const title = film.title
             const releaseData = film.release_date
             const posterPath = film.poster_path
@@ -21,8 +18,6 @@ async function loadPopularMovies() {
 
             return { posterPath, title, genres, releaseData, rating }
         })
-
-        console.log(popFilmsInfo)
 
         const markup = await popFilmsInfo.map(film => {
             return oneCardMarkup(film)

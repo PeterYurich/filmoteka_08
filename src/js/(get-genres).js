@@ -1,4 +1,4 @@
-import { TheMovieDb } from './get-content/fetch';
+// import { TheMovieDb } from './get-content/fetch';
 
 
 async function getGenres(genreIds) {
@@ -10,7 +10,6 @@ async function getGenres(genreIds) {
         for (i = 0; i < genreIds.length; i += 1) {
             genreArray.push(listOfGenres.find(item => item.id === genreIds[i]));
         }
-
         const genreNames = genreArray.map(item => item.name);
         const [firstGenre, secondGenre, ...genres] = genreNames;
 // console.log("genreNames", genreNames)
@@ -31,6 +30,5 @@ async function asd () {
 }
 
 // asd()
-
 
 export { getGenres }
