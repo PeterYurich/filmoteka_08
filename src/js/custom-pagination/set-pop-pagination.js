@@ -6,4 +6,4 @@ function setPopPagination (apiReply) {
     paginationWrapper.addEventListener("click", loadPopClickedPage)
 }
 
-export { makePagination, setPopPagination }
+export { setPopPagination }
