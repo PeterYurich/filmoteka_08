@@ -1,3 +1,4 @@
+// import { loadWatchedMovies, loadQueuedMovies } from "../get-content/my-lib-btn-clicks";
 
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
@@ -27,6 +28,7 @@ function hideModalMovieWindow() {
   refs.body.classList.remove('overflow');
   window.removeEventListener('keydown', onEscClose);
   refs.modal.classList.add('is-hidden');
+
 }
 
 function onBackdropClick(e) {

@@ -1,7 +1,7 @@
 import { TheMovieDb } from "./fetch.js"
 import { oneCardMarkup } from '../components/one-card-markup';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { makePopPaginationMarkup, paginationWrapper } from '../custom-pagination/make-pop-pagination-markup';
+import { setPopPagination, paginationWrapper } from '../custom-pagination/set-pop-pagination';
 
 async function loadPopClickedPage(e) {
     e.preventDefault();
@@ -28,7 +28,7 @@ async function loadPopClickedPage(e) {
         const containerMainPage = document.querySelector('.film-grid');
         containerMainPage.innerHTML = markup;
 
-        makePopPaginationMarkup(apiReply);
+        setPopPagination(apiReply);
 
     } catch (error) {
         console.log(error);
