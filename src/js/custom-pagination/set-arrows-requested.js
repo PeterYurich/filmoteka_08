@@ -7,7 +7,7 @@ import { currentPageNumber } from './make-pagination-markup'
 
 async function goToNextRequestedPage() {
 
-    nextPageNumber = currentPageNumber + 1;
+    const nextPageNumber = currentPageNumber + 1;
 
     const containerMainPage = document.querySelector('.film-grid');
     paginationWrapper.innerHTML = '';
@@ -39,7 +39,7 @@ async function goToNextRequestedPage() {
 async function goToPreviousRequestedPage() {
     // loadPopMovies(nextPage);
 
-    previousPageNumber = currentPageNumber - 1;
+    const previousPageNumber = currentPageNumber - 1;
     const containerMainPage = document.querySelector('.film-grid');
     paginationWrapper.innerHTML = '';
     showLoader();

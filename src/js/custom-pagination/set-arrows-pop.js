@@ -7,7 +7,7 @@ import { currentPageNumber } from './make-pagination-markup'
 
 async function goToNextPopPage() {
 
-    nextPageNumber = currentPageNumber + 1;
+    const nextPageNumber = currentPageNumber + 1;
 
     const fetchMovies = new TheMovieDb(nextPageNumber)
     try {
@@ -34,7 +34,7 @@ async function goToNextPopPage() {
 async function goToPreviousPopPage() {
     // loadPopMovies(nextPage);
 
-    previousPageNumber = currentPageNumber - 1;
+    const previousPageNumber = currentPageNumber - 1;
 
     const fetchMovies = new TheMovieDb(previousPageNumber)
     try {
