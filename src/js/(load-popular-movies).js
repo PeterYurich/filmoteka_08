@@ -10,7 +10,6 @@ async function loadPopularMovies() {
         const popFilmsInfo = await foundMovies.map(async film => {
             const genresPromise = await getGenres(film.genre_ids)
             const genres = await Promise.all(genresPromise).then(res => res)
-console.log(genres)
             const title = film.title
             const releaseData = film.release_date
             const posterPath = film.poster_path
