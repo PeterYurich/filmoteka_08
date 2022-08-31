@@ -1,4 +1,3 @@
-import {loadWatchedMovies, loadQueuedMovies } from "../get-content/my-lib-btn-clicks";
 
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
@@ -19,9 +18,7 @@ function showModalMovieWindow() {
 function hideModalMovieWindow() {
   let url = window.location.href;
   if (
-    url.indexOf('https://peteryurich.github.io/filmoteka_08/my_library.html') !=
-    -1
-  ) {
+    url.indexOf('https://peteryurich.github.io/filmoteka_08/my_library.html') != -1) {
     window.location.reload(true);
   }
   // if (url.indexOf('http://localhost:1234/my_library.html') != -1) {
