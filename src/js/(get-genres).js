@@ -1,4 +1,4 @@
-// import { TheMovieDb } from './get-content/fetch';
+import { TheMovieDb } from './get-content/fetch';
 
 
 async function getGenres(genreIds) {
@@ -12,7 +12,6 @@ async function getGenres(genreIds) {
         }
         const genreNames = genreArray.map(item => item.name);
         const [firstGenre, secondGenre, ...genres] = genreNames;
-// console.log("genreNames", genreNames)
         if (genreNames.length > 2) {
             return `${firstGenre}, ${secondGenre}, ...`;
         } else if (genreNames.length === 2) {
@@ -23,12 +22,5 @@ async function getGenres(genreIds) {
         console.log(error);
     }
 }
-
-async function asd () {
-    const df = await getGenres([154875])
-    console.log(df)
-}
-
-// asd()
 
 export { getGenres }

@@ -1,4 +1,4 @@
-// import { loadWatchedMovies, loadQueuedMovies } from "../get-content/my-lib-btn-clicks";
+// import { loadWatchedMovies } from "../get-content/my-lib-btn-clicks";
 
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
@@ -22,13 +22,13 @@ function hideModalMovieWindow() {
     url.indexOf('https://peteryurich.github.io/filmoteka_08/my_library.html') != -1) {
     window.location.reload(true);
   }
-  // if (url.indexOf('http://localhost:1234/my_library.html') != -1) {
-  //   window.location.reload(true);
-  // }
   refs.body.classList.remove('overflow');
   window.removeEventListener('keydown', onEscClose);
   refs.modal.classList.add('is-hidden');
 
+  // if (url.indexOf('http://localhost:1234/my_library.html') != -1) {
+  //   window.location.reload(true);
+  // }
 }
 
 function onBackdropClick(e) {
