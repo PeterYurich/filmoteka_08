@@ -20,6 +20,10 @@ async function loadWatchedMovies() {
 
         const containerMyLibPage = document.querySelector('.film-grid');
         containerMyLibPage.innerHTML = markup
+        const message = document.querySelector('.message-wrapper')
+        if (containerMyLibPage.childElementCount > 0) {
+            message.classList.add('hide-load');
+        }
     } catch (error) {
         console.log(error)
     }
@@ -40,6 +44,10 @@ async function loadQueuedMovies() {
 
         const containerMyLibPage = document.querySelector('.film-grid');
         containerMyLibPage.innerHTML = markup
+        const message = document.querySelector('.message-wrapper')
+        if (containerMyLibPage.childElementCount > 0) {
+            message.classList.add('hide-load');
+        }
     } catch (error) {
         console.log(error)
     }

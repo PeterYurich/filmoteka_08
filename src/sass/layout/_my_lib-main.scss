@@ -1,0 +1,26 @@
+.empty-message {
+    text-align: center;
+    font-weight: 500;
+    font-size: 4vw;
+    line-height: 1.67;
+    color: #000000;
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .empty-message {
+        font-size: 16px;
+        margin-top: 50px;
+        width: 520px;
+    }
+}
+
+.message-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.hide-load {
+    display: none;
+  }
+
