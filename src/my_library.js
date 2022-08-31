@@ -3,4 +3,4 @@ import './js/components/loader';
 
 import './js/modal-windows/open-close-movie-modal';
 import './js/get-content/load-clicked-movie';
-import './js//modal-windows/modal-footer-window';
+import './js//modal-windows/team-modal-window';

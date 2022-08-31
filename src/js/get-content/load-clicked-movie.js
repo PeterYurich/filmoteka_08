@@ -1,5 +1,5 @@
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { modalMovieMarkup } from '../modal-windows/modal-movie-markup';
+import { modalMovieMarkup } from '../modal-windows/movie-modal-markup';
 import { addToWatchedAddToQueueCloseModal } from '../modal-windows/add-to-localstorage-close-btn';
 import { showModalMovieWindow } from '../modal-windows/open-close-movie-modal';
 import {
