@@ -1,4 +1,4 @@
-import { loadRequestedClickedPage } from "../get-content/load-pop-clicked-page"
+import { loadRequestedClickedPage } from "../get-content/load-requested-clicked-page"
 import { makePaginationMarkup, paginationWrapper } from "./make-pagination-markup"
 import { goToNextRequestedPage, goToPreviousRequestedPage } from './set-arrows-requested'
 
