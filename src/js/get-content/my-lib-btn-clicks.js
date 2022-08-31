@@ -4,7 +4,6 @@ import { getTheMoviesTargetInfo } from "./get-movies-target-info"
 const watched = document.querySelector('#watched')
 const queue = document.querySelector('#queue')
 
-
 watched.addEventListener('click', loadWatchedMovies)
 queue.addEventListener('click', loadQueuedMovies)
 
@@ -49,4 +48,4 @@ async function loadQueuedMovies() {
 }
 loadQueuedMovies()
 
-// export { loadQueuedMovies, loadWatchedMovies }
+export { loadQueuedMovies, loadWatchedMovies }

@@ -13,15 +13,24 @@ async function getGenres(genreIds) {
 
         const genreNames = genreArray.map(item => item.name);
         const [firstGenre, secondGenre, ...genres] = genreNames;
-
+// console.log("genreNames", genreNames)
         if (genreNames.length > 2) {
             return `${firstGenre}, ${secondGenre}, ...`;
         } else if (genreNames.length === 2) {
             return `${firstGenre}, ${secondGenre}`;
-        } else if (genreNames.length === 1) return `${firstGenre}`;
+        } else if (genreNames.length === 1)
+            return `${firstGenre}`;
     } catch (error) {
         console.log(error);
     }
 }
+
+async function asd () {
+    const df = await getGenres([154875])
+    console.log(df)
+}
+
+// asd()
+
 
 export { getGenres }

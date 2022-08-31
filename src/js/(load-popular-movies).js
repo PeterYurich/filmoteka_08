@@ -7,13 +7,13 @@ import { getGenres } from './(get-genres)';
 
 async function loadPopularMovies() {
     const fetchMovies = new TheMovieDb(1);
+
     try {
         const apiReply = await fetchMovies.fetchPopularMovies();
         const foundMovies = apiReply.results;
         const popFilmsInfo = await foundMovies.map(async film => {
-            const genresPromise = await getGenres(film.genre_ids)
-            const genres = await Promise.all(genresPromise).then(res => res)
-console.log(genres)
+            const genres = await getGenres(film.genre_ids)
+
             const title = film.title
             const releaseData = film.release_date
             const posterPath = film.poster_path
@@ -22,7 +22,7 @@ console.log(genres)
             return { posterPath, title, genres, releaseData, rating }
         })
 
-        // console.log(popFilmsInfo)
+        console.log(popFilmsInfo)
 
         const markup = await popFilmsInfo.map(film => {
             return oneCardMarkup(film)

@@ -2,7 +2,7 @@ import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from '../components/loader';
-import {makeRequestedPaginationMarkup, paginationWrapper} from '../custom-pagination/make-requested-pagination-markup'
+import {setRequestedPagination, paginationWrapper} from '../custom-pagination/set-requested-pagination'
 
 const requestMessage = document.querySelector('.alert');
 
@@ -43,7 +43,7 @@ async function loadRequestedMovies(e) {
 
         hideLoader();
         containerMainPage.innerHTML = markup;
-        makeRequestedPaginationMarkup(apiReply)
+        setRequestedPagination(apiReply)
     } catch (error) {
         console.log(error);
     }

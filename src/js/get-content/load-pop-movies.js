@@ -1,7 +1,7 @@
 import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
-import { makePopPaginationMarkup } from '../custom-pagination/make-pop-pagination-markup';
+import { setPopPagination } from '../custom-pagination/set-pop-pagination';
 
 
 
@@ -21,7 +21,7 @@ async function loadPopMovies() {
         const containerMainPage = document.querySelector('.film-grid');
         containerMainPage.innerHTML = markup;
 
-        makePopPaginationMarkup(apiReply)
+        setPopPagination(apiReply)
     } catch (error) {
         console.log(error);
     }
