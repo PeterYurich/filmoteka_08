@@ -5,22 +5,7 @@
   align-items: center;
   margin-bottom: 40px;
 }
-.page-button {
-  padding: 10px 16px;
-  margin: 2px;
-  appearance: none;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
 
-  background-color: rgba(0, 0, 0, 0);
-  transition: 0.4s;
-  color: #000000;
-  font-size: 18px;
-  text-shadow: 0px 0 px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0 px 4px rgba(0, 0, 0, 0.2);
-}
 .page-button:hover {
   background-color: #ff6b08;
   color: #ffffff;
@@ -37,4 +22,26 @@
 
 .arrow {
   cursor: pointer;
+  padding: 10px 16px;
+  &:hover {
+    border: 2px solid var(--accent-color);
+    border-radius: 5px
+  }
+}
+
+.page-button {
+  padding: 10px 16px;
+  margin: 2px;
+  appearance: none;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.4s;
+  color: #000000;
+  font-size: 18px;
+  text-shadow: 0px 0 px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0 px 4px rgba(0, 0, 0, 0.2);
 }

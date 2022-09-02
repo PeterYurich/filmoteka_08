@@ -36,11 +36,9 @@ function hideModalMovieWindow() {
         const queue = document.querySelector('#queue')
 
         if (watched.classList.contains("active-btn")) {
-            console.log("watch")
             loadWatchedMovies()
         }
         if (queue.classList.contains("active-btn")) {
-            console.log("wueue")
             loadQueuedMovies()
         }
     }

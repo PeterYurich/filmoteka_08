@@ -21,6 +21,7 @@ async function loadWatchedMovies() {
         if (containerMyLibPage.childElementCount > 0) {
             message.classList.add('hide-load');
         }
+    
     } catch (error) {
         console.log(error)
     }

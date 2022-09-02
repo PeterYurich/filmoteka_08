@@ -17,7 +17,6 @@ async function loadRequestedClickedPage(e) {
     paginationWrapper.innerHTML = '';
     showLoader();
 
-
     const query = inputEl.value;
     const fetchMovies = new TheMovieDb(clickedPage, query);
 

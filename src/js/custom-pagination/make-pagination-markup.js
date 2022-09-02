@@ -19,16 +19,16 @@ function makePaginationMarkup(apiReply) {
 
     // кінець сторінок
     if (currentPage === pageAmount) {
-        for (let i = currentPage - 4; i < currentPage; i++) {
+        for (let i = currentPage - 4; i <= currentPage; i++) {
             paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${i}</button>`)
         }
     } else if (currentPage === pageAmount - 1) {
-        for (let i = currentPage - 3; i < currentPage + 1; i++) {
+        for (let i = currentPage - 3; i <= pageAmount; i++) {
             paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${i}</button>`)
         }
     } else if (currentPage === pageAmount - 2) {
-        for (let i = currentPage - 2; i < currentPage + 2; i++) {
-            paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${i}</button>`)
+        for (let i = currentPage - 2; i <= pageAmount; i++) {
+    paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${i}</button>`)
         }
     }
 
@@ -51,7 +51,10 @@ function makePaginationMarkup(apiReply) {
     }
 
     // показати останню
-    if (pageAmount > 10 && currentPage < pageAmount - 5) {
+    if ( currentPage === pageAmount - 4) {
+        paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${pageAmount}</button>`)
+    }
+    if (pageAmount > 10 && currentPage <= pageAmount - 5) {
         paginationWrapper.insertAdjacentHTML("beforeend", '<div class="break-pagination">...</div>')
         paginationWrapper.insertAdjacentHTML("beforeend", `<button class="page-button">${pageAmount}</button>`)
     }

@@ -2,7 +2,8 @@ import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from './fetch';
 import { getTheMoviesTargetInfo } from './get-movies-target-info';
 import { showLoader, hideLoader } from '../components/loader';
-import { setRequestedPagination, paginationWrapper } from '../custom-pagination/set-requested-pagination'
+import { paginationWrapper } from '../custom-pagination/make-pagination-markup'
+import {setRequestedPagination} from '../custom-pagination/set-requested-pagination'
 
 const requestMessage = document.querySelector('.alert');
 

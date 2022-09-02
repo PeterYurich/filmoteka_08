@@ -13,7 +13,6 @@ async function goToNextPopPage() {
     try {
         const apiReply = await fetchMovies.fetchPopularMovies();
 
-        console.log("worked");
         const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);
@@ -32,7 +31,6 @@ async function goToNextPopPage() {
 }
 
 async function goToPreviousPopPage() {
-    // loadPopMovies(nextPage);
 
     const previousPageNumber = currentPageNumber - 1;
 
@@ -40,7 +38,6 @@ async function goToPreviousPopPage() {
     try {
         const apiReply = await fetchMovies.fetchPopularMovies();
 
-        console.log("worked");
         const foundMovies = apiReply.results;
         const foundMoviesIds = foundMovies.map(film => film.id);
         const filmsToRender = await getTheMoviesTargetInfo(foundMoviesIds);

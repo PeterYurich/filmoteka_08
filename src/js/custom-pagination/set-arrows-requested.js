@@ -2,9 +2,11 @@ import { oneCardMarkup } from '../components/one-card-markup';
 import { TheMovieDb } from '../get-content/fetch';
 import { getTheMoviesTargetInfo } from '../get-content/get-movies-target-info';
 import { setRequestedPagination } from './set-requested-pagination';
-
+import { paginationWrapper } from '../custom-pagination/make-pagination-markup'
 import { currentPageNumber } from './make-pagination-markup'
+import { showLoader, hideLoader } from '../components/loader'
 
+const inputEl = document.querySelector(".input")
 async function goToNextRequestedPage() {
 
     const nextPageNumber = currentPageNumber + 1;
@@ -42,7 +44,6 @@ async function goToPreviousRequestedPage() {
     const containerMainPage = document.querySelector('.film-grid');
     paginationWrapper.innerHTML = '';
     showLoader();
-
 
     const query = inputEl.value;
     const fetchMovies = new TheMovieDb(previousPageNumber, query);
